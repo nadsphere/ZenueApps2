@@ -1,0 +1,107 @@
+.carousels {
+	margin: 50px auto;
+	padding: 0 0px;
+}
+.carousels .item {
+	color: #747d89;
+	min-height: 325px;
+    text-align: center;
+	overflow: hidden;
+}
+.carousels .thumb-wrappers {
+	padding: 15px 15px;
+	margin: 15px;
+	background: #fff;
+  	border-radius: 6px;
+  	border: #ddd 2px solid;
+	text-align: center;
+	position: relative;
+	transition: ease-in-out;
+}
+.carousels .item .img-box {
+	height: 120px;
+	margin: 20px 0px;
+	width: 100%;
+	position: relative;
+}
+.carousels .item img {	
+	max-width: 100%;
+	max-height: 100%;
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+.carousels .item h4 {
+	font-size: 18px;
+}
+.carousels .item h4, .carousels .item p, .carousels .item ul {
+	margin-bottom: 5px;
+}
+.carousels .thumb-content .btn {
+	color: #c11717;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: none;
+    border: 1px solid #c11717;
+    padding: 6px 14px;
+    margin-top: 5px;
+    line-height: 16px;
+    border-radius: 20px;
+}
+.carousels .thumb-content .btn:hover, .carousels .thumb-content .btn:focus {
+	color: #fff;
+	background: #c11717;
+	box-shadow: none;
+}
+.carousels .thumb-content .btn i {
+	font-size: 14px;
+    font-weight: bold;
+    margin-left: 4px;
+}
+.carousels .carousel-control {
+	height: 44px;
+	width: 44px;
+	background: #c11717;	
+    margin: auto -10px;
+    border-radius: 50%;
+	opacity: 0.8;
+}
+.carousels .carousel-control:hover {
+	background: #a81616;
+	opacity: 1;
+}
+.carousels .carousel-control i {
+    font-size: 36px;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin: -19px 0 0 0;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    color: #fff;
+	text-shadow: none;
+    font-weight: bold;
+}
+.carousels .item-price {
+	font-size: 13px;
+	padding: 2px 0;
+}
+
+.star-rating li {
+	padding: 0;
+}
+.star-rating i {
+	font-size: 14px;
+	color: #ffc000;
+}
+.img-rd{
+	border-radius: 100%;
+}
+.carousels:hover {
+  transition: ease-in-out;
+}
