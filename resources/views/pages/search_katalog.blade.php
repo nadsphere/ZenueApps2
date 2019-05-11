@@ -46,16 +46,8 @@
         <nav class="main-nav float-right d-none d-lg-block">
           <ul>
             <li>
-                <div class="input-group">
-                    <div class="form-group has-search">
-                        <span class="fa fa-glip fa-search form-control-feedback"></span>
-                        <input type="text" class="form-controls form-control" placeholder="Cari...">
-                    </div>
-                </div>
-            </li>
-            <li>
                 <a href="#" class="widget-header mr-3">
-                  <i style="font-size: 16pt" class="icon fa fa-shopping-basket"></i>
+                  <i style="font-size: 16pt" class="icon fa fa-shopping-bag"></i>
                 </a>
             </li>
             <li>
@@ -63,12 +55,19 @@
                   <i style="font-size: 16pt" class="icon fa fa-bell-o"></i>
                 </a>
             </li>
+            <li>
+                <form class="form-inline">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Cari" aria-label="Search">
+                  <button class="btn btn-white my-2 my-sm-0" type="submit"><i classs="fa fa-facebook"></i></button>
+                </form>
+            </li>
+            <li><a href="#about">Paket</a></li>
             <!-- <li><a href="after-login.html">Iklan</a></li> -->
             <li class="drop-down"><a href="index.html"><span>Joko Mulyadi</span></a>
               <ul>
-                <li><a href="#">Edit Profil</a></li>
-                <li><a href="#">My Order</a></li>
-                <li><a href="#">My Wishlist</a></li>
+                <li><a href="#">Atur EO</a></li>
+                <li><a href="#">Pengriman</a></li>
+                <li><a href="#">Dashboard</a></li>
                 <li><a href="index.html">Sign Out</a></li>
               </ul>
             </li>
@@ -314,7 +313,7 @@
                             <ul class="pagination">
                                 <li class="page-item">
                                     <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
+                                        <span aria-hidden="true">&laquo;</span>
                                     </a>
                                 </li>
                                 <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -322,7 +321,7 @@
                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
                                 <li class="page-item">
                                     <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
+                                        <span aria-hidden="true">&raquo;</span>
                                     </a>
                                 </li>
                             </ul>

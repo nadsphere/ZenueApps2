@@ -155,8 +155,7 @@
                             <option>Harga</option>
                           </select>
                       </div>
-                  </form>         
-                </p>                      
+                  </form>                              
               </div>    
             </div>
             <br>

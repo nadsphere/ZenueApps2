@@ -1929,7 +1929,9 @@ ul.row, ul.row-sm {
     padding: 15px;
     border-top: 1px solid #eee; }
   .card-product .title {
-    margin-top: 0; }
+    margin: 10px 0; }
+  .card-product .texts {
+    margin: 10px 0; }
   .card-product .btn-overlay {
     -webkit-transition: .5s;
     transition: .5s;
