@@ -95,7 +95,7 @@
                             <h4 class="text-center" id="myLargeModalLabel">Form Tambah Paket</h4>
                         </div>
                         <div class="modal-body">
-                            <form class="" action="{{url('/insert')}}" enctype="multipart/form-data" method="POST">
+                            <form class="" action="{{url('/insert/')}}" enctype="multipart/form-data" method="POST">
                                 @csrf  
                               <div class="mb-3">
                                 <label for="foto_p">Foto Produk</label>
@@ -104,7 +104,7 @@
                               </div>
                               <div class="mb3">
                                 <label for="nama_p">Nama Produk</label>
-                                <input type="text" class="form-control" id="nama_p" placeholder="" value="" required="required" name="nama_paket">
+                                <input type="text" class="form-control" id="nama_p" placeholder=""  required="required" name="nama_paket">
                               </div>
                               <div class="row">
                                 <div class="col-md-6 mb-3">
@@ -167,96 +167,83 @@
                     <thead>
                         <tr>
                             <th class="prd-img">No.</th>
-                            <th class="prd-img">Gambar Produk</th>
-                            <th class="prd-name">Produk</th>
+                            <th class="prd-img">Gambar Paket</th>
+                            <th class="prd-name">Nama Paket</th>
                             <th class="prd-cate">Kategori</th>
                             <th class="prd-sta">Status Paket</th>
                             <th class="prd-dsc">Deskripsi</th>
                             <th class="prd-prc">Harga</th>
-                            <th class="prd-name"></th>
+                            <th class="prd-name">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- <tr>
-                            <td class="product-thumbnail">
-                              <img class="img-sm" src="{{asset('img/paket/weds.jpg')}}" alt="">
-                            </td>
-                            <td class="prd-name"><a href="#">Paket Nikah Kelas Ekonomi</a></td>
-                            <td class="prd_cate"><span class="amount">Wedding</span></td>
-                            <td class="prd-sta">Tersedia</td>
-                            <td class="prd-dsc">Sound System, MC berkualitas</td>
-                            <td class="prd-opt"> </td>
-                            <td class="prd-prc">25000000</td>
-                            <td class="prd-name">
-                              <a href="#"><i class="fa fa-pencil-square-o" data-toggle="modal" data-target=".bd-example-modal-lg"></i></a> 
-                              <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                                  <div class="modal-dialog modal-lg">
-                                    <div class="modal-content">
-                                        <div class="modal-header border-bottom-0">
-                                            <h4 class="text-center" id="myLargeModalLabel">Form Tambah Paket</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true"><i class="fa fa-times-thin" aria-hidden="true"></i></span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form class="" >
-                                              <div class="mb-3">
-                                                <label for="foto_p">Foto Produk</label>
-                                                <input type="file" class="form-control-file" id="lain" accept="image/*">
-                                              </div>
-                                              <div class="mb3">
-                                                <label for="nama_p">Nama Produk</label>
-                                                <input type="text" class="form-control" id="nama_p" placeholder="" value="" required="required">
-                                              </div>
-                                              <div class="row">
-                                                <div class="col-md-6 mb-3">
-                                                  <label for="kategori">Kategori</label>
-                                                  <select class="form-control" id="kategori">
-                                                    <option>Catering</option>
-                                                    <option>Wedding</option>
-                                                    <option>Concert</option>
-                                                    <option>Confrence</option>
-                                                    <option>Party</option>
-                                                    <option>Rental</option>
-                                                  </select>
-                                                </div>
-                                                <div class="col-md-6 mb-3">
-                                                  <label for="status_pk">Status Paket</label>
-                                                  <select class="form-control" id="status_pk">
-                                                    <option>Tersedia</option>
-                                                    <option>Tidak Tersedia</option>
-                                                  </select>
-                                                </div>
-                                              </div>
-                                              <div class="mb-3">
-                                                <label for="address">Deskripsi</label>
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                              </div>
-                                              <div class="mb-3">
-                                                <label for="harga_pkt">Harga Paket </label>
-                                                <input type="text" class="form-control" id="harga_pkt" placeholder="100000">
-                                              </div>
-                                              <button class="btn btn-danger btn-md btn-block" type="submit">Simpan</button>
-                                            </form>    
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              <span><a href="#"><i class="fa fa-trash-o"></i></a> </span>
-                            </td>
-                        </tr> --}}
                         @foreach ($paket as $value)
                           <tr>
                             <th scope="row">{{$value->id}}</th>
-                            <td><img class="" src="{{asset('img/upload/'.$value->gambar_paket)}}" alt="{{$value->gambar_paket}}"></td>
+                            <td><img height="90px" width="100px" class="d-flex justify-content-center" src="{{asset('img/upload/'.$value->gambar_paket)}}" alt="{{$value->gambar_paket}}"></td>
                             <td>{{$value->nama_paket}}</td>
                             <td>{{$value->kategori}}</td>
                             <td>{{$value->available}}</td>
                             <td>{{$value->deskripsi}}</td>
                             <td>{{$value->harga_paket}}</td>
-                            <td><a href="{{url('edit_data/'.$value->id)}}" class="btn btn-success">Edit</a>
-                            <a href="{{url('hapus_data/'.$value->id)}}" class="btn btn-danger">Hapus</a></td>
+                          <td><a href="{{url('edit_data/'.$value->id)}}" data-toggle="modal" data-target="#editpaket{{$value->id}}" class="btn btn-warning fa fa-pencil"></a>
+                            <a href="{{url('hapus_paket/'.$value->id)}}" class="btn btn-danger fa fa-trash"></a>
+                            <a href="{{url('detail_paket')}}" class="btn btn-info fa fa-info-circle"></a></td>
                           </tr> 
+                          @foreach ($paket as $item)
+                            <div class="modal fade" tabindex="-1" role="dialog" id="editpaket{{$item->id}}" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="text-center" id="myLargeModalLabel">Edit Paket</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="" action="{{url('/update/'.$item->id)}}" enctype="multipart/form-data" method="POST">
+                                            @csrf  
+                                          <div class="mb-3">
+                                            <label for="foto_p">Foto Produk</label>
+                                            <input type="file" class="form-control-file" id="lain" name="gambar_paket" value="{{$item->gambar_paket}}">
+                                            
+                                          </div>
+                                          <div class="mb3">
+                                            <label for="nama_p">Nama Produk</label>
+                                            <input type="text" class="form-control" id="nama_p" placeholder="" value="{{$item->nama_paket}}" required="required" name="nama_paket">
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                              <label for="kategori">Kategori</label>
+                                              <select class="form-control" id="kategori" name="kategori" value="{{$item->kategori}}">
+                                                <option value="{{$value->id}}">Catering</option>
+                                                <option value="Wedding">Wedding</option>
+                                                <option value="Concert">Concert</option>
+                                                <option value="Conference">Conference</option>
+                                                <option value="Party">Party</option>
+                                                <option value="Rental">Rental</option>
+                                              </select>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                              <label for="status_pk">Status Paket</label>
+                                              <select class="form-control" id="status_pk" name="available">
+                                                <option>Tersedia</option>
+                                                <option>Tidak Tersedia</option>
+                                              </select>
+                                            </div>
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="address">Deskripsi</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="deskripsi">{{$item->deskripsi}}</textarea>
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="harga_pkt">Harga Paket </label>
+                                            <input type="text" class="form-control" id="harga_pkt" placeholder="100000" name="harga_paket" value="{{$item->harga_paket}}">
+                                          </div>
+                                          <button class="btn btn-danger btn-md btn-block" type="submit">Simpan Perubahan</button>
+                                        </form>    
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                          @endforeach
                         @endforeach
                         
                     </tbody>

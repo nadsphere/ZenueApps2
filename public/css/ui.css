@@ -1,8 +1,3 @@
-/* ========================
-UIkit bootstrap-ecommerce.com 
-===================== */
-/* ==================== INCLUDE FONTS ======================= */
-@import url("../fonts/roboto/font.css");
 html {
   font-size: 15px; }
 
@@ -2079,11 +2074,11 @@ ul.row, ul.row-sm {
   border-bottom: 1px solid #dee2e6; }
   .card-group-item .card-header {
     border-bottom: 0;
-    background-color: #f9f9f9; }
+    background-color: #f7f7f7; }
   .card-group-item:last-child {
     border-bottom: 0; }
 
-/* ====================== shopping-cart ==================== */
+
 .shopping-cart-wrap img {
   max-width: 100px; }
 .shopping-cart-wrap thead th {
@@ -2096,7 +2091,6 @@ ul.row, ul.row-sm {
   margin-right: 5px;
   display: block; }
 
-/* ====================== block ==================== */
 .box {
   padding: 1rem 1.2rem;
   display: block;

@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/fix.css" rel="stylesheet" type="text/css"/>
+  <link href="css/measure.css" rel="stylesheet" type="text/css"/>
 
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -28,7 +29,7 @@
   <link href="css/style2.css" rel="stylesheet">
 </head>
 <body>
-  <header id="header">
+  {{-- <header id="header">
     <div class="container">
       <div class="logo float-left">
         <h1 class="text-light"><a href="#intro" class="scrollto"><span>ZEN</span></a></h1>
@@ -55,12 +56,76 @@
                 <button class="btn btn-white my-2 my-sm-0" type="submit"><i classs="fa fa-facebook"></i></button>
               </form>
             </li>
-          <li><a href="after-login.html">Masuk</a></li>
+          <li><a href="#myModal" class="trigger-btn" data-toggle="modal">Login</a></li>
           <li><a href="after-login.html">Daftar</a></li>
         </ul>
       </nav>
     </div>
-  </header>
+  </header> --}}
+  {{-- modals --}}
+  {{-- <div id="loginModal" class="modal fade">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header">				
+          <h4 class="modal-title">Login</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="/examples/actions/confirmation.php" method="post">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
+                <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
+                <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
+            </div>
+            <p class="hint-text"><a href="#">Lupa Password?</a></p>
+          </form>
+        </div>
+        <div class="modal-footer">Belum Punya akun? <a href="#">Buat Di sini!</a></div>
+      </div>
+    </div>
+  </div>  --}}
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header">				
+          <h4 class="modal-title">Sign In</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="/examples/actions/confirmation.php" method="post">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
+                <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
+                <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
+            </div>
+            <p class="hint-text"><a href="#">Forgot Password?</a></p>
+          </form>
+        </div>
+        <div class="modal-footer">Don't have an account? <a href="#">Create one</a></div>
+      </div>
+    </div>
+</div> 
+
   <section>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
