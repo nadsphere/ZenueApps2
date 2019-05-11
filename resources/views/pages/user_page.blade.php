@@ -38,7 +38,6 @@
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li><a href="#about">Tentang</a></li>
           <li><a href="#about">Mitra EO</a></li>
           <li>
               <a href="#" class="widget-header mr-3">
@@ -58,107 +57,18 @@
                     </div>
                 </div>
             </li>
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalLogin">LOGIN</a></li> 
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalRegist">REGISTER</a></li>
+            <li class="drop-down"><a href="index.html"><span>Joko Mulyadi</span></a>
+              <ul>
+                <li><a href="#">Edit Profil</a></li>
+                <li><a href="#">My Order</a></li>
+                <li><a href="#">My Wishlist</a></li>
+                <li><a href="index.html">Sign Out</a></li>
+              </ul>
+            </li>
         </ul>
       </nav>
     </div>
   </header>
-
-    <div class="modal fade modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-              <div class="modal-header">				
-                <h4 class="modal-title">Sign In</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              </div>
-              <div class="modal-body">
-                <form action="/examples/actions/confirmation.php" method="post">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
-                      <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
-                      <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
-                  </div>
-                  <p class="hint-text"><a href="#">Lupa Password?</a></p>
-                </form>
-              </div>
-              <div class="modal-footer">Belum Punya Akun? <a href="#">Daftar di sini</a></div>
-            </div>
-          </div>
-    </div>
-    <div class="modal fade modalRegist" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-              <div class="modal-header">				
-                <h4 class="modal-title">Register</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              </div>
-              <div class="modal-body">
-                <form action="/examples/actions/confirmation.php" method="post">
-                  <div class="form-group">
-                    <div class="input-group">
-                        <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
-                        <br />
-                        <div style="margin-left:20px">
-                            <div class="form-check-inline rad_check">
-                                <label class="form-check-label">
-                                  <input type="radio" class="form-check-input" name="optradio">Pemilik Acara (EO)
-                                </label>
-                            </div>
-                            <div class="form-check-inline rad_check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optradio">Pelanggan
-                              </label>
-                            </div>
-                        </div>
-                          
-                    </div>
-                  </div>
-                  <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
-                        <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama" required="required">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-envelope" style="margin-top:10px"></i></span>
-                      <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-phone" style="margin-top:10px"></i></span>
-                        <input type="text" class="form-control" name="no_telp" placeholder="No. Telp" required="required">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
-                      <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
-                    </div>
-                  </div>
-                  <p class="hint-text">Dengan Mendaftar, anda telah menyetujui <a href="#">Syarat & Kebijakan</a> Kami</p>
-                  <br>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block btn-lg">Sign up</button>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer border-top-0">Sudah Punya akun? <a href="#"> Sign In</a></div>
-            </div>
-        </div>
-    </div>
  
   <section>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -202,8 +112,8 @@
       </div>
   </section>
   <main id="main">
-		<section id="services" class="section-bg">
-		    <div class="container">
+    <section id="services" class="section-bg">
+		<div class="container">
           <div class="row">
               <div class="col-md-2 col-sm-4 data-wow-duration="1.4s">
                   <a href="">
@@ -266,313 +176,314 @@
                   </a>
               </div>        
           </div>
-			  </div>
-		</section>
-		<section class="bg-gray"> 
+		</div>
+	</section>
+	<section class="bg-gray"> 
+        <div class="container">
+            <div class="col-md-12">
+                    <div id="myCarousel" class="carousel carousels slide" data-ride="carousels" data-interval="0"> 
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>   
+                            <div class="carousel-inner">
+                                <div class="item carousel-item active">
+                                        <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                            <div class="img-box">
+                                                <img src="img/EO/eo-1.png" class="img-responsive img-fluid img-rd" alt="">									
+                                            </div>
+                                            <div class="thumb-content">
+                                                <h4>Parama Creative</h4>									
+                                                <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker"></i> <b> Jakarta Pusat</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                            </div>						
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                                <div class="img-box">
+                                                <img src="img/EO/eo-3.jpg" class="img-responsive img-fluid img-rd" alt="">									
+                                                </div>
+                                                <div class="thumb-content">
+                                                <h4>Moment n Co.</h4>									
+                                                <div class="star-rating">
+                                                    <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                    </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                                </div>						
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                            <div class="img-box">
+                                                <img src="img/EO/eo-4.jpg" class="img-responsive img-fluid" alt="">									
+                                            </div>
+                                            <div class="thumb-content">
+                                                <h4>FUN Party</h4>									
+                                                <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                            </div>						
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                            <div class="img-box">
+                                                <img src="img/EO/mama.jpg" class="img-responsive img-fluid img-rd" alt="">									
+                                            </div>
+                                            <div class="thumb-content">
+                                                <h4>MAM EO</h4>									
+                                                <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                            </div>						
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <br><br>
+                                </div>
+                                <div class="item carousel-item">
+                                        <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                            <div class="img-box">
+                                                <img src="img/EO/eo-1.png" class="img-responsive img-fluid img-rd" alt="">									
+                                            </div>
+                                            <div class="thumb-content">
+                                                <h4>Parama Creative</h4>									
+                                                <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker"></i> <b> Jakarta Pusat</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                            </div>						
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                                <div class="img-box">
+                                                <img src="img/EO/eo-3.jpg" class="img-responsive img-fluid img-rd" alt="">									
+                                                </div>
+                                                <div class="thumb-content">
+                                                <h4>Moment n Co.</h4>									
+                                                <div class="star-rating">
+                                                    <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                    </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                                </div>						
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                            <div class="img-box">
+                                                <img src="img/EO/eo-4.jpg" class="img-responsive img-fluid" alt="">									
+                                            </div>
+                                            <div class="thumb-content">
+                                                <h4>FUN Party</h4>									
+                                                <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                            </div>						
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                            <div class="img-box">
+                                                <img src="img/EO/mama.jpg" class="img-responsive img-fluid img-rd" alt="">									
+                                            </div>
+                                            <div class="thumb-content">
+                                                <h4>MAM EO</h4>									
+                                                <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                            </div>						
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <br><br>
+                                </div>
+                                <div class="item carousel-item">
+                                        <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                            <div class="img-box">
+                                                <img src="img/EO/eo-1.png" class="img-responsive img-fluid img-rd" alt="">									
+                                            </div>
+                                            <div class="thumb-content">
+                                                <h4>Parama Creative</h4>									
+                                                <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker"></i> <b> Jakarta Pusat</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                            </div>						
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                                <div class="img-box">
+                                                <img src="img/EO/eo-3.jpg" class="img-responsive img-fluid img-rd" alt="">									
+                                                </div>
+                                                <div class="thumb-content">
+                                                <h4>Moment n Co.</h4>									
+                                                <div class="star-rating">
+                                                    <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                    </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                                </div>						
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                            <div class="img-box">
+                                                <img src="img/EO/eo-4.jpg" class="img-responsive img-fluid" alt="">									
+                                            </div>
+                                            <div class="thumb-content">
+                                                <h4>FUN Party</h4>									
+                                                <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                            </div>						
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="thumb-wrappers">
+                                            <div class="img-box">
+                                                <img src="img/EO/mama.jpg" class="img-responsive img-fluid img-rd" alt="">									
+                                            </div>
+                                            <div class="thumb-content">
+                                                <h4>MAM EO</h4>									
+                                                <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                </ul>
+                                                </div>
+                                                <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
+                                                <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
+                                            </div>						
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <br><br>
+                                </div>
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                    </div>
+            </div>
+        </div>
 			<div class="container">
 				<div class="row">  
           <div class="col-md-12">
-              <div id="myCarousel" class="carousel carousels slide" data-ride="carousels" data-interval="0"> 
-                  <header class="section-header">
-                      <h3>Best EO</h3>
-                      <br>
-                    </header>
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>   
-                    <div class="carousel-inner">
-                        <div class="item carousel-item active">
-                                <div class="row">
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                    <div class="img-box">
-                                        <img src="img/EO/eo-1.png" class="img-responsive img-fluid img-rd" alt="">									
-                                    </div>
-                                    <div class="thumb-content">
-                                        <h4>Parama Creative</h4>									
-                                        <div class="star-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker"></i> <b> Jakarta Pusat</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                    </div>						
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                        <div class="img-box">
-                                        <img src="img/EO/eo-3.jpg" class="img-responsive img-fluid img-rd" alt="">									
-                                        </div>
-                                        <div class="thumb-content">
-                                        <h4>Moment n Co.</h4>									
-                                        <div class="star-rating">
-                                            <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                        </div>						
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                    <div class="img-box">
-                                        <img src="img/EO/eo-4.jpg" class="img-responsive img-fluid" alt="">									
-                                    </div>
-                                    <div class="thumb-content">
-                                        <h4>FUN Party</h4>									
-                                        <div class="star-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                    </div>						
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                    <div class="img-box">
-                                        <img src="img/EO/mama.jpg" class="img-responsive img-fluid img-rd" alt="">									
-                                    </div>
-                                    <div class="thumb-content">
-                                        <h4>MAM EO</h4>									
-                                        <div class="star-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                    </div>						
-                                    </div>
-                                </div>
-                                </div>
-                                <br><br>
-                        </div>
-                        <div class="item carousel-item">
-                                <div class="row">
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                    <div class="img-box">
-                                        <img src="img/EO/eo-1.png" class="img-responsive img-fluid img-rd" alt="">									
-                                    </div>
-                                    <div class="thumb-content">
-                                        <h4>Parama Creative</h4>									
-                                        <div class="star-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker"></i> <b> Jakarta Pusat</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                    </div>						
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                        <div class="img-box">
-                                        <img src="img/EO/eo-3.jpg" class="img-responsive img-fluid img-rd" alt="">									
-                                        </div>
-                                        <div class="thumb-content">
-                                        <h4>Moment n Co.</h4>									
-                                        <div class="star-rating">
-                                            <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                        </div>						
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                    <div class="img-box">
-                                        <img src="img/EO/eo-4.jpg" class="img-responsive img-fluid" alt="">									
-                                    </div>
-                                    <div class="thumb-content">
-                                        <h4>FUN Party</h4>									
-                                        <div class="star-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                    </div>						
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                    <div class="img-box">
-                                        <img src="img/EO/mama.jpg" class="img-responsive img-fluid img-rd" alt="">									
-                                    </div>
-                                    <div class="thumb-content">
-                                        <h4>MAM EO</h4>									
-                                        <div class="star-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                    </div>						
-                                    </div>
-                                </div>
-                                </div>
-                                <br><br>
-                        </div>
-                        <div class="item carousel-item">
-                                <div class="row">
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                    <div class="img-box">
-                                        <img src="img/EO/eo-1.png" class="img-responsive img-fluid img-rd" alt="">									
-                                    </div>
-                                    <div class="thumb-content">
-                                        <h4>Parama Creative</h4>									
-                                        <div class="star-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker"></i> <b> Jakarta Pusat</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                    </div>						
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                        <div class="img-box">
-                                        <img src="img/EO/eo-3.jpg" class="img-responsive img-fluid img-rd" alt="">									
-                                        </div>
-                                        <div class="thumb-content">
-                                        <h4>Moment n Co.</h4>									
-                                        <div class="star-rating">
-                                            <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                            </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                        </div>						
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                    <div class="img-box">
-                                        <img src="img/EO/eo-4.jpg" class="img-responsive img-fluid" alt="">									
-                                    </div>
-                                    <div class="thumb-content">
-                                        <h4>FUN Party</h4>									
-                                        <div class="star-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                    </div>						
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <div class="thumb-wrappers">
-                                    <div class="img-box">
-                                        <img src="img/EO/mama.jpg" class="img-responsive img-fluid img-rd" alt="">									
-                                    </div>
-                                    <div class="thumb-content">
-                                        <h4>MAM EO</h4>									
-                                        <div class="star-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                        </ul>
-                                        </div>
-                                        <p class="item-price"><i class="fa fa-map-marker" aria-hidden="true"></i> <b> Jakarta Timur</b></p>
-                                        <a href="#" class="btn btn-primary">Ajukan Penawaran</a>
-                                    </div>						
-                                    </div>
-                                </div>
-                                </div>
-                                <br><br>
-                        </div>
-                    </div>
-                    <!-- Carousel controls -->
-                    <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-              </div>
+                
           </div> 
 				</div>
 			</div>                          		                            
     </section>
-    <section class="section-bg"> 
+    <section class="bg-gray"> 
         <div class="container">
             <br>
             <header class="section-header">
-                <h3 class="title">Best Services</h3>
                 <a href="" class="float-right">See All <i class="icon fa fa-chevron-right"></i></a>
-                <br>
+                <br />
             </header>
             <br>
             <div class="row-sm">
+                <br/>
                 <div class="col-md-3 col-sm-6">
                   <a href="start.html">
                     <figure class="card card-product">
@@ -693,109 +604,10 @@
                     </figure> <!-- card // -->
                 </div>
             </div>
-            <div class="row-sm">
-                <div class="col-md-3 col-sm-6">
-                  <a href="start.html">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img class="" src="img/items/wedding-package.jpeg"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Nikah (Tipe: Anggrek)</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 36.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure>
-                  </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-2.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Paket Nikah Silver Class</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 22.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-3.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Sultan Class Wedding Package (Custom Nego)</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 60.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img src="img/items/cont.png"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Konser Tipe Ekonomis</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 25.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure> <!-- card // -->
-                </div>
-            </div>
             <br /> <br>
         </div>                    		                            
     </section> 
-    <section class="bg-white" id="why-us">
-        <div class="container">
-          <header class="section-header">
-            <h3>Kenapa Zenith?</h3>
-            <br>
-          </header>
-          <div class="row">
-            <div></div>
-            <div class="col-lg-4 col-md-5">
-                <div class="why-us-content">
-                  <div class="features">
-                    <i class="fa fa-users" style="color: #c11717;"></i>
-                    <h4 class="title">EO Berpengalaman</h4>
-                    <p>Berasal dari EO profesional dan berpengalaman yang siap melayani Anda</p>
-                  </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-5">
-                <div class="why-us-content">
-                  <div class="features">
-                    <i class="fa fa-dropbox" style="color: #c11717;"></i>
-                    <h4 class="title">Mudah & Cepat</h4>
-                    <p>Beragam layanan berkualitas dan pengiriman responsif </p>
-                  </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-5">
-                <div class="why-us-content">
-                  <div class="features">
-                    <i class="fa fa-lock" style="color: #c11717;"></i>
-                    <h4 class="title">Aman </h4>
-                    <p>Pembayaran dan Negosiasi dijamin aman dari EO terpercaya</p>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </div>
-      </section>
   </main>
-
 
   <footer id="footer" class="section-bg">
     <div class="footer-top">
