@@ -999,11 +999,20 @@ h6 {
 .fa-search .fa-glip{
   color: #fff;
 }
+.fa-search .fa-glip:hover{
+  color: #000;
+}
 input.form-controls::placeholder {
   color: #fff;
 }
 input.form-controls:hover{
-  background: #c11717;
+  background: white;
+  color: #000;
+  box-shadow: 0px 0px 3px rgba(255,255,255);
+}
+input.form-controls::placeholder:hover{
+  background: white;
+  color: #000;
   box-shadow: 0px 0px 3px rgba(255,255,255);
 }
 

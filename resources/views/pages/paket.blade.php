@@ -55,11 +55,13 @@
                 </a>
             </li>
             <li>
-                <form class="form-inline">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Cari" aria-label="Search">
-                  <button class="btn btn-white my-2 my-sm-0" type="submit"><i classs="fa fa-facebook"></i></button>
-                </form>
-            </li>
+              <div class="input-group">
+                  <div class="form-group has-search">
+                      <span class="fa fa-glip fa-search form-control-feedback"></span>
+                      <input type="text" class="form-controls form-control" placeholder="Cari...">
+                  </div>
+              </div>
+          </li>
             <li><a href="#about">Paket</a></li>
             <!-- <li><a href="after-login.html">Iklan</a></li> -->
             <li class="drop-down"><a href="index.html"><span>Jono Organizer</span></a>
