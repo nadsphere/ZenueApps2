@@ -803,7 +803,6 @@
               <p class="cta-text"> Yuk gabung bersama kami untuk mewujudkan peluang bisnis yang tinggi.</p>
             </div>
             <div class="col-lg-3 cta-btn-container text-center">
-              {{-- <a class="cta-btn align-middle" href="#">Buka EO</a> --}}
               <a href="" class="cta-btn align-middle" data-toggle="modal" data-target=".modalBukaEO">Buka EO</a>
             </div>
           </div>
