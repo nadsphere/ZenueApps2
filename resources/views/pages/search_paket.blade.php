@@ -51,17 +51,17 @@
                 </a>
             </li>
             <li>
+                <a href="#" class="widget-header mr-3">
+                  <i style="font-size: 16pt" class="icon fa fa-bell-o"></i>
+                </a>
+            </li>
+            <li>
                 <div class="input-group">
                     <div class="form-group has-search">
                         <span class="fa fa-glip fa-search form-control-feedback"></span>
                         <input type="text" class="form-controls form-control" placeholder="Cari...">
                     </div>
                 </div>
-            </li>
-            <li>
-                <a href="#" class="widget-header mr-3">
-                  <i style="font-size: 16pt" class="icon fa fa-bell-o"></i>
-                </a>
             </li>
             <!-- <li><a href="after-login.html">Iklan</a></li> -->
             <li class="drop-down"><a href="index.html"><span>Joko Mulyadi</span></a>
