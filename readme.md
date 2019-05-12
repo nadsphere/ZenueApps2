@@ -1,1 +1,3 @@
 # ZenueApps2
+banyak yang harus gw revisi, maap klo gw salah ngepush file...
+Gue juga bakal kasih dekripsi yg mendetail :D
