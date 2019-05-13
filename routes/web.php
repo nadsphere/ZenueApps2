@@ -8,6 +8,9 @@ Route::get('/paket','PaketController@index');
 Route::get('/search_paket', function () {
     return view('pages.search_paket');
 });
+Route::get('/welcomes', function () {
+    return view('pages.user_page');
+});
 Route::post('/insert','PaketController@store');
 Route::get('/paket_edit/{id}','paketController@edit');
 Route::post('/update/{id}','paketController@update');
