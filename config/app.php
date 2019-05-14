@@ -174,8 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Ejarnutowski\LaravelApiKey\Providers\ApiKeyServiceProvider::class
-
+        Ejarnutowski\LaravelApiKey\Providers\ApiKeyServiceProvider::class,
     ],
 
     /*
