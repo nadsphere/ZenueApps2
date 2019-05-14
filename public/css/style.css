@@ -4,6 +4,9 @@ body {
   color: #444;
   font-family: "Open Sans", sans-serif;
 }
+aside { 
+  display: block;
+}
 
 a {
   color: #000;
@@ -479,7 +482,7 @@ h6 {
   background: #f5f8fd;
 }
 .section-bg2 {
-  background: rgb(185, 184, 184);
+  background: #eeeeee;
 }
 
 
