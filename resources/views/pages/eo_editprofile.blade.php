@@ -14,9 +14,11 @@
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <style>
       .img-circle{
-        width: 250px;
-        height: auto;
-        border-radius: 50%;
+        width: 160px;
+        height: 160px;
+      }
+      .txt-small{
+          font-size: 14px;
       }
     </style>
 </head>
@@ -58,103 +60,121 @@
         </div>
 </header>
 <div class="theme-layout">
-
   <section class="container-fluid section-bg2">
       <br />  <br />  <br /> <br />
             <div class="row merged">
-					<div class="col-lg-3 col-sm-4">
-            <div class="col-md-12">
-                <div class="col-sm-12">
-                        <div class="row">
-                          <!--  -->
-                          <div class="card mb-5">
-                              <div class="card-body">
-                                  <div class="card-body text-center">
-                                      <img src="{{ asset('img/EO/eo-2.jpg') }}" alt="Kathy Davis" class="img-fluid rounded-circle mb-2 img-circle">
-                                      <br />
-                                      <p class="small-text text-muted text-justify">Ukuran gambar: maks. 1 MB <br /> Format gambar: .JPEG, .PNG</p>
-                                      {{-- <a class="btn btn-outline-info btn-md" href="#">Edit Profile</a> --}}
-                                      <input type="file" class=" btn-ouline-info form-control-file" id="exampleFormControlFile1"> 
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="card mb-5">
-                              <div class="card-body">
-                                <p class="text-justify"><i class="fa fa-file-o"></i> Transaksi</p>
-                                <p class="text-justify"><i class="fa fa-sliders"></i> Iklan</p>
-                                <p class="text-justify"><i class="fa fa-question-circle"></i> Cara Bermitra</p>
-                              </div>
-                          </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3 col-sm-4">
+                        <div class="col-md-12">
+                            <div class="col-sm-12">
+                                    <div class="row">
+                                    <div class="card mb-4">
+                                            <div class="card-body">
+                                                    <div class="card-body text-center">
+                                                            <img src="{{ asset('img/EO/eo-2.jpg') }}" alt="Kathy Davis" class="img-fluid rounded-circle mb-2 img-circle">
+                                                            <br />
+                                                            <p class="txt-small text-muted text-center">Ukuran gambar: maks. 1 MB <br /> Format gambar: .JPEG, .PNG</p>
+                                                            {{-- <a class="btn btn-outline-info btn-md" href="#">Edit Profile</a> --}}
+                                                            <form>
+                                                                <div class="form-group row">
+                                                                    <input type="file" class="btn-ouline-info form-control-file" id="gambar_profil">
+                                                                </div>
+                                                            </form>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    <div class="card mb-4 col-sm-12">
+                                            <div class="card-body">
+                                                <ul class="list-unstyled mb-0">
+                                                    <li class="mb-1">
+                                                    <i class="fa fa-file-o"></i> Transaksi
+                                                    </li><br />
+                                                    <li class="mb-1">
+                                                        <i class="fa fa-sliders"></i> Iklan
+                                                    </li><br />
+                                                    <li class="mb-1">
+                                                        <i class="fa fa-question-circle"></i> Cara Bermitra
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+				</div>
+				<div class="col-lg-7 col-sm-6">
+                        <div class="card mb-4">
+                            <div class="card-body ">  
+                                <div class="col-md-12 order-md-1">
+                                    <h4 class="mb-3 text-center"><b> Ubah Profil </b></h4> <br />
+                                    <form>
+                                        <div class="form-group row">
+                                        <label for="nama" class="col-sm-3 col-form-label"><b>Nama EO </b></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" id="nama" readonly class="form-control-plaintext" id="nama" value="Jojo Organizer">
+                                        </div>
+                                        </div>
+                                        <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-3 col-form-label"><b> Email</b></label>
+                                        <div class="col-sm-9">
+                                            <input type="email" name="email" class="form-control" id="email inputPassword3" placeholder="">
+                                        </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="kontak" class="col-sm-3 col-form-label"><b>Kontak</b></label>
+                                            <div class="col-sm-9">
+                                            <input type="text" class="form-control" name="kontak" id="kontak" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="alamats" class="col-sm-3 col-form-label"><b>Alamat</b></label>
+                                            <div class="col-sm-9">
+                                            <textarea class="form-control" id="alamats" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label for="linkk" class="col-sm-3 col-form-label"><b>Link</b></label>
+                                                <div class="col-sm-9">
+                                                <input type="text" class="form-control-plaintext" value="www.jono-organizer.com" name="link" id="link" placeholder="">
+                                                </div>
+                                            </div>
+                                        {{-- <div class="form-group row">
+                                            <label for="deskripsi" class="col-sm-3 col-form-label"><b>Deskripsi</b></label>
+                                            <div class="col-sm-9">
+                                            <textarea class="form-control-plaintext" id="deskripsi" rows="3" value="Wedding, Conference" readonly>Menerima Jasa Event MC, singer, make-up, fotografi, dancer, magcian, model, usher, band. Jakarta, Bandung dan luar kota lainnya. BASE DI JAKARTA MC, Singer, Fotografi, Videographer, Band, DJ, dll</textarea>
+                                            </div>
+                                        </div> --}}
+                                        <div class="form-group row">
+                                            <label for="layanan" class="col-sm-3 col-form-label"><b>Layanan</b></label>
+                                            <div class="col-sm-5">
+                                            <input type="text" class="form-control-plaintext" id="layanan" placeholder="" value="Wedding, Conference" readonly>
+                                            </div>
+                                            <div class="col-sm-2 justify-content-center">
+                                                <a class="link col-sm-2" href="#">Ubah</a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="password" class="col-sm-3 col-form-label"><b> Password</b></label>
+                                            <div class="col-sm-5">
+                                            <input type="password" class="form-control-plaintext" id="password" placeholder="" value="********" readonly>
+                                            </div>
+                                            <div class="col-sm-2 justify-content-center">
+                                                <a class="link col-sm-2" href="#">Ubah</a>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="form-group row justify-content-center">
+                                        <div class="col-sm-10">
+                                            <button class="btn btn-outline-danger btn-md btn-block" type="submit">Simpan</button>
+                                        </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                 </div>
+                <div class="col-lg-1"></div>
             </div>
-					</div>
-					<div class="col-lg-8 col-sm-7">
-              <div class="card mb-4">
-                  <div class="card-body ">  
-                  <div class="col-md-12 order-md-1">
-                        <h4 class="mb-3 text-center"><b> Ubah Profil </b></h4> <br />
-                        <form>
-                            <div class="form-group row">
-                              <label for="nama" class="col-sm-2 col-form-label"><b>Nama</b></label>
-                              <div class="col-sm-10">
-                                <input type="text" id="nama" readonly class="form-control-plaintext" id="nama" value="Jojo Organizer">
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                              <label for="inputPassword3" class="col-sm-2 col-form-label"><b> Email</b></label>
-                              <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email inputPassword3" placeholder="">
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputPhone" class="col-sm-2 col-form-label"><b>No Telp</b></label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="phone inputPhone" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="alamats" class="col-sm-2 col-form-label"><b>Alamat</b></label>
-                                <div class="col-sm-10">
-                                  <textarea class="form-control" id="alamats" rows="3"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="deskripsi" class="col-sm-2 col-form-label"><b>Deskripsi</b></label>
-                                <div class="col-sm-10">
-                                  <textarea class="form-control-plaintext" id="deskripsi" rows="3" value="Wedding, Conference" readonly>Menerima Jasa Event MC, singer, make-up, fotografi, dancer, magcian, model, usher, band. Jakarta, Bandung dan luar kota lainnya. BASE DI JAKARTA MC, Singer, Fotografi, Videographer, Band, DJ, dll</textarea>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="layanan" class="col-sm-2 col-form-label"><b>Layanan</b></label>
-                                <div class="col-sm-6">
-                                  <input type="text" class="form-control-plaintext" id="layanan" placeholder="" value="Wedding, Conference" readonly>
-                                </div>
-                                <div class="col-sm-2 justify-content-center">
-                                    <a class="link col-sm-2" href="#">Ubah</a>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="password" class="col-sm-2 col-form-label"><b> Password</b></label>
-                                <div class="col-sm-6">
-                                  <input type="password" class="form-control-plaintext" id="password" placeholder="" value="********" readonly>
-                                </div>
-                                <div class="col-sm-2 justify-content-center">
-                                    <a class="link col-sm-2" href="#">Ubah</a>
-                                </div>
-                            </div>
-                            <br />
-                            <div class="form-group row justify-content-center">
-                              <div class="col-sm-10">
-                                <button class="btn btn-outline-danger btn-md btn-block" type="submit">Simpan</button>
-                              </div>
-                            </div>
-                        </form>
-                        
-                      </div>
-                  </div>
-              </div>
-          </div>
   </section>
 </div>
 <footer id="footer" class="section-bg">

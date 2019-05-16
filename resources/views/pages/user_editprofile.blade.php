@@ -69,106 +69,100 @@
   <section class="container-fluid section-bg2">
       <br />  <br />  <br /> <br />
             <div class="row merged">
-					<div class="col-lg-3 col-sm-4">
-            <div class="col-md-12">
-                <div class="col-sm-12">
-                        <div class="row">
-                          <!--  -->
-                          <div class="card mb-5">
-                              <div class="card-body">
-                                  <div class="card-body text-center">
-                                      <img src="{{ asset('img/EO/eo-2.jpg') }}" alt="Kathy Davis" class="img-fluid rounded-circle mb-2 img-circle">
-                                      <br />
-                                      <p class="small-text text-muted text-justify">Ukuran gambar: maks. 1 MB <br /> Format gambar: .JPEG, .PNG</p>
-                                      {{-- <a class="btn btn-outline-info btn-md" href="#">Edit Profile</a> --}}
-                                      <input type="file" class=" btn-ouline-info form-control-file" id="exampleFormControlFile1"> 
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="card mb-5">
-                              <div class="card-body">
-                                <p class="text-justify"><i class="fa fa-heart-o"></i> My Wishlist</p>
-                                <p class="text-justify"><i class="fa fa-file-o"></i> Pesanan Saya</p>
-                                <p class="text-justify"><i class="fa fa-credit-card"></i> Metode Pembayaran</p>
-                              </div>
-                          </div>
+					      <div class="col-lg-1"></div>
+                <div class="col-lg-3 col-sm-4">
+                        <div class="col-md-12">
+                            <div class="col-sm-12">
+                                    <div class="row">
+                                    <div class="card mb-4">
+                                            <div class="card-body">
+                                                    <div class="card-body text-center">
+                                                            <img src="{{ asset('img/EO/eo-2.jpg') }}" alt="Kathy Davis" class="img-fluid rounded-circle mb-2 img-circle">
+                                                            <br />
+                                                            <p class="txt-small text-muted text-center">Ukuran gambar: maks. 1 MB <br /> Format gambar: .JPEG, .PNG</p>
+                                                            <form>
+                                                                <div class="form-group row">
+                                                                    <input type="file" class="btn-ouline-info form-control-file" id="gambar_profil">
+                                                                </div>
+                                                            </form>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    <div class="card mb-4 col-sm-12">
+                                            <div class="card-body">
+                                                <ul class="list-unstyled mb-0">
+                                                    <li class="mb-1">
+                                                    <i class="fa fa-heart-o"></i> My Wishlist
+                                                    </li><br />
+                                                    <li class="mb-1">
+                                                      <i class="fa fa-file-o"></i> Pesanan Saya
+                                                    </li><br />
+                                                    <li class="mb-1">
+                                                      <i class="fa fa-credit-card"></i> Metode Pembayaran
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
                         </div>
-                </div>
-            </div>
-					</div>
-					<div class="col-lg-8 col-sm-7">
-              <div class="card mb-4">
-                  <div class="card-body ">  
-                  <div class="col-md-12 order-md-1">
-                        <h4 class="mb-3 text-center"><b> Ubah Profil </b></h4> <br />
-                        <form>
-                            <div class="form-group row">
-                              <label for="nama" class="col-sm-2 col-form-label"><b>Nama</b></label>
-                              <div class="col-sm-10">
-                                <input type="text" id="nama" readonly class="form-control-plaintext" id="nama" value="Joko Mulyadi">
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                              <label for="inputPassword3" class="col-sm-2 col-form-label"><b> Email</b></label>
-                              <div class="col-sm-10">
-                                <input type="email" class="form-control" id="email inputPassword3" placeholder="">
-                              </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputPhone" class="col-sm-2 col-form-label"><b>No Telp</b></label>
-                                <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="phone inputPhone" placeholder="">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="alamats" class="col-sm-2 col-form-label"><b>Alamat</b></label>
-                                <div class="col-sm-10">
-                                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputPhone" class="col-sm-2 col-form-label"><b> Password</b></label>
-                                <div class="col-sm-10">
-                                  <input type="password" class="form-control" id="phone inputPhone" placeholder="">
-                                </div>
-                            </div>
-                            {{-- <fieldset class="form-group">
-                              <div class="row">
-                                <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-                                <div class="col-sm-10">
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                                    <label class="form-check-label" for="gridRadios1">
-                                      First radio
-                                    </label>
-                                  </div>
-                                  <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                                    <label class="form-check-label" for="gridRadios2">
-                                      Second radio
-                                    </label>
-                                  </div>
-                                  <div class="form-check disabled">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                                    <label class="form-check-label" for="gridRadios3">
-                                      Third disabled radio
-                                    </label>
+				        </div>
+                <div class="col-lg-7 col-sm-6">
+                  <div class="card mb-4">
+                      <div class="card-body ">  
+                      <div class="col-md-12 order-md-1">
+                            <h4 class="mb-3 text-center"><b> Ubah Profil </b></h4> <br />
+                            <form>
+                                <div class="form-group row">
+                                  <label for="name" class="col-sm-3 col-form-label"><b>Nama</b></label>
+                                  <div class="col-sm-9">
+                                    <input type="text" id="name" name="name" readonly class="form-control-plaintext" id="name" value="Joko Mulyadi">
                                   </div>
                                 </div>
-                              </div>
-                            </fieldset> --}}
-                            <br />
-                            <div class="form-group row justify-content-center">
-                              <div class="col-sm-10">
-                                <button class="btn btn-outline-danger btn-md btn-block" type="submit">Simpan</button>
-                              </div>
-                            </div>
-                        </form>
-                        
+                                <div class="form-group row">
+                                    <label for="birthday" class="col-sm-3 col-form-label"><b>Tanggal Lahir</b></label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control" name="birthday" id="birthday" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                  <label for="email" class="col-sm-3 col-form-label"><b> Email</b></label>
+                                  <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="">
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="no_phone" class="col-sm-3 col-form-label"><b>No Telp</b></label>
+                                    <div class="col-sm-9">
+                                      <input type="text" class="form-control" name="no_phone" id="no_phone" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="alamats" class="col-sm-3 col-form-label"><b>Alamat</b></label>
+                                    <div class="col-sm-9">
+                                      <textarea class="form-control" name="alamats" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="password" class="col-sm-3 col-form-label"><b> Password</b></label>
+                                    <div class="col-sm-9">
+                                      <input type="password" name="password" class="form-control" id="password" placeholder="">
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="form-group row justify-content-center">
+                                  <div class="col-sm-10">
+                                    <button class="btn btn-outline-danger btn-md btn-block" type="submit">Simpan</button>
+                                  </div>
+                                </div>
+                            </form>
+                            
+                          </div>
                       </div>
                   </div>
-              </div>
-          </div>
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
   </section>
 </div>
 <footer id="footer" class="section-bg">

@@ -27,7 +27,7 @@
  <link href="css/fix.css" rel="stylesheet" type="text/css"/>
 
  <!-- Libraries CSS Files -->
- <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+ <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
  <link href="lib/animate/animate.min.css" rel="stylesheet">
  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -220,17 +220,17 @@
 					<div class="container">
 							<ul class="nav nav-pills pilus mb-3" id="pills-tab" role="tablist">
 									<li class="nav-item">
-											<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Toko</a>
+										<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false">Toko</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Deskripsi</a>
+										<a class="nav-link " id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="true">Deskripsi</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Ulasan</a>
 									</li>
 								</ul>
 								<div class="tab-content" id="pills-tabContent">
-									<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+									<div class="tab-pane fade show" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 										<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur temporibus ipsum libero eos vel sunt veritatis perferendis. Facere, culpa! Enim, soluta ipsa. Fuga nisi culpa adipisci nam esse nobis fugit.</p>
 									</div>
 									<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -245,23 +245,20 @@
 											</div>
 									</div>	
 									</div>
-									<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+									<div class="tab-pane active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 										<div class="media mt-3">
 											<a class="pr-2" href="#">
 													<img src="{{ asset('img/EO/eo-2.jpg') }}" width="65" height="65" class="rounded-circle mr-5" alt="Marie Salter">
 											</a>
 											<div class="media-body">
 													<h4>H Dadang Organizer</h4>
-													<p>Huungi</p>
+													<a href="#" class="btn btn-danger"><i class="	far fa-comment"></i> Kontak</a>
 											</div>
 									</div>
 									</div>
 								</div>
 					</div>
-					<!-- /.container -->
 			</div>
-			<!-- /.content-section-c -->
-
 		
 	</div>
 </article>
