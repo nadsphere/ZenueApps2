@@ -209,7 +209,7 @@
                     <div class="padding-y-sm">
                         <span><b>{{ $count_search_paket }}</b> results for "{{ $search }}"</span>	
                         <form class="form-inline float-right">
-                                <div class="form-group>
+                                <div class="form-group">
                                   <label for="urut" class="">Urutkan </label>
                                 </div>
                                 <div class="form-group">

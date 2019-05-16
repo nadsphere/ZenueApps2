@@ -27,7 +27,7 @@
  <link href="css/fix.css" rel="stylesheet" type="text/css"/>
 
  <!-- Libraries CSS Files -->
- <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+ <link rel='stylesheet' href='lib/font-awesome/css/font-awesome.min.css'>
  <link href="lib/animate/animate.min.css" rel="stylesheet">
  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -76,7 +76,7 @@
                 </li>
                 <li>
                     <a href="#" class="widget-header mr-3">
-                      <i style="font-size: 16pt" class="icon fa fa-bell-o"></i>
+                      <i style="font-size: 16pt" class="fa fa-bell-o"></i>
                     </a>
                 </li>
                 <li>
@@ -252,7 +252,7 @@
 											</a>
 											<div class="media-body">
 													<h4>H Dadang Organizer</h4>
-													<a href="#" class="btn btn-danger"><i class="	far fa-comment"></i> Kontak</a>
+													<a href="#" class="btn btn-danger"><i class="	fa fa-comment"></i> Kontak</a>
 											</div>
 									</div>
 									</div>
