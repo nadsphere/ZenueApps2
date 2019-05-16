@@ -32,3 +32,13 @@ Route::post('/update/{id}','paketController@update');
 Route::get('/hapus_paket/{id}','paketController@destroy');
 Route::get('/detail_paket','paketController@index');
 Route::resource('pakets', 'paketController');
+
+
+Route::group(['middleware' => 'web'], function () {
+    Route::post('/register', 'UserController@store');
+    Route::post('/login', 'UserController@login');
+    Route::get('/logout', 'UserController@logout');
+    Route::get('/', 'UserController@index');
+});
+
+Route::post('/search', 'PaketController@search');

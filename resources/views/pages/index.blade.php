@@ -53,13 +53,37 @@
            <li>
                 <div class="input-group">
                     <div class="form-group has-search">
+                    <form action="{{url('/search')}}" method="post" id="searchPaket">
+                    {{ csrf_field() }}
                         <span class="fa fa-glip fa-search form-control-feedback"></span>
-                        <input type="text" class="form-controls form-control" placeholder="Cari...">
+                        <input type="text" class="form-controls form-control" name="paket" placeholder="Cari...">
+                    </form>
                     </div>
                 </div>
             </li>
+            @if ($user == null)
           <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalLogin">LOGIN</a></li> 
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalRegist">REGISTER</a></li>
+          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
+            @elseif ($user->is_eo == 1 )
+            <li><a href="#about">Paket</a></li>
+            <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
+                <ul>
+                  <li><a href="{{ url('/paket') }}">Paket</a></li>
+                  <li><a href="#">Pengriman</a></li>
+                  <li><a href="#">Dashboard</a></li>
+                  <li><a href="{{ url('/logout') }}">Sign Out</a></li>
+                </ul>
+            </li>
+          @elseif ($user->is_renter == 1 )
+          <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
+              <ul>
+                <li><a href="#">Edit Profil</a></li>
+                <li><a href="#">My Order</a></li>
+                <li><a href="#">My Wishlist</a></li>
+                <li><a href="{{ url('/logout') }}">Sign Out</a></li>
+              </ul>
+          </li>
+          @endif
         </ul>
       </nav>
     </div>
@@ -73,11 +97,12 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
               <div class="modal-body">
-                <form action="/examples/actions/confirmation.php" method="post">
+                <form action="{{ url('/login') }}" method="post">
+                {{ csrf_field() }}
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
-                      <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required">
+                      <input type="text" class="form-control" name="no_telp" placeholder="Masukkan Email" required="required">
                     </div>
                   </div>
                   <div class="form-group">
@@ -96,7 +121,7 @@
             </div>
           </div>
     </div>
-    <div class="modal fade modalRegist" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalRegist" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-login">
             <div class="modal-content">
               <div class="modal-header">				
@@ -104,7 +129,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
               <div class="modal-body">
-                <form action="/examples/actions/confirmation.php" method="post">
+                <form action="{{url('/register')}}" method="post">
+                {{ csrf_field() }}
                   <div class="form-group">
                     <div class="input-group">
                         <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
@@ -112,41 +138,55 @@
                         <div style="margin-left:20px">
                             <div class="form-check-inline rad_check">
                                 <label class="form-check-label">
-                                  <input type="radio" class="form-check-input" name="optradio">Pemilik Acara (EO)
+                                  <input type="radio" class="form-check-input" name="role" value="eo" {{ (old('role') == 'eo') ? 'checked' : '' }}>Pemilik Acara (EO)
                                 </label>
                             </div>
                             <div class="form-check-inline rad_check">
                               <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optradio">Pelanggan
+                                <input type="radio" class="form-check-input" name="role" value="renter" {{ (old('role') == 'renter') ? 'checked' : '' }}>Pelanggan
                               </label>
                             </div>
                         </div>
-                          
                     </div>
+                    @if ($errors->first('role'))
+                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('role') }}</strong>
+                  @endif
                   </div>
                   <div class="form-group">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
-                        <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama" required="required">
+                        <input type="text" class="form-control" name="name" placeholder="Masukkan Nama" required="required" value="{{ old('name') }}">
                       </div>
+                  @if ($errors->first('name'))
+                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('name') }}</strong>
+                  @endif
                   </div>
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-envelope" style="margin-top:10px"></i></span>
-                      <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required">
+                      <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required" value="{{ old('email') }}">
                     </div>
+                    @if ($errors->first('email'))
+                      <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('email') }}</strong>
+                    @endif
                   </div>
                   <div class="form-group">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-phone" style="margin-top:10px"></i></span>
-                        <input type="text" class="form-control" name="no_telp" placeholder="No. Telp" required="required">
+                        <input type="text" class="form-control" name="no_telp" placeholder="No. Telp" required="required" value="{{ old('no_telp') }}">
                       </div>
+                  @if ($errors->first('no_telp'))
+                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
+                  @endif
                   </div>
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
-                      <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+                      <input type="password" class="form-control" name="password" placeholder="Masukkan Password" required="required" value="{{ old('password') }}">
                     </div>
+                    @if ($errors->first('password'))
+                      <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('password') }}</strong>
+                    @endif
                   </div>
                   <p class="hint-text">Dengan Mendaftar, anda telah menyetujui <a href="#">Syarat & Kebijakan</a> Kami</p>
                   <br>
@@ -159,7 +199,6 @@
             </div>
         </div>
     </div>
- 
 
   <section>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -955,6 +994,20 @@
   interval: 2000
   })
   </script>
+  @if( $errors->any())
+<script>
+    $('#modalRegist').modal('show');
+</script>
+@endif
+
+<script>
+$('body').keypress(function(e){
+if (e.keyCode == 13)
+{
+    $('#searchPaket').submit();
+}
+});
+</script>
 
 </body>
 </html>

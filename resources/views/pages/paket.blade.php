@@ -39,7 +39,7 @@
     <header id="header" class="header-stack">
       <div class="container">
         <div class="logo float-left">
-          <h1 class="text-light"><a href="promaag.html" class="scrollto"><span>ZEN</span></a></h1>
+          <h1 class="text-light"><a href="{{url('/')}}" class="scrollto"><span>ZEN</span></a></h1>
         </div>
   
         <nav class="main-nav float-right d-none d-lg-block">
@@ -62,16 +62,21 @@
                   </div>
               </div>
           </li>
-            <li><a href="#about">Paket</a></li>
             <!-- <li><a href="after-login.html">Iklan</a></li> -->
-            <li class="drop-down"><a href="index.html"><span>Jono Organizer</span></a>
-              <ul>
-                <li><a href="#">Atur EO</a></li>
-                <li><a href="#">Pengriman</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="index.html">Sign Out</a></li>
-              </ul>
+            @if ($user == null)
+            <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalLogin">LOGIN</a></li> 
+            <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
+            @elseif ($user->is_eo == 1 )
+            <li><a href="#about">Paket</a></li>
+            <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
+                <ul>
+                  <li><a href="{{url('/paket')}}">Paket</a></li>
+                  <li><a href="#">Pengriman</a></li>
+                  <li><a href="#">Dashboard</a></li>
+                  <li><a href="{{ url('/logout') }}">Sign Out</a></li>
+                </ul>
             </li>
+            @endif
           </ul>
         </nav>
       </div>
@@ -98,12 +103,39 @@
                         </div>
                         <div class="modal-body">
                             <form class="" action="{{url('/insert/')}}" enctype="multipart/form-data" method="POST">
-                                @csrf  
-                              <div class="mb-3">
-                                <label for="foto_p">Foto Produk</label>
-                                <input type="file" class="form-control-file" id="lain" name="gambar_paket">
-                                
+                                {{ csrf_field() }}
+                                <div class="mb-3">
+                                  <label for="foto_p">Foto Produk</label>
+                                  <div class="input-group control-group increment" >
+                                    <input type="file" name="gambar_paket[]" class="form-control">
+                                    <div class="input-group-btn"> 
+                                      <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
+                                    </div>
+                                  </div>
+                                  <div class="clone hide">
+                                    <div class="control-group input-group" style="margin-top:10px">
+                                      <input type="file" name="gambar_paket[]" class="form-control">
+                                      <div class="input-group-btn"> 
+                                        <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+                                      </div>
+                                    </div>
+                                  </div>
                               </div>
+                              @if (count($errors) > 0)
+                              <div class="alert alert-danger">
+                                <ul>
+                                  @foreach ($errors->all() as $error)
+                                      <li>{{ $error }}</li>
+                                  @endforeach
+                                </ul>
+                              </div>
+                              @endif
+                              @if(session('success'))
+                                <div class="alert alert-success">
+                                    {{ session('success') }}
+                                </div> 
+                              @endif
+
                               <div class="mb3">
                                 <label for="nama_p">Nama Produk</label>
                                 <input type="text" class="form-control" id="nama_p" placeholder=""  required="required" name="nama_paket">
@@ -180,13 +212,14 @@
                     <tbody>
                         @foreach ($paket as $value)
                           <tr>
-                            <th scope="row">{{$value->id}}</th>
-                            <td><img height="90px" width="100px" class="d-flex justify-content-center" src="{{asset('img/upload/'.$value->gambar_paket)}}" alt="{{$value->gambar_paket}}"></td>
+                            <td>{{ ++$i }}</td>
+                            @php $images_paket = json_decode($value->gambar_paket) @endphp
+                            <td><img height="90px" width="100px" class="d-flex justify-content-center" src="{{asset('img/upload/'.$images_paket[0])}}" alt="{{$value->gambar_paket}}"></td>
                             <td>{{$value->nama_paket}}</td>
                             <td>{{$value->kategori}}</td>
                             <td>{{$value->available}}</td>
                             <td>{{$value->deskripsi}}</td>
-                            <td>{{$value->harga_paket}}</td>
+                            <td>Rp. {{ number_format($value->harga_paket)}} ,-</td>
                           <td><a href="{{url('edit_data/'.$value->id)}}" data-toggle="modal" data-target="#editpaket{{$value->id}}" class="btn btn-warning fa fa-pencil"></a>
                             <a href="{{url('hapus_paket/'.$value->id)}}" class="btn btn-danger fa fa-trash"></a>
                             <a href="{{url('detail_paket')}}" class="btn btn-info fa fa-info-circle"></a></td>
@@ -333,6 +366,22 @@
   interval: 2000
   })
   </script>
+  <script type="text/javascript">
+
+$(document).ready(function() {
+
+  $(".btn-success").click(function(){ 
+      var html = $(".clone").html();
+      $(".increment").after(html);
+  });
+
+  $("body").on("click",".btn-danger",function(){ 
+      $(this).parents(".control-group").remove();
+  });
+
+});
+
+</script>
 
 </body>
 </html>

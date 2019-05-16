@@ -40,7 +40,7 @@
     <header id="header" class="header-stack">
       <div class="container">
         <div class="logo float-left">
-          <h1 class="text-light"><a href="promaag.html" class="scrollto"><span>ZEN</span></a></h1>
+          <h1 class="text-light"><a href="{{url('/')}}" class="scrollto"><span>ZEN</span></a></h1>
         </div>
   
         <nav class="main-nav float-right d-none d-lg-block">
@@ -64,14 +64,28 @@
                 </div>
             </li>
             <!-- <li><a href="after-login.html">Iklan</a></li> -->
-            <li class="drop-down"><a href="index.html"><span>Joko Mulyadi</span></a>
+            @if ($user == null)
+          <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalLogin">LOGIN</a></li> 
+          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
+            @elseif ($user->is_eo == 1 )
+          <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
+              <ul>
+                <li><a href="{{url('/paket')}}">Paket</a></li>
+                <li><a href="#">Pengriman</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="{{ url('/logout') }}">Sign Out</a></li>
+              </ul>
+          </li>
+          @elseif ($user->is_renter == 1 )
+          <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
               <ul>
                 <li><a href="#">Edit Profil</a></li>
                 <li><a href="#">My Order</a></li>
                 <li><a href="#">My Wishlist</a></li>
-                <li><a href="index.html">Sign Out</a></li>
+                <li><a href="{{ url('/logout') }}">Sign Out</a></li>
               </ul>
-            </li>
+          </li>
+          @endif
           </ul>
         </nav>
       </div>
@@ -193,7 +207,7 @@
                 </aside>
                 <main class="col-sm-9">
                     <div class="padding-y-sm">
-                        <span><b>3897</b> results for "Item"</span>	
+                        <span><b>{{ $count_search_paket }}</b> results for "{{ $search }}"</span>	
                         <form class="form-inline float-right">
                                 <div class="form-group>
                                   <label for="urut" class="">Urutkan </label>
@@ -210,14 +224,16 @@
                     </div>
                     <br>
 
+                    @foreach ($search_paket as $value)
                     <article class="card card-product">
                             <div class="card-body">
                                 <div class="row">
                                     <aside class="col-sm-3">
-                                        <div class="img-wrap"><img class="img-wrap" alt="gambar nikana" src="{{ asset('img/paket/weds.jpg') }}"></div>
+                                    @php $images_paket = json_decode($value->gambar_paket)@endphp
+                                        <div class="img-wrap"><img class="img-wrap" alt="{{$value->gambar_paket}}" src="{{ asset('img/upload/'.$images_paket[0]) }}"></div>
                                     </aside> 
                                     <article class="col-sm-9">
-                                        <h4 class="title"> Paket Nikah Minimalis</h4>
+                                        <h4 class="title">{{$value->nama_paket}}</h4>
                                         <div class="rating-wrap mb-2">
                                                 <ul class="rating-stars">
                                                     <li style="width:90%" class="stars-active"> 
@@ -233,100 +249,17 @@
                                                     </li>
                                                 </ul>
                                                 <div class="label-rating"><b> (125)</b></div> 
-                                                <p class="title"> <b>H Dadang Organizer</b></p> 
+                                                <p class="title"> <b>{{$value->id_eo}}</b></p> 
                                         </div>
-                                        <p class="texts">Tersedia fasilitas nikah lengkap dengan harga jempolan.. </p>
+                                        <p class="texts">{{$value->deskripsi}}</p>
+                                        <p class="texts">Rp. {{ number_format($value->harga_paket)}} ,-</p>
                                         <br>
                                         <a style="font-size:15pt" href="#" class="float-right"><i class="fa fa-heart-o"></i></a>
                                     </article>
                                 </div> 
                             </div>
                     </article>
-                    <article class="card card-product">
-                            <div class="card-body">
-                                <div class="row">
-                                    <aside class="col-sm-3">
-                                        <div class="img-wrap"><img class="img-wrap" alt="gambar nikana" src="{{ asset('img/paket/weds.jpg') }}"></div>
-                                    </aside> 
-                                    <article class="col-sm-9">
-                                        <h4 class="title"> Paket Katering Diet</h4>
-                                        <div class="rating-wrap mb-2">
-                                                <ul class="rating-stars">
-                                                    <li style="width:85%" class="stars-active"> 
-                                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                                        <i class="fa fa-star"></i> 
-                                                    </li>
-                                                    <li>
-                                                        
-                                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                                        <i class="fa fa-star"></i> 
-                                                    </li>
-                                                </ul>
-                                                <div class="label-rating"><b> (130)</b></div> 
-                                                <p class="title"> <b>Deden Rukmana</b></p> 
-                                        </div>
-                                        <p class="texts"> Cocok untuk Anda yang ingin menurunkan berat badan... </p>
-                                        <br>
-                                        <a style="font-size:15pt" href="#" class="float-right"><i class="fa fa-heart-o"></i></a>
-                                    </article>
-                                </div> 
-                            </div>
-                    </article>
-                    <article class="card card-product">
-                            <div class="card-body">
-                                <div class="row">
-                                    <aside class="col-sm-3">
-                                        <div class="img-wrap"><img class="img-wrap" alt="gambar nikana" src="{{ asset('img/paket/weds.jpg') }}"></div>
-                                    </aside> 
-                                    <article class="col-sm-9">
-                                        <h4 class="title"> Paket Katering Akikah</h4>
-                                        <div class="rating-wrap mb-2">
-                                                <ul class="rating-stars">
-                                                    <li style="width:95%" class="stars-active"> 
-                                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                                        <i class="fa fa-star"></i> 
-                                                    </li>
-                                                    <li>
-                                                        
-                                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                                        <i class="fa fa-star"></i> 
-                                                    </li>
-                                                </ul>
-                                                <div class="label-rating"><b> (210)</b></div> 
-                                                <p class="title"> <b>Jojo Eats</b></p> 
-                                        </div>
-                                        <p class="texts"> Cocok untuk Anda yang ingin menurunkan berat badan... </p>
-                                        <br>
-                                        <a style="font-size:15pt" href="#" class="float-right"><i class="fa fa-heart-o"></i></a>
-                                    </article>
-                                </div> 
-                            </div>
-                    </article>
-                </main> 
-            </div>
-            <br />
-            <div class="row d-flex justify-content-center">
-                    <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true"><i class="fa fa-chevron-right"></i></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                    @endforeach
             </div>
         </div>
     </section>
