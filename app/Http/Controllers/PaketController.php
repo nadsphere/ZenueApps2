@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Post;
+use App\Paket;
+use Auth;
+
 class PaketController extends Controller
 {
     /**
@@ -14,8 +16,11 @@ class PaketController extends Controller
      */
     public function index()
     {
-        $paket = DB::table('pakets')->get();
-        return view('pages.paket', compact('paket'));
+        $i = 0;
+        $user = Auth::guard('users')->user();
+        $id_eo = Auth::guard('users')->user()->id;
+        $paket = Paket::where('id_eo', '=', $id_eo)->get();
+        return view('pages.paket', compact('paket', 'i', 'id_eo', 'user'));
     }
 
     /**
@@ -36,26 +41,71 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->hasfile('gambar_paket')){
-            $file = $request->gambar_paket;
-            $image_name = $file->getClientOriginalName();
-            $file->move('img/upload/',$image_name);
-        }
-        else{
-            // return 0;
-            $request->session()->flash('failed-input-catalog', 'Mohon Upload Foto Paket Anda.');
-        }
+        $validator = $this->validate($request, [
+            'gambar_paket' => 'required',
+            'gambar_paket.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'nama_paket' => 'required|min:5',
+            'kategori' => 'required',
+            'available'=> 'required'
+        ]);
+        
 
-        $paket = [ 
-            'gambar_paket'=> $image_name,
+        if($request->hasfile('gambar_paket')){
+            foreach($request->file('gambar_paket') as $gambar){
+                $file = $gambar->getClientOriginalName();
+                $gambar->move(public_path().'/img/upload/', $file);  
+                $data[] = $file;
+            }
+
+            $id_eo = Auth::guard('users')->user()->id;
+
+            $data_paket = [ 
+            'id_eo' => $id_eo,
+            'gambar_paket'=> implode("|",$data),
             'nama_paket'=> $request->nama_paket,
             'kategori'=> $request->kategori,
             'available'=> $request->available,
             'deskripsi'=> $request->deskripsi,
             'harga_paket'=> $request->harga_paket
         ];
-        DB::table('pakets')->insert($paket);
-        return redirect('/paket');
+
+            $paket = new Paket($data_paket);
+            $paket->gambar_paket=json_encode($data);
+            $paket->save();
+
+            
+            //return compact('data_paket');
+            //return back()->with('success');
+            if (!$validator){
+                return 0;
+                //return Redirect::back()->withErrors($validator)->withInput($request->all());
+            }else{
+                return 1;
+                // $user = Auth::guard('users')->user();
+                // return view('pages.index', compact('user'))->with('success', 'Registrasi Berhasil!');
+            }
+
+        }
+        else{
+            // return 0;
+            $request->session()->flash('failed-input-catalog', 'Mohon Upload Foto Paket Anda.');
+        }
+
+        
+
+        // $paket = [ 
+        //     'id_eo' => $id_eo,
+        //     'gambar_paket'=> $image_name,
+        //     'nama_paket'=> $request->nama_paket,
+        //     'kategori'=> $request->kategori,
+        //     'available'=> $request->available,
+        //     'deskripsi'=> $request->deskripsi,
+        //     'harga_paket'=> $request->harga_paket
+        // ];
+        // DB::table('pakets')->insert($paket);
+        // return redirect('/paket');
+        // $id_eo = Auth::guard('users')->user()->id;
+        // return compact('id_eo');
     }
 
 
@@ -86,7 +136,7 @@ class PaketController extends Controller
     public function update(Request $request, $id)
     {
         //ngubah foto
-        $post = Post::find($id);
+        $post = Paket::find($id);
         //edit upload
         if($request->hasfile('gambar_paket')){
             $file = $request->gambar_paket;
@@ -138,6 +188,23 @@ class PaketController extends Controller
         DB::table('pakets')->where('id', $id)
                             ->delete();
         return redirect('/paket');
+
+    }
+
+    public function search(Request $request){
+        $user = Auth::guard('users')->user();
+        // if ($user == null){
+        //     return 0;
+        // }else{
+        //     $namaeonya = $user->name;
+        //     return compact('namaeonya');
+        $search = $request['paket'];
+        $search_paket = Paket::where('nama_paket', 'like', '%'.$search.'%')->get();
+        $count_search_paket = $search_paket->count();
+        return view('pages.search_paket', compact('search', 'search_paket', 'count_search_paket', 'user'));
+    }
+
+    public function search_filter(Request $request){
 
     }
 }
