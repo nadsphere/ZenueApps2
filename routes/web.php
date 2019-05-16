@@ -1,5 +1,15 @@
 <?php
 
+Route::get('/', function () {
+    return view('pages.index');
+});
+Route::get('/edit_user', function () {
+    return view('pages.user_editprofile');
+});
+Route::get('/edit_eo', function () {
+    return view('pages.eo_editprofile');
+});
+
 Route::get('/paket','PaketController@index');
 Route::get('/search_paket', function () {
     return view('pages.search_paket');
@@ -11,7 +21,10 @@ Route::get('/welcomes', function () {
     return view('pages.user_page');
 });
 Route::get('/store', function () {
-    return view('pages.profil_eo');
+    return view('pages.eo_profile');
+});
+Route::get('/about_paket', function () {
+    return view('pages.paket_details');
 });
 Route::post('/insert','PaketController@store');
 Route::get('/paket_edit/{id}','paketController@edit');

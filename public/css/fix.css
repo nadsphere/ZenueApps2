@@ -1,12 +1,6 @@
-/* ========================
-UIkit bootstrap-ecommerce.com 
-===================== */
-/* ==================== INCLUDE FONTS ======================= */
-@import url("../fonts/roboto/font.css");
 html {
   font-size: 15px; }
 
-/* ================== HELPERS  =================== */
 a:hover {
   text-decoration: none; }
 
@@ -1666,6 +1660,8 @@ article:after,
     cursor: zoom-in; }
 .gallery-wrap .img-small-wrap {
   text-align: center; }
+  .gallery-wrap .img-small-wrap-left {
+    text-align: left; }
   .gallery-wrap .img-small-wrap .item-gallery {
     width: 60px;
     height: 60px;
@@ -1680,12 +1676,39 @@ article:after,
        object-fit: cover;
     border-radius: 4px;
     cursor: -webkit-zoom-in;
-    cursor: zoom-in; }
+    cursor: zoom-in; 
+  }
     .gallery-wrap .img-small-wrap img:hover {
       -webkit-filter: brightness(1.1);
               filter: brightness(1.1);
       cursor: -webkit-zoom-in;
-      cursor: zoom-in; }
+      cursor: zoom-in; 
+    }
+  /* left align */
+  .gallery-wrap .img-small-wrap-left .item-gallery {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    margin: 7px 2px;
+    display: inline-block;
+    overflow: hidden; }
+  .gallery-wrap .img-small-wrap-left img {
+    max-width: 100%;
+    max-height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 4px;
+    cursor: -webkit-zoom-in;
+    cursor: zoom-in; 
+  }
+    .gallery-wrap .img-small-wrap-left img:hover {
+      -webkit-filter: brightness(1.1);
+              filter: brightness(1.1);
+      cursor: -webkit-zoom-in;
+      cursor: zoom-in; 
+    }
+
+    
 
 /* ================== COMPONENTS =================== */
 .owl-prev, .owl-next {

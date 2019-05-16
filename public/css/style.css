@@ -4,6 +4,9 @@ body {
   color: #444;
   font-family: "Open Sans", sans-serif;
 }
+aside { 
+  display: block;
+}
 
 a {
   color: #000;
@@ -31,7 +34,7 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   padding: 0;
 }
 
@@ -479,8 +482,12 @@ h6 {
   background: #f5f8fd;
 }
 .section-bg2 {
-  background: rgb(185, 184, 184);
+  background: #eeeeee;
 }
+.section-bg-wh {
+  background: #ffffff;
+}
+
 
 
 /* Services Section
