@@ -176,7 +176,7 @@
                   <div class="form-group">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-calendar" style="margin-top:10px"></i></span>
-                        <input class="form-control" type="date" value="2000-01-01" id="birthdates" name="birthday" required="required" value="{{ old('birthday') }}">
+                        <input class="form-control" type="date" value="" id="birthdates" name="birthday" required="required" value="{{ old('birthday') }}">
                       </div>
                       @if ($errors->first('birthday'))
                         <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
