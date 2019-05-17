@@ -136,16 +136,10 @@
                         <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
                         <br />
                         <div style="margin-left:20px">
-                            <div class="form-check-inline rad_check">
-                                <label class="form-check-label">
-                                  <input type="radio" class="form-check-input" name="role" value="eo" {{ (old('role') == 'eo') ? 'checked' : '' }}>Pemilik Acara (EO)
-                                </label>
-                            </div>
-                            <div class="form-check-inline rad_check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="role" value="renter" {{ (old('role') == 'renter') ? 'checked' : '' }}>Pelanggan
-                              </label>
-                            </div>
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option value="users">Pelanggan</option>
+                            <option value="eos">Pemilik EO</option>
+                          </select>
                         </div>
                     </div>
                     @if ($errors->first('role'))
@@ -175,9 +169,18 @@
                         <span class="input-group-addon"><i class="fa fa-phone" style="margin-top:10px"></i></span>
                         <input type="text" class="form-control" name="no_telp" placeholder="No. Telp" required="required" value="{{ old('no_telp') }}">
                       </div>
-                  @if ($errors->first('no_telp'))
-                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
-                  @endif
+                      @if ($errors->first('no_telp'))
+                        <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
+                      @endif
+                  </div>
+                  <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar" style="margin-top:10px"></i></span>
+                        <input class="form-control" type="date" value="2000-01-01" id="birthdates" name="birthday" required="required" value="{{ old('birthday') }}">
+                      </div>
+                      @if ($errors->first('birthday'))
+                        <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
+                      @endif
                   </div>
                   <div class="form-group">
                     <div class="input-group">
