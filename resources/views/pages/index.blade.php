@@ -58,106 +58,179 @@
                     </div>
                 </div>
             </li>
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalLogin">LOGIN</a></li> 
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalRegist">REGISTER</a></li>
+          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalLogin">LOGIN</a></li> 
+          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-    <div class="modal fade modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-              <div class="modal-header">				
-                <h4 class="modal-title">Sign In</h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              </div>
-              <div class="modal-body">
-                <form action="/examples/actions/confirmation.php" method="post">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
-                      <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
-                      <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
-                  </div>
-                  <p class="hint-text"><a href="#">Lupa Password?</a></p>
-                </form>
-              </div>
-              <div class="modal-footer">Belum Punya Akun? <a href="#">Daftar di sini</a></div>
-            </div>
-          </div>
-    </div>
-    <div class="modal fade modalRegist" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-              <div class="modal-header">				
-                <h4 class="modal-title">Register</h4>
+  <div id="modalLogin" class="modal fade">
+      <div class="modal-dialog modal-login">
+        <div class="modal-content">
+          <div class="modal-header">				
+            <h4 class="modal-title">Sign In</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form action="/examples/actions/confirmation.php" method="post">
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
+                  <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required">
+                </div>
               </div>
-              <div class="modal-body">
-                <form action="/examples/actions/confirmation.php" method="post">
-                  <div class="form-group">
-                    <div class="input-group">
-                        <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
-                        <br />
-                        <div style="margin-left:20px">
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option value="users">Pelanggan</option>
-                            <option value="eos">Pemilik EO</option>
-                          </select>
-                        </div>  
-                    </div>
-                  </div>
-                  <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
-                        <input type="text" class="form-control" name="name" placeholder="Nama" required="required">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-envelope" style="margin-top:10px"></i></span>
-                      <input type="email" class="form-control" name="email" placeholder="Email" required="required">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-phone" style="margin-top:10px"></i></span>
-                        <input type="text" class="form-control" name="no_telp" placeholder="No. Telp" required="required">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-calendar" style="margin-top:10px"></i></span>
-                      <input class="form-control" type="date" value="2000-01-01" id="birthdates" name="birthday" required="required">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
-                      <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
-                    </div>
-                  </div>
-                  <p class="hint-text">Dengan Mendaftar, anda telah menyetujui <a href="#">Syarat & Kebijakan</a> Kami</p>
-                  <br>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block btn-lg">Sign up</button>
-                  </div>
-                </form>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
+                  <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+                </div>
               </div>
-              <div class="modal-footer border-top-0">Sudah Punya akun? <a href="#"> Sign In</a></div>
-            </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
+              </div>
+              <p class="hint-text"><a href="#">Forgot Password?</a></p>
+            </form>
+          </div>
+          <div class="modal-footer">Don't have an account? <a href="#">Create one</a></div>
         </div>
+      </div>
+  </div> 
+  <div id="modalRegist" class="modal fade">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header">				
+          <h4 class="modal-title">Register</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="/examples/actions/confirmation.php" method="post">
+            <div class="form-group">
+              <div class="input-group">
+                  <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
+                  <br />
+                  <div style="margin-left:20px">
+                    <select class="form-control" id="role_as">
+                        <option value="users"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#sub-model" data-dismiss="modal">Pelanggan</button></option>
+                        <option value="eos"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
+                    </select>
+                  </div>  
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
+                  <input type="text" class="form-control" name="name" placeholder="Nama" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope" style="margin-top:10px"></i></span>
+                <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone" style="margin-top:10px"></i></span>
+                  <input type="text" class="form-control" name="no_telp" placeholder="No. Telp" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-calendar" style="margin-top:10px"></i></span>
+                <input class="form-control" type="date" value="" id="birthdates" name="birthday" required="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
+                <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+              </div>
+            </div>
+            <p class="hint-text">Dengan Mendaftar, anda telah menyetujui <a href="#">Syarat & Kebijakan</a> Kami</p>
+            <br>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Sign up</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer border-top-0">Sudah Punya akun? <a href="#"> Sign In</a></div>
+      </div>
     </div>
+  </div> 
+  <div id="eoModal" class="modal fade">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <div class="modal-header">				
+          <h4 class="modal-title">Register EO</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form action="/examples/actions/confirmation.php" method="post">
+            <div class="form-group">
+              <div class="input-group">
+                  <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
+                  <br />
+                  <div style="margin-left:20px">
+                      <select class="form-control" id="role_as2">
+                          <option value="users"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal2" data-dismiss="modal">Pelanggan</button></option>
+                          <option value="eos"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
+                      </select>
+                  </div>  
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-building" style="margin-top:10px"></i></span>
+                  <input type="text" class="form-control" name="name" placeholder="Nama EO" required>
+                </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope" style="margin-top:10px"></i></span>
+                <input type="email" class="form-control" name="email" placeholder="Email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-map" style="margin-top:10px"></i></span>
+                <input type="text" class="form-control" name="alamat" placeholder="Alamat" required>
+              </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-phone" style="margin-top:10px"></i></span>
+                  <input type="text" class="form-control" name="kontak" placeholder="Kontak" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-globe" style="margin-top:10px"></i></span>
+                <input type="text" class="form-control" name="link" placeholder="Link (opsional)">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
+                <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" name="gambar_profil" accept="image/*" id="gambarprofil" required>
+                <label class="custom-file-label" for="gambarprofil">Foto Profil</label>
+              </div>
+            </div>            
+            <p class="hint-text">Dengan Mendaftar, anda telah menyetujui <a href="#">Syarat & Kebijakan</a> Kami</p>  
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Sign up</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer border-top-0">Sudah Punya akun? <a href="#">  Sign In</a></div>
+      </div>
+    </div>
+  </div> 
  
 
   <section>
@@ -953,6 +1026,15 @@
     $('.carousel').carousel({
   interval: 2000
   })
+  </script>
+  <script>
+    $('#role_as').change(function(){
+            //this is just getting the value that is selected
+            var title = $(this).val();
+            $('#eoModal').modal({
+              closeExisting:true
+            });
+          });
   </script>
 
 </body>
