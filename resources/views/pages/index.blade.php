@@ -110,30 +110,23 @@
                         <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
                         <br />
                         <div style="margin-left:20px">
-                            <div class="form-check-inline rad_check">
-                                <label class="form-check-label">
-                                  <input type="radio" class="form-check-input" name="optradio">Pemilik Acara (EO)
-                                </label>
-                            </div>
-                            <div class="form-check-inline rad_check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optradio">Pelanggan
-                              </label>
-                            </div>
-                        </div>
-                          
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option value="users">Pelanggan</option>
+                            <option value="eos">Pemilik EO</option>
+                          </select>
+                        </div>  
                     </div>
                   </div>
                   <div class="form-group">
                       <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
-                        <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama" required="required">
+                        <input type="text" class="form-control" name="name" placeholder="Nama" required="required">
                       </div>
                   </div>
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-envelope" style="margin-top:10px"></i></span>
-                      <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required">
+                      <input type="email" class="form-control" name="email" placeholder="Email" required="required">
                     </div>
                   </div>
                   <div class="form-group">
@@ -141,6 +134,12 @@
                         <span class="input-group-addon"><i class="fa fa-phone" style="margin-top:10px"></i></span>
                         <input type="text" class="form-control" name="no_telp" placeholder="No. Telp" required="required">
                       </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="input-group">
+                      <span class="input-group-addon"><i class="fa fa-calendar" style="margin-top:10px"></i></span>
+                      <input class="form-control" type="date" value="2000-01-01" id="birthdates" name="birthday" required="required">
+                    </div>
                   </div>
                   <div class="form-group">
                     <div class="input-group">
