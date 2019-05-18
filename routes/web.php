@@ -13,9 +13,7 @@ Route::get('/edit_eo', function () {
 Route::get('/eo_profile', function () {
     return view('pages.eo_profile');
 });
-Route::get('/welcomes', function () {
-    return view('pages.user_page');
-});
+
 Route::get('/store', function () {
     return view('pages.eo_profile');
 });

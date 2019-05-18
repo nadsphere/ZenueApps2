@@ -174,15 +174,6 @@
                       @endif
                   </div>
                   <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-calendar" style="margin-top:10px"></i></span>
-                        <input class="form-control" type="date" value="" id="birthdates" name="birthday" required="required" value="{{ old('birthday') }}">
-                      </div>
-                      @if ($errors->first('birthday'))
-                        <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
-                      @endif
-                  </div>
-                  <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
                       <input type="password" class="form-control" name="password" placeholder="Masukkan Password" required="required" value="{{ old('password') }}">
@@ -213,6 +204,21 @@
           </div>
           <div class="modal-body">
             <form action=" " method="post">
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="role_as" class="opsi_name">Mendaftar Sebagai </label>
+                        <br />
+                        <div style="margin-left:20px">
+                          <select class="form-control" id="role_as">
+                            <option value="users"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#sub-model" data-dismiss="modal">Pelanggan</button></option>
+                            <option value="eos"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
+                        </select>
+                        </div>
+                    </div>
+                    @if ($errors->first('role'))
+                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('role') }}</strong>
+                  @endif
+                </div>
               <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-building fa_color" style="margin-top:10px"></i></span>
@@ -267,7 +273,6 @@
         </div>
       </div>
     </div> 
-
 
   <section>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -1086,6 +1091,12 @@ if (e.keyCode == 13)
     //   $('#eoModal').modal({
     //   closeExisting:true
     // });
+    // if($(this).val() === 'eos'){
+    //   $('#eoModal').modal('show');
+    //   $('#modalRegist').modal('hide');
+    //     } else if($(this).val() === 'users') {
+    //       $('#modalRegist').modal('show');
+    // } 
   });
 </script>
 
