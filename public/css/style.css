@@ -922,6 +922,7 @@ h6 {
 .modal-login .hint-text {
   text-align: center;
   padding-top: 5px;
+  color: black;
   font-size: 13px;
   height: 13px;
 }
@@ -929,7 +930,7 @@ h6 {
   color: #000;
   border-color: #dee4e7;
   text-align: center;
-  margin: 0 -25px -25px;
+  margin: 0 -25px -40px;
   font-size: 13px;
   justify-content: center;
 }
@@ -1026,4 +1027,7 @@ input.form-controls::placeholder:hover{
 .form-controls .has-search:active {
   background-color: #ddd;
 
+}
+.fa_color{
+  color:black;
 }
