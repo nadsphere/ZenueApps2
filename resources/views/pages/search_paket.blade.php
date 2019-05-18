@@ -236,6 +236,7 @@
                                         <div class="img-wrap"><img class="img-wrap" alt="{{$value->gambar_paket}}" src="{{ asset('img/upload/'.$images_paket[0]) }}"></div>
                                     </aside> 
                                     <article class="col-sm-9">
+                                    <a href="{{ url('/detail_paket/'.$value->id) }}">
                                         <h4 class="title">{{$value->nama_paket}}</h4>
                                         <div class="rating-wrap mb-2">
                                                 <ul class="rating-stars">
@@ -258,6 +259,7 @@
                                         <p class="texts">Rp. {{ number_format($value->harga_paket)}} ,-</p>
                                         <br>
                                         <a style="font-size:15pt" href="#" class="float-right"><i class="fa fa-heart-o"></i></a>
+                                    </a>
                                     </article>
                                 </div> 
                             </div>

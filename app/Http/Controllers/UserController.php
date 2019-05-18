@@ -58,29 +58,13 @@ class UserController extends Controller
             return Redirect::back()->withErrors($validator)->withInput($request->all());
         }else{
             $user = Auth::guard('users')->user();
-            return view('pages.index', compact('user'))->with('success', 'Registrasi Berhasil!');
+            return view('pages.index', compact('user'));
         }
     }
 
     public function index()
     {
-        $user = Auth::guard('users')->user();
-        //$user_name = $user->name;
-        // return view('pages.index', compact('user'));
-
-        // $logged_in = Auth::check();
-        // return compact('logged_in');
-
-        // if ($logged_in){
-        //     if (Auth::guard(users)->user()->is_eo == 1){
-        //         return 1;
-        //     }else if(Auth::guard(users)->user()->is_renter == 1){
-        //         return 3;
-        //     }
-        // }else{
-        //     return compact('logged_in');
-        // }
-        
+        $user = Auth::guard('users')->user();        
         return view('pages.index', compact('user'));
     }
     public function login(Request $request)
@@ -93,7 +77,7 @@ class UserController extends Controller
         if ($auth){
             return redirect('/');
         }else{
-            return 0;
+            return Redirect::back();
         }
     }
 

@@ -62,7 +62,7 @@
                 </div>
             </li>
             @if ($user == null)
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalLogin">LOGIN</a></li> 
+          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalLogin">LOGIN</a></li> 
           <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
             @elseif ($user->is_eo == 1 )
             <li><a href="#about">Paket</a></li>
@@ -89,7 +89,7 @@
     </div>
   </header>
 
-    <div class="modal fade modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-login">
             <div class="modal-content">
               <div class="modal-header">				
@@ -136,9 +136,9 @@
                         <label for="role_as" class="opsi_name">Mendaftar Sebagai </label>
                         <br />
                         <div style="margin-left:20px">
-                          <select class="form-control" id="role_as">
-                            <option value="users"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#sub-model" data-dismiss="modal">Pelanggan</button></option>
-                            <option value="eos"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
+                          <select class="form-control" id="role_as" name="role">
+                            <option value="renter"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#sub-model" data-dismiss="modal">Pelanggan</button></option>
+                            <option value="eo"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
                         </select>
                         </div>
                     </div>
@@ -170,15 +170,6 @@
                         <input type="text" class="form-control" name="no_telp" placeholder="No. Telp" required="required" value="{{ old('no_telp') }}">
                       </div>
                       @if ($errors->first('no_telp'))
-                        <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
-                      @endif
-                  </div>
-                  <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-calendar" style="margin-top:10px"></i></span>
-                        <input class="form-control" type="date" value="" id="birthdates" name="birthday" required="required" value="{{ old('birthday') }}">
-                      </div>
-                      @if ($errors->first('birthday'))
                         <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
                       @endif
                   </div>
@@ -280,8 +271,8 @@
             <div class="carousel-item active">
               <img class="first-slide img-box" style="background: rgb(193, 23, 23, .5); height: 50%;" src="img/bg-1.jpg" alt="First slide">
               <div class="carousel-caption text-left d-none d-md-block ">
-                <h3 class="display-4">Get 30% Off</h3>
-                <p class="lead">Untuk setiap pemesanan pertama</p>
+                <h3 class="display-4" style="color:white;">Get 30% Off</h3>
+                <p class="lead" style="color:white;">Untuk setiap pemesanan pertama</p>
                 <a class="btn btn-lg btn-outline-light" href="#" role="button">Pesan Sekarang</a>
               </div>
             </div>
@@ -1083,9 +1074,6 @@ if (e.keyCode == 13)
     var title = $(this).val();
       $('#eoModal').modal('show');
       $('#modalRegist').modal('hide');
-    //   $('#eoModal').modal({
-    //   closeExisting:true
-    // });
   });
 </script>
 
