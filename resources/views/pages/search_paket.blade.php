@@ -257,6 +257,7 @@
                                         </div>
                                         <p class="texts">{{$value->deskripsi}}</p>
                                         <p class="texts">Rp. {{ number_format($value->harga_paket)}} ,-</p>
+                                        <a href="#" class="btn btn-outline-danger">Ambil Penawaran</a>
                                         <br>
                                         <a style="font-size:15pt" href="#" class="float-right"><i class="fa fa-heart-o"></i></a>
                                     </a>
