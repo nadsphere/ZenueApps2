@@ -13,14 +13,9 @@ Route::get('/edit_eo', function () {
 Route::get('/eo_profile', function () {
     return view('pages.eo_profile');
 });
-Route::get('/welcomes', function () {
-    return view('pages.user_page');
-});
+
 Route::get('/store', function () {
     return view('pages.eo_profile');
-});
-Route::get('/about_paket', function () {
-    return view('pages.paket_details');
 });
 
 // LOGIN, REGISTER, LOGOUT
