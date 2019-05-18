@@ -42,3 +42,9 @@ Route::group(['middleware' => 'web'], function () {
 });
 
 Route::post('/search', 'PaketController@search');
+
+Route::get('/dashboard', 'TemplateControl@index');
+
+Route::get('/form', function () {
+    return view('pages.form');
+});
