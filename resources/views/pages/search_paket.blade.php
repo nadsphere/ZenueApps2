@@ -58,8 +58,11 @@
             <li>
                 <div class="input-group">
                     <div class="form-group has-search">
-                        <span class="fa fa-glip fa-search form-control-feedback"></span>
-                        <input type="text" class="form-controls form-control" placeholder="Cari...">
+                      <form action="{{url('/search')}}" method="post" id="searchPaket">
+                      {{ csrf_field() }}
+                          <span class="fa fa-glip fa-search form-control-feedback"></span>
+                          <input type="text" class="form-controls form-control" name="paket" placeholder="Cari...">
+                      </form>
                     </div>
                 </div>
             </li>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Paket;
+use App\User;
 use Auth;
 
 class PaketController extends Controller
@@ -20,7 +21,12 @@ class PaketController extends Controller
         $user = Auth::guard('users')->user();
         $id_eo = Auth::guard('users')->user()->id;
         $paket = Paket::where('id_eo', '=', $id_eo)->get();
+    
         return view('pages.paket', compact('paket', 'i', 'id_eo', 'user'));
+
+        //$id_paket = $paket->id;
+        //$images_paket = $item[$id_paket]->gambar_paket;
+        //return compact('id_paket');
     }
 
     /**
@@ -73,40 +79,14 @@ class PaketController extends Controller
             $paket->gambar_paket=json_encode($data);
             $paket->save();
 
-            
-            //return compact('data_paket');
-            //return back()->with('success');
             if (!$validator){
-                return 0;
-                //return Redirect::back()->withErrors($validator)->withInput($request->all());
+                return Redirect::back()->withErrors($validator)->withInput($request->all());
             }else{
-                return 1;
-                // $user = Auth::guard('users')->user();
-                // return view('pages.index', compact('user'))->with('success', 'Registrasi Berhasil!');
+                return redirect('/paket');
             }
-
-        }
-        else{
-            // return 0;
-            $request->session()->flash('failed-input-catalog', 'Mohon Upload Foto Paket Anda.');
-        }
-
-        
-
-        // $paket = [ 
-        //     'id_eo' => $id_eo,
-        //     'gambar_paket'=> $image_name,
-        //     'nama_paket'=> $request->nama_paket,
-        //     'kategori'=> $request->kategori,
-        //     'available'=> $request->available,
-        //     'deskripsi'=> $request->deskripsi,
-        //     'harga_paket'=> $request->harga_paket
-        // ];
-        // DB::table('pakets')->insert($paket);
-        // return redirect('/paket');
-        // $id_eo = Auth::guard('users')->user()->id;
-        // return compact('id_eo');
+        };
     }
+        
 
 
     public function show($id)
@@ -206,5 +186,19 @@ class PaketController extends Controller
 
     public function search_filter(Request $request){
 
+    }
+
+    public function index_detail($id){
+        $user = Auth::guard('users')->user();
+        $paket = DB::table('pakets')->where('id',$id)->get();
+        $eo_id = $paket[0]->id_eo;
+        $nama_eo = User::where('id', $eo_id)->get();
+
+        if ($user == null) {
+            return view('pages.paket_details', compact('user', 'paket', 'nama_eo'));
+        }else{
+            $id_eo = Auth::guard('users')->user()->id;
+            return view('pages.paket_details', compact('user', 'id_eo', 'paket', 'nama_eo'));
+        }
     }
 }
