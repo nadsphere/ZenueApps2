@@ -242,9 +242,7 @@
                                             @php
                                               $images_paket = json_decode($value->gambar_paket);
                                             @endphp
-                                            @foreach($images_paket as $image)
                                             <input type="file" class="form-control-file" id="lain" name="gambar_paket[]" value="">
-                                            @endforeach
                                           </div>
                                           <div class="mb3">
                                             <label for="nama_p">Nama Produk</label>

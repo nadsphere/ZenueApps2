@@ -16,7 +16,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #c11717;
+  color: #707070;
   outline: none;
   text-decoration: none;
 }
@@ -524,7 +524,9 @@ h6 {
   width: 60px;
   height: 60px;
 }
-
+.title{
+  color: #000;
+}
 #services .icon i {
   font-size: 36px;
   line-height: 1;

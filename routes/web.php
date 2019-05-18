@@ -17,9 +17,6 @@ Route::get('/eo_profile', function () {
 Route::get('/store', function () {
     return view('pages.eo_profile');
 });
-Route::get('/about_paket', function () {
-    return view('pages.paket_details');
-});
 
 // LOGIN, REGISTER, LOGOUT
 Route::group(['middleware' => 'web'], function () {
@@ -41,3 +38,9 @@ Route::resource('pakets', 'PaketController');
 
 //SEARCHING
 Route::post('/search', 'PaketController@search');
+
+Route::get('/dashboard', 'TemplateControl@index');
+
+Route::get('/form', function () {
+    return view('pages.form');
+});

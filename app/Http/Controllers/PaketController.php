@@ -23,10 +23,6 @@ class PaketController extends Controller
         $paket = Paket::where('id_eo', '=', $id_eo)->get();
     
         return view('pages.paket', compact('paket', 'i', 'id_eo', 'user'));
-
-        //$id_paket = $paket->id;
-        //$images_paket = $item[$id_paket]->gambar_paket;
-        //return compact('id_paket');
     }
 
     /**
@@ -173,11 +169,6 @@ class PaketController extends Controller
 
     public function search(Request $request){
         $user = Auth::guard('users')->user();
-        // if ($user == null){
-        //     return 0;
-        // }else{
-        //     $namaeonya = $user->name;
-        //     return compact('namaeonya');
         $search = $request['paket'];
         $search_paket = Paket::where('nama_paket', 'like', '%'.$search.'%')->get();
         $count_search_paket = $search_paket->count();
