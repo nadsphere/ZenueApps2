@@ -121,7 +121,7 @@
             </div>
           </div>
     </div>
-    <div class="modal fade" id="modalRegist" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalRegist" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-login">
             <div class="modal-content">
               <div class="modal-header">				
@@ -133,19 +133,13 @@
                 {{ csrf_field() }}
                   <div class="form-group">
                     <div class="input-group">
-                        <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
+                        <label for="role_as" class="opsi_name">Mendaftar Sebagai </label>
                         <br />
                         <div style="margin-left:20px">
-                            <div class="form-check-inline rad_check">
-                                <label class="form-check-label">
-                                  <input type="radio" class="form-check-input" name="role" value="eo" {{ (old('role') == 'eo') ? 'checked' : '' }}>Pemilik Acara (EO)
-                                </label>
-                            </div>
-                            <div class="form-check-inline rad_check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="role" value="renter" {{ (old('role') == 'renter') ? 'checked' : '' }}>Pelanggan
-                              </label>
-                            </div>
+                          <select class="form-control" id="role_as">
+                            <option value="users"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#sub-model" data-dismiss="modal">Pelanggan</button></option>
+                            <option value="eos"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
+                        </select>
                         </div>
                     </div>
                     @if ($errors->first('role'))
@@ -175,9 +169,18 @@
                         <span class="input-group-addon"><i class="fa fa-phone" style="margin-top:10px"></i></span>
                         <input type="text" class="form-control" name="no_telp" placeholder="No. Telp" required="required" value="{{ old('no_telp') }}">
                       </div>
-                  @if ($errors->first('no_telp'))
-                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
-                  @endif
+                      @if ($errors->first('no_telp'))
+                        <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
+                      @endif
+                  </div>
+                  <div class="form-group">
+                      <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar" style="margin-top:10px"></i></span>
+                        <input class="form-control" type="date" value="" id="birthdates" name="birthday" required="required" value="{{ old('birthday') }}">
+                      </div>
+                      @if ($errors->first('birthday'))
+                        <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
+                      @endif
                   </div>
                   <div class="form-group">
                     <div class="input-group">
@@ -199,6 +202,80 @@
             </div>
         </div>
     </div>
+    <div id="eoModal" role="dialog" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog modal-login">
+        <div class="modal-content">
+          <div class="modal-header">				
+            <h4 class="modal-title">Register EO</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <form action="/examples/actions/confirmation.php" method="post">
+              <div class="form-group">
+                <div class="input-group">
+                    <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
+                    <br />
+                    <div style="margin-left:20px">
+                        <select class="form-control" id="role_as">
+                            <option value="users"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal2" data-dismiss="modal">Pelanggan</button></option>
+                            <option value="eos"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
+                        </select>
+                    </div>  
+                </div>
+              </div>
+              <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-building" style="margin-top:10px"></i></span>
+                    <input type="text" class="form-control" name="name" placeholder="Nama EO" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope" style="margin-top:10px"></i></span>
+                  <input type="email" class="form-control" name="email" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-map" style="margin-top:10px"></i></span>
+                  <input type="text" class="form-control" name="alamat" placeholder="Alamat" required>
+                </div>
+              </div>
+              <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-phone" style="margin-top:10px"></i></span>
+                    <input type="text" class="form-control" name="kontak" placeholder="Kontak" required="required">
+                  </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-globe" style="margin-top:10px"></i></span>
+                  <input type="text" class="form-control" name="link" placeholder="Link (opsional)">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
+                  <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" name="gambar_profil" accept="image/*" id="gambarprofil" required>
+                  <label class="custom-file-label" for="gambarprofil">Foto Profil</label>
+                </div>
+              </div>            
+              <p class="hint-text">Dengan Mendaftar, anda telah menyetujui <a href="#">Syarat & Kebijakan</a> Kami</p>  
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block btn-lg">Sign up</button>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer border-top-0">Sudah Punya akun? <a href="#">  Sign In</a></div>
+        </div>
+      </div>
+    </div> 
+
 
   <section>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -1007,6 +1084,16 @@ if (e.keyCode == 13)
     $('#searchPaket').submit();
 }
 });
+</script>
+<script>
+  abstract
+  $('#role_as').change(function(){
+    //this is just getting the value that is selected
+    var title = $(this).val();
+    $('#eoModal').modal({
+      closeExisting:true
+    });
+  });
 </script>
 
 </body>

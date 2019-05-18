@@ -27,11 +27,19 @@
  <link href="{{asset('css/fix.css')}}" rel="stylesheet" type="text/css"/>
 
  <!-- Libraries CSS Files -->
+<<<<<<< HEAD
  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
  <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
  <link href="{{asset('lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
  <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
  <link href="{{asset('css/style.css')}}" rel="stylesheet">
+=======
+ <link rel='stylesheet' href='lib/font-awesome/css/font-awesome.min.css'>
+ <link href="lib/animate/animate.min.css" rel="stylesheet">
+ <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+ <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
+>>>>>>> 2be053b8aeebde53ef8937579066f132b0d21c87
 <style>
 	/* CSS used here will be applied after bootstrap.css */
 
@@ -76,7 +84,7 @@
                 </li>
                 <li>
                     <a href="#" class="widget-header mr-3">
-                      <i style="font-size: 16pt" class="icon fa fa-bell-o"></i>
+                      <i style="font-size: 16pt" class="fa fa-bell-o"></i>
                     </a>
                 </li>
                 <li>
