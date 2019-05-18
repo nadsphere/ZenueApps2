@@ -209,8 +209,8 @@
                         </form>
                     </div>
                     <br>
-
-                    <article class="card card-product">
+                    <a href="#">
+                        <article class="card card-product">
                             <div class="card-body">
                                 <div class="row">
                                     <aside class="col-sm-3">
@@ -241,7 +241,8 @@
                                     </article>
                                 </div> 
                             </div>
-                    </article>
+                        </article>
+                    </a>
                     <article class="card card-product">
                             <div class="card-body">
                                 <div class="row">
