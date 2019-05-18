@@ -13,20 +13,20 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/fix.css" rel="stylesheet" type="text/css"/>
-  <link href="css/measure.css" rel="stylesheet" type="text/css"/>
+  <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/fix.css') }}" rel="stylesheet" type="text/css"/>
+  <link href="{{asset('css/measure.css')}}" rel="stylesheet" type="text/css"/>
 
   <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
+  <link href="{{asset('lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
+  <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style2.css" rel="stylesheet">
+  <link href="{{asset('css/style.css')}}" rel="stylesheet">
+  <link href="{{asset('css/style2.css')}}" rel="stylesheet">
 </head>
 <body>
   <header id="header">
@@ -62,7 +62,7 @@
                 </div>
             </li>
             @if ($user == null)
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalLogin">LOGIN</a></li> 
+          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalLogin">LOGIN</a></li> 
           <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
             @elseif ($user->is_eo == 1 )
             <li><a href="#about">Paket</a></li>
@@ -89,7 +89,7 @@
     </div>
   </header>
 
-    <div class="modal fade modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-login">
             <div class="modal-content">
               <div class="modal-header">				
@@ -108,7 +108,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
-                      <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+                      <input type="password" class="form-control" name="password" placeholder="Masukkan Password" required="required">
                     </div>
                   </div>
                   <div class="form-group">
@@ -136,9 +136,9 @@
                         <label for="role_as" class="opsi_name">Mendaftar Sebagai </label>
                         <br />
                         <div style="margin-left:20px">
-                          <select class="form-control" id="role_as">
-                            <option value="users"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#sub-model" data-dismiss="modal">Pelanggan</button></option>
-                            <option value="eos"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
+                          <select class="form-control" id="role_as" name="role">
+                            <option value="renter"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#sub-model" data-dismiss="modal">Pelanggan</button></option>
+                            <option value="eo"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
                         </select>
                         </div>
                     </div>
@@ -174,15 +174,6 @@
                       @endif
                   </div>
                   <div class="form-group">
-                      <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-calendar" style="margin-top:10px"></i></span>
-                        <input class="form-control" type="date" value="" id="birthdates" name="birthday" required="required" value="{{ old('birthday') }}">
-                      </div>
-                      @if ($errors->first('birthday'))
-                        <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('no_telp') }}</strong>
-                      @endif
-                  </div>
-                  <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
                       <input type="password" class="form-control" name="password" placeholder="Masukkan Password" required="required" value="{{ old('password') }}">
@@ -196,13 +187,15 @@
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block btn-lg">Sign up</button>
                   </div>
+                  <div class="modal-footer border-top-0">
+                      <p class="hint-text">Sudah Punya akun? <a href="#"> Sign In</p>
+                  </div>
                 </form>
               </div>
-              <div class="modal-footer border-top-0">Sudah Punya akun? <a href="#"> Sign In</a></div>
             </div>
         </div>
     </div>
-    <div id="eoModal" role="dialog" aria-hidden="true" class="modal fade">
+    <div id="eoModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-login">
         <div class="modal-content">
           <div class="modal-header">				
@@ -210,52 +203,40 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           </div>
           <div class="modal-body">
-            <form action="/examples/actions/confirmation.php" method="post">
-              <div class="form-group">
-                <div class="input-group">
-                    <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
-                    <br />
-                    <div style="margin-left:20px">
-                        <select class="form-control" id="role_as">
-                            <option value="users"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal2" data-dismiss="modal">Pelanggan</button></option>
-                            <option value="eos"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
-                        </select>
-                    </div>  
-                </div>
-              </div>
+            <form action=" " method="post">
               <div class="form-group">
                   <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-building" style="margin-top:10px"></i></span>
+                    <span class="input-group-addon"><i class="fa fa-building fa_color" style="margin-top:10px"></i></span>
                     <input type="text" class="form-control" name="name" placeholder="Nama EO" required>
                   </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-envelope" style="margin-top:10px"></i></span>
+                  <span class="input-group-addon"><i class="fa fa-envelope fa_color" style="margin-top:10px"></i></span>
                   <input type="email" class="form-control" name="email" placeholder="Email" required>
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-map" style="margin-top:10px"></i></span>
+                  <span class="input-group-addon"><i class="fa fa-map fa_color" style="margin-top:10px"></i></span>
                   <input type="text" class="form-control" name="alamat" placeholder="Alamat" required>
                 </div>
               </div>
               <div class="form-group">
                   <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-phone" style="margin-top:10px"></i></span>
+                    <span class="input-group-addon"><i class="fa fa-phone fa_color" style="margin-top:10px"></i></span>
                     <input type="text" class="form-control" name="kontak" placeholder="Kontak" required="required">
                   </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-globe" style="margin-top:10px"></i></span>
+                  <span class="input-group-addon"><i class="fa fa-globe fa_color" style="margin-top:10px"></i></span>
                   <input type="text" class="form-control" name="link" placeholder="Link (opsional)">
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
+                  <span class="input-group-addon"><i class="fa fa-lock fa_color" style="margin-top:10px"></i></span>
                   <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
                 </div>
               </div>
@@ -265,13 +246,15 @@
                   <label class="custom-file-label" for="gambarprofil">Foto Profil</label>
                 </div>
               </div>            
-              <p class="hint-text">Dengan Mendaftar, anda telah menyetujui <a href="#">Syarat & Kebijakan</a> Kami</p>  
+              <p class="hint-text"> <a href="#"></a> Dengan Mendaftar, anda telah menyetujui <a href="">Syarat & Ketentuan</a> Kami</p>  
               <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block btn-lg">Sign up</button>
               </div>
+              <div class="modal-footer border-top-0">
+                  <p class="hint-text">Sudah Punya akun? <a href="#"> Sign In</p>
+              </div>
             </form>
           </div>
-          <div class="modal-footer border-top-0">Sudah Punya akun? <a href="#">  Sign In</a></div>
         </div>
       </div>
     </div> 
@@ -288,8 +271,8 @@
             <div class="carousel-item active">
               <img class="first-slide img-box" style="background: rgb(193, 23, 23, .5); height: 50%;" src="img/bg-1.jpg" alt="First slide">
               <div class="carousel-caption text-left d-none d-md-block ">
-                <h3 class="display-4">Get 30% Off</h3>
-                <p class="lead">Untuk setiap pemesanan pertama</p>
+                <h3 class="display-4" style="color:white;">Get 30% Off</h3>
+                <p class="lead" style="color:white;">Untuk setiap pemesanan pertama</p>
                 <a class="btn btn-lg btn-outline-light" href="#" role="button">Pesan Sekarang</a>
               </div>
             </div>
@@ -1053,7 +1036,7 @@
       </div>
     </div>
   </footer>
-  <!-- <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a> -->
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1085,14 +1068,12 @@ if (e.keyCode == 13)
 }
 });
 </script>
+
 <script>
-  abstract
   $('#role_as').change(function(){
-    //this is just getting the value that is selected
     var title = $(this).val();
-    $('#eoModal').modal({
-      closeExisting:true
-    });
+      $('#eoModal').modal('show');
+      $('#modalRegist').modal('hide');
   });
 </script>
 

@@ -55,12 +55,15 @@
                 </a>
             </li>
             <li>
-              <div class="input-group">
-                  <div class="form-group has-search">
-                      <span class="fa fa-glip fa-search form-control-feedback"></span>
-                      <input type="text" class="form-controls form-control" placeholder="Cari...">
-                  </div>
+            <div class="input-group">
+              <div class="form-group has-search">
+									<form action="{{url('/search')}}" method="post" id="searchPaket">
+										{{ csrf_field() }}
+										<span class="fa fa-glip fa-search form-control-feedback"></span>
+										<input type="text" class="form-controls form-control" name="paket" placeholder="Cari...">
+								</form>
               </div>
+            </div>
           </li>
             <!-- <li><a href="after-login.html">Iklan</a></li> -->
             @if ($user == null)
@@ -222,7 +225,7 @@
                             <td>Rp. {{ number_format($value->harga_paket)}} ,-</td>
                           <td><a href="{{url('edit_data/'.$value->id)}}" data-toggle="modal" data-target="#editpaket{{$value->id}}" class="btn btn-warning fa fa-pencil"></a>
                             <a href="{{url('hapus_paket/'.$value->id)}}" class="btn btn-danger fa fa-trash"></a>
-                            <a href="{{url('detail_paket')}}" class="btn btn-info fa fa-info-circle"></a></td>
+                            <a href="{{url('/detail_paket/'.$value->id)}}" class="btn btn-info fa fa-info-circle"></a></td>
                           </tr> 
                           @foreach ($paket as $item)
                             <div class="modal fade" tabindex="-1" role="dialog" id="editpaket{{$item->id}}" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -233,11 +236,13 @@
                                     </div>
                                     <div class="modal-body">
                                         <form class="" action="{{url('/update/'.$item->id)}}" enctype="multipart/form-data" method="POST">
-                                            @csrf  
+                                            {{ csrf_field() }}
                                           <div class="mb-3">
                                             <label for="foto_p">Foto Produk</label>
-                                            <input type="file" class="form-control-file" id="lain" name="gambar_paket" value="{{$item->gambar_paket}}">
-                                            
+                                            @php
+                                              $images_paket = json_decode($value->gambar_paket);
+                                            @endphp
+                                            <input type="file" class="form-control-file" id="lain" name="gambar_paket[]" value="">
                                           </div>
                                           <div class="mb3">
                                             <label for="nama_p">Nama Produk</label>
