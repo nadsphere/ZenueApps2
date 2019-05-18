@@ -1034,7 +1034,7 @@
             $('#eoModal').modal({
               closeExisting:true
             });
-          });
+    });
   </script>
 
 </body>
