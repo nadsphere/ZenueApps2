@@ -3,20 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | General Form Elements</title>
-  <!-- Tell the browser to be responsive to screen width -->
+  <title>Form Pembayaran</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Favicons -->
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style2.css" rel="stylesheet">
-    <link href="css/ui.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/fix.css" rel="stylesheet" type="text/css"/>
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style2.css" rel="stylesheet">
+  <link href="css/ui.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/fix.css" rel="stylesheet" type="text/css"/>
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
     <button type="button" class="mobile-nav-toggle d-lg-none"><i class="fa fa-bars"></i></button>
@@ -43,6 +40,20 @@
                       <a class="dropdown-item" href="#">
                           <div class="notification__icon-wrapper">
                             <div class="notification__icon">
+                              <i class="fa fa-times-circle"></i>
+                            </div>
+                          </div>
+                          <div class="notification__content">
+                            <span class="notification__category">Order</span>
+                            <p>Pesanan Anda Dibatalkan..</p>
+                          </div>
+                        </a>
+                  </li>
+                  <hr>
+                  <li>
+                      <a class="dropdown-item" href="#">
+                          <div class="notification__icon-wrapper">
+                            <div class="notification__icon">
                               <i class="fa fa-exclamation-triangle"></i>
                             </div>
                           </div>
@@ -57,7 +68,7 @@
                       <a class="dropdown-item" href="#">
                           <div class="notification__icon-wrapper">
                             <div class="notification__icon">
-                              <i class="fa fa-check-circle"></i>
+                              <i class="fa fa-info"></i>
                             </div>
                           </div>
                           <div class="notification__content">
@@ -71,7 +82,7 @@
                       <a class="dropdown-item" href="#">
                           <div class="notification__icon-wrapper">
                             <div class="notification__icon">
-                              <i class="fa fa-check-circle-o"></i>
+                              <i class="fa fa-check-circle"></i>
                             </div>
                           </div>
                           <div class="notification__content">
@@ -107,10 +118,10 @@
         </nav>
       </div>
     </header>
-    <main id="main">
-        <section class="section-bg2"> 
+    <main id="main" class="section-bg2">
+        <section class="container"> 
             <br /><br />
-            <div class="container bg-white" style="margin-top:50px">
+            <div class=" bg-white" style="margin-top:50px">
                 <br /><br />  
                 <header class="section-header">
                     <h3 class="title">Pesanan Anda</h3>
