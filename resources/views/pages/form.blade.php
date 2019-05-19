@@ -62,60 +62,103 @@
       </div>
     </header>
     <main id="main">
-        <section class="bg-white"> 
-            <div class="container" style="margin-top:75px">
-                <br /><br />
+        <section class="section-bg2"> 
+            <br /><br />
+            <div class="container bg-white" style="margin-top:50px">
+                <br /><br />  
                 <header class="section-header">
-                    <h3 class="title">Paket Anda</h3>
+                    <h3 class="title">Pesanan Anda</h3>
                 </header>
-                <br />
-                <table class="table">
-                    <tr>
-                        <th>Nama Paket</th>
-                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td>
-                        <tr></tr>            
-                        <th>Fasilitas</th>
-                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td> 
-                        <tr></tr>
-                        <th>Harga</th>
-                        <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td>
-                        <tr></tr>
-                    </tr>
-                </table>
-                <div>
-                  <form action="">
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1">Nama Pembeli</label>
-                      <input type="text" class="form-control" id="exInputNama1">
+                <br /><br /><br />
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        {{-- <table class="table">
+                            <tr>
+                                <th> Nama Paket</th>
+                                <td>Paket Nikah (Kelas Ekonomi)</td>
+                                <tr></tr>            
+                                <th>Fasilitas</th>
+                                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td> 
+                                <tr></tr>
+                                <th>Harga</th>
+                                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td>
+                                <tr></tr>
+                            </tr>
+                        </table> --}}
+                        <form>
+                            <div class="form-group row">
+                              <label for="name" class="col-sm-3 col-form-label"><b>Nama Paket</b></label>
+                              <div class="col-sm-9">
+                                <input type="text" id="name" name="name" readonly class="form-control-plaintext" id="name" value="Paket Nikah Minimalis">
+                              </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row">
+                                <label for="birthday" class="col-sm-3 col-form-label"><b>Fasilitas</b></label>
+                                <div class="col-sm-9">
+                                  <textarea class="form-control-plaintext" id="exampleFormControlTextarea1" rows="2" readonly>Tropical tent, kursi, dan buffet dan makan yang 100% halal</textarea>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row">
+                              <label for="email" class="col-sm-3 col-form-label"><b>Harga (Rp) </b></label>
+                              <div class="col-sm-9">
+                                <input type="number" class="form-control-plaintext" id="email" name="harga" placeholder="" value="25000000" readonly>
+                              </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exInputEmail1" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Alamat</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleFormControlInput1">Nomor Telpon</label>
-                      <input type="number" class="form-control" id="exInputTelpon1" placeholder="Nomor Telpon">
-                    </div> 
-                    <div class="form-group">
-                          <label>Pilih Pembayaran</label>
-                          <select class="form-control">
-                            <option>Transfer</option>
-                            <option>Midtrans</option>
-                          </select>
-                    </div>
-                    <button class="btn btn-danger" type="submit">Submit</button>
-                    <button class="btn btn-danger" type="submit">Reset</button>
-                  </form>
+                    <div class="col-md-1"></div>
                 </div>
-            </div>                    		                            
+                
+                <br /><br />
+                <div class="row">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-10">
+                      <form action="">
+                          <div class="form-group row">
+                              <label for="inputEmail3" class="col-sm-2 col-form-label"><b> Nama Pembeli</b></label>
+                              <div class="col-sm-10">
+                                  <input type="text" class="form-control-plaintext" id="exInputNama1" value="Joko Mulyadi" readonly>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="email" class="col-sm-2 col-form-label"><b> Email</b></label>
+                              <div class="col-sm-10">
+                                  <input type="email" class="form-control" id="email" placeholder="" name="email" value="jokomul13@gmail.com">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="telpon" class="col-sm-2 col-form-label"><b> Nomor Telepon</b></label>
+                              <div class="col-sm-10">
+                                <input type="number" class="form-control" name="no_telpon" id="telpon" placeholder="0813xxxx" value="081356224577">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="bayar" class="col-sm-2 col-form-label"><b>Metode Pembayaran</b></label>
+                              <div class="col-sm-10">
+                                  <select class="form-control" disabled>
+                                      <option>Transfer</option>
+                                  </select>
+                              </div>
+                          </div>
+                          <br />
+                          <div class="text-center">
+                              <button class="btn btn-danger" type="submit">Lanjutkan</button>
+                              <button class="btn btn-outline-danger" type="reset">Batal</button>
+                          </div>
+                          <br /><br />
+                      </form>
+                  </div>
+                  <div class="col-md-1"></div>
+                </div>
+                
+            </div>  
+            <br /><br /><br /><br />                  		                            
         </section> 
-        
     </main>
-    <br /><br /><br /><br />
+
       <footer id="footer" class="section-bg">
         <div class="footer-top">
           <div class="container">
