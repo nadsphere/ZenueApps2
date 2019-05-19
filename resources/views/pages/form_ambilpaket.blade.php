@@ -5,15 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Pengambilan Paket</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style2.css" rel="stylesheet">
-    <link href="css/ui.css" rel="stylesheet">
+    <link href="{{asset('img/favicon.png')}}" rel="icon">
+    <link href="{{asset('img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/style2.css')}}" rel="stylesheet">
+    <link href="{{asset('css/ui.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/fix.css" rel="stylesheet" type="text/css"/>
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/fix.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{asset('lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
 
 </head>
 <body>
@@ -107,7 +107,7 @@
                     </div>
                 </div>
             </li>
-            <li class="drop-down"><a href="index.html"><span>JOKO MULYADI</span></a>
+            <li class="drop-down"><a href="index.html"><span>{{$user_nama}}</span></a>
               <ul>
                 <li><a href="#">Edit Profil</a></li>
                 <li><a href="#">My Order</a></li>
@@ -131,23 +131,24 @@
                     <div class="row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
-                            <form action="">
+                            <form action="/form_paket" method="post">
+                            @csrf
                                 <div class="form-group row">
                                     <label for="nama_cust" class="col-sm-3 col-form-label"><b> Nama Pembeli</b></label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control-plaintext" id="nama_cust" value="Joko Mulyadi" readonly>
+                                        <input type="text" class="form-control-plaintext" id="nama_cust" value="{{$user_nama}}" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="email" class="col-sm-3 col-form-label"><b> Email</b></label>
                                     <div class="col-sm-9">
-                                        <input type="email" class="form-control" id="email" placeholder="" name="email" value="jokomul13@gmail.com">
+                                        <input type="email" class="form-control" id="email" value="{{$user->email}}" name="email"  readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="telpon" class="col-sm-3 col-form-label"><b> Nomor Telepon</b></label>
                                     <div class="col-sm-9">
-                                      <input type="number" class="form-control" name="no_telpon" id="telpon" placeholder="0813xxxx" value="">
+                                      <input type="number" class="form-control" name="no_telp" value="{{$user->no_telp}}" readonly id="telpon" placeholder="0813xxxx">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -159,37 +160,31 @@
                                 <div class="form-group row">
                                     <label for="nama_barang" class="col-sm-3 col-form-label"><b> Nama Paket yang Diambil</b></label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="nama_barang" name="nama_barang" placeholder="" name="email" value="">
+                                        <input type="text" class="form-control" id="nama_barang" name="nama_paket" placeholder="" value="{{$paket->nama_paket}}" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="des_pkt" class="col-sm-3 col-form-label"><b>Deskripsi</b></label>
                                     <div class="col-sm-9">
-                                        <textarea name="deskrisi_pkt" class="form-control" name="" id="des_pkt" rows="3"></textarea>
+                                        <textarea name="deskrisi_pkt" class="form-control" name="deskripsi" id="des_pkt" rows="3"  readonly>{{$paket->deskripsi}} </textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="tgl_ambil" class="col-sm-3 col-form-label"><b>Tanggal Ambil</b></label>
+                                    <label for="tgl_ambil" class="col-sm-3 col-form-label"><b>Tanggal Acara</b></label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="tgl_ambil" name="nama_barang" placeholder="" name="email" value="">
+                                        <input type="date" class="form-control" id="tgl_acara" name="tanggalacara">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="harga_paket" class="col-sm-3 col-form-label"><b>Harga Paket</b></label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="tgl_ambil" name="nama_barang" placeholder="" name="harga_paket" value="">
+                                        <input type="text" class="form-control" id="tgl_ambil" name="harga_paket" placeholder="" value="{{$paket->harga_paket}}" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="harga_paket" class="col-sm-3 col-form-label"><b>Pembayaran</b></label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control-plaintext" id="tgl_ambil" name="nama_barang" placeholder="" name="harga_paket" value="Transfer" readonly>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="harga_paket" class="col-sm-3 col-form-label"><b>Status Pembayaran</b></label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control-plaintext" id="tgl_ambil" name="nama_barang" placeholder="" name="harga_paket" value="Sudah Membayar Uang Penuh" readonly>
+                                        <input type="text" class="form-control-plaintext" name="harga_paket" value="Transfer" readonly>
                                     </div>
                                 </div>
                                 <br />
@@ -277,11 +272,11 @@
       
   <!-- ./wrapper -->
 
-  <script src="../../dist/js/demo.js"></script>
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="{{asset('dist/js/demo.js')}}"></script>
+  <script src="{{asset('lib/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('lib/wow/wow.min.js')}}"></script>
+  <script src="{{asset('lib/waypoints/waypoints.min.js')}}"></script>
+  <script src="{{asset('js/main.js')}}"></script>
 </body>
 </html>

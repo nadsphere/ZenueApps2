@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Paket;
 use App\User;
+use App\Transaction;
 use Auth;
 
 class PaketController extends Controller
@@ -192,4 +193,6 @@ class PaketController extends Controller
             return view('pages.paket_details', compact('user', 'id_eo', 'paket', 'nama_eo'));
         }
     }
+
+
 }
