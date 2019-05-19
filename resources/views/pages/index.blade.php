@@ -102,13 +102,13 @@
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
-                      <input type="text" class="form-control" name="email" placeholder="Masukkan Email" required="required">
+                      <input type="text" class="form-control" name="no_telp" placeholder="Masukkan No Telp" required="required">
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-lock" style="margin-top:10px"></i></span>
-                      <input type="password" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+                      <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
                     </div>
                   </div>
                   <div class="form-group">

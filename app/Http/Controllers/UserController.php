@@ -67,17 +67,18 @@ class UserController extends Controller
         $user = Auth::guard('users')->user();        
         return view('pages.index', compact('user'));
     }
+
     public function login(Request $request)
     {
         $auth = Auth::guard('users')->attempt([
             'no_telp' => $request->input('no_telp'),
             'password' => $request->input('password')
         ], true);
-
+        
         if ($auth){
-            return redirect('/');
+            return redirect('/', compact('user'));
         }else{
-            return Redirect::back();
+           return 0;
         }
     }
 
