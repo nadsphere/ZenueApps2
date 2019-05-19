@@ -65,7 +65,7 @@
           <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalLogin">LOGIN</a></li> 
           <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
             @elseif ($user->is_eo == 1 )
-            <li><a href="#about">Paket</a></li>
+            <li><a href="{{ url('/paket') }}">Paket</a></li>
             <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
                 <ul>
                   <li><a href="{{ url('/paket') }}">Paket</a></li>
