@@ -6,6 +6,9 @@ Route::get('/', function () {
 Route::get('/edit_user', function () {
     return view('pages.user_editprofile');
 });
+Route::get('/my_request', function () {
+    return view('pages.user_transact');
+});
 Route::get('/edit_eo', function () {
     return view('pages.eo_editprofile');
 });

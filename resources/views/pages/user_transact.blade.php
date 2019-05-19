@@ -3,17 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Form Pembayaran</title>
+  <title>My Request</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/style2.css" rel="stylesheet">
-  <link href="css/ui.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/fix.css" rel="stylesheet" type="text/css"/>
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style2.css" rel="stylesheet">
+    <link href="css/ui.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fix.css" rel="stylesheet" type="text/css"/>
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        .img-circle{
+          width: 100px;
+          height: 100px;
+        }
+        .txt-small{
+          font-size: 15px;
+      }
+    </style>
 </head>
 <body>
     <button type="button" class="mobile-nav-toggle d-lg-none"><i class="fa fa-bars"></i></button>
@@ -119,105 +128,103 @@
       </div>
     </header>
     <main id="main" class="section-bg2">
-        <section class="container"> 
+        <section class="container">
             <br />  <br />  <br /> <br />
             <div class=" bg-white" style="margin-top:50px">
-                <br /><br />  
-                <header class="section-header">
-                    <h3 class="title">Pesanan Anda</h3>
-                </header>
-                <br /><br />
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        {{-- <table class="table">
-                            <tr>
-                                <th> Nama Paket</th>
-                                <td>Paket Nikah (Kelas Ekonomi)</td>
-                                <tr></tr>            
-                                <th>Fasilitas</th>
-                                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td> 
-                                <tr></tr>
-                                <th>Harga</th>
-                                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td>
-                                <tr></tr>
-                            </tr>
-                        </table> --}}
-                        <form>
-                            <hr>
-                            <div class="form-group row">
-                              <label for="name" class="col-sm-3 col-form-label"><b>Nama Paket</b></label>
-                              <div class="col-sm-9">
-                                <input type="text" id="name" name="name" readonly class="form-control-plaintext" id="name" value="Paket Nikah Minimalis">
-                              </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <label for="birthday" class="col-sm-3 col-form-label"><b>Fasilitas</b></label>
-                                <div class="col-sm-9">
-                                  <textarea class="form-control-plaintext" id="exampleFormControlTextarea1" rows="2" readonly>Tropical tent, kursi, dan buffet dan makan yang 100% halal</textarea>
+                    <br /><br />  
+                    <header class="section-header">
+                        <h3 class="title">Pesanan Anda</h3>
+                    </header>
+                    <br /><br />
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            {{-- <table class="table">
+                                <tr>
+                                    <th> Nama Paket</th>
+                                    <td>Paket Nikah (Kelas Ekonomi)</td>
+                                    <tr></tr>            
+                                    <th>Fasilitas</th>
+                                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td> 
+                                    <tr></tr>
+                                    <th>Harga</th>
+                                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td>
+                                    <tr></tr>
+                                </tr>
+                            </table> --}}
+                            <form>
+                                <div class="form-group row">
+                                  <label for="name" class="col-sm-3 col-form-label"><b>Nama Paket</b></label>
+                                  <div class="col-sm-9">
+                                    <input type="text" id="name" name="name" readonly class="form-control-plaintext" id="name" value="Paket Nikah Minimalis">
+                                  </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                              <label for="email" class="col-sm-3 col-form-label"><b>Harga (Rp) </b></label>
-                              <div class="col-sm-9">
-                                <input type="number" class="form-control-plaintext" id="email" name="harga" placeholder="" value="25000000" readonly>
-                              </div>
-                            </div>
-                            <hr>
-                        </form>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="birthday" class="col-sm-3 col-form-label"><b>Fasilitas</b></label>
+                                    <div class="col-sm-9">
+                                      <textarea class="form-control-plaintext" id="exampleFormControlTextarea1" rows="2" readonly>Tropical tent, kursi, dan buffet dan makan yang 100% halal</textarea>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="form-group row">
+                                  <label for="email" class="col-sm-3 col-form-label"><b>Harga (Rp) </b></label>
+                                  <div class="col-sm-9">
+                                    <input type="number" class="form-control-plaintext" id="email" name="harga" placeholder="" value="25000000" readonly>
+                                  </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-1"></div>
                     </div>
-                    <div class="col-md-1"></div>
+                    
+                    <br /><br />
+                    <div class="row">
+                      <div class="col-md-1"></div>
+                      <div class="col-md-10">
+                          <form action="">
+                              <div class="form-group row">
+                                  <label for="inputEmail3" class="col-sm-2 col-form-label"><b> Nama Pembeli</b></label>
+                                  <div class="col-sm-10">
+                                      <input type="text" class="form-control-plaintext" id="exInputNama1" value="Joko Mulyadi" readonly>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="email" class="col-sm-2 col-form-label"><b> Email</b></label>
+                                  <div class="col-sm-10">
+                                      <input type="email" class="form-control" id="email" placeholder="" name="email" value="jokomul13@gmail.com">
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="telpon" class="col-sm-2 col-form-label"><b> Nomor Telepon</b></label>
+                                  <div class="col-sm-10">
+                                    <input type="number" class="form-control" name="no_telpon" id="telpon" placeholder="0813xxxx" value="081356224577">
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="bayar" class="col-sm-2 col-form-label"><b>Metode Pembayaran</b></label>
+                                  <div class="col-sm-10">
+                                      <select class="form-control" disabled>
+                                          <option>Transfer</option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <br />
+                              <div class="text-center">
+                                  <button class="btn btn-danger" type="submit">Lanjutkan</button>
+                                  <button class="btn btn-outline-danger" type="reset">Batal</button>
+                              </div>
+                              <br /><br />
+                          </form>
+                      </div>
+                      <div class="col-md-1"></div>
+                    </div>
+                    
                 </div>
-                <br /><br />
-                <div class="row">
-                  <div class="col-md-1"></div>
-                  <div class="col-md-10">
-                      <form action="">
-                          <div class="form-group row">
-                              <label for="inputEmail3" class="col-sm-3 col-form-label"><b> Nama Pembeli</b></label>
-                              <div class="col-sm-9">
-                                  <input type="text" class="form-control-plaintext" id="exInputNama1" value="Joko Mulyadi" readonly>
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="email" class="col-sm-3 col-form-label"><b> Email</b></label>
-                              <div class="col-sm-9">
-                                  <input type="email" class="form-control" id="email" placeholder="" name="email" value="jokomul13@gmail.com">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="telpon" class="col-sm-3 col-form-label"><b> Nomor Telepon</b></label>
-                              <div class="col-sm-9">
-                                <input type="number" class="form-control" name="no_telpon" id="telpon" placeholder="0813xxxx" value="081356224577">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="bayar" class="col-sm-3 col-form-label"><b>Metode Pembayaran</b></label>
-                              <div class="col-sm-9">
-                                  <select class="form-control-plaintext" disabled>
-                                      <option>Transfer</option>
-                                  </select>
-                              </div>
-                          </div>
-                          <br />
-                          <div class="text-center">
-                              <button class="btn btn-danger" type="submit">Lanjutkan</button>
-                              <button class="btn btn-outline-danger" type="reset">Batal</button>
-                          </div>
-                          <br /><br />
-                      </form>
-                  </div>
-                  <div class="col-md-1"></div>
-                </div>
-                
-            </div>  
-            <br /><br /><br /><br />                  		                            
-        </section> 
+        </section>
+        
     </main>
-
-    <footer id="footer" class="section-bg">
+      <footer id="footer" class="section-bg">
         <div class="footer-top">
           <div class="container">
               <div class="row">
