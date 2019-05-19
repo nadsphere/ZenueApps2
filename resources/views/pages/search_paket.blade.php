@@ -304,6 +304,7 @@
                                                 <div class="label-rating"><b> (125)</b></div> 
                                                 <p class="title"> <b>{{$value->id_eo}}</b></p> 
                                         </div>
+                                        <p class="texts">{{$value->kategori}}</p>
                                         <p class="texts">{{$value->deskripsi}}</p>
                                         <p class="texts">Rp. {{ number_format($value->harga_paket)}} ,-</p>
                                         <a href="#" class="btn btn-outline-danger">Ambil Penawaran</a>

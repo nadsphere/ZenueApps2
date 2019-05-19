@@ -49,6 +49,7 @@
                   <i style="font-size: 16pt" class="icon fa fa-shopping-bag"></i>
                 </a>
             </li>
+            @if ($user->is_eo == 1)
             <li class="dropdown notifications">
                 <a href="#" class="widget-header mr-3" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
                     <i style="font-size: 16pt" class="icon fa fa-bell" ></i>
@@ -102,8 +103,8 @@
                       <!-- <a class="dropdown-item notification__all text-center" href="#"> Lihat Semua </a> -->
                   </li>
                 </ul>
-    
             </li>
+            @endif
             <li>
             <div class="input-group">
               <div class="form-group has-search">
