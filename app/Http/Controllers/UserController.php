@@ -18,14 +18,12 @@ class UserController extends Controller
         $user = new User();
 
         $validator = $request->validate([
-            'role' => 'required',
             'name'=>'required|min:4',
             'email'=>'required|email|unique:users',
             'no_telp' => 'required|min:11',
             'password' => 'required|min:8',
         ],
         [
-            'role.required' => 'This field cannot be empty',
             'name.required' => 'Name is required',
             'name.min' => 'Name must be at least 4 characters.',
             'email.required' => 'Email is required',
@@ -35,19 +33,20 @@ class UserController extends Controller
         ]);
 
         
-        if($request->role == 'eo'){
+        // if($request->role == 'eo'){
             
-            $user->is_eo = 1;  
-            $user->is_renter = 0;  
+        //     $user->is_eo = 1;  
+        //     $user->is_renter = 0;  
             
-        } 
-        elseif ($request->role == 'renter')   {
+        // } 
+        // elseif ($request->role == 'renter')   {
             
-            $user->is_eo = 0;  
-            $user->is_renter = 1; 
-        }   
+        //     $user->is_eo = 0;  
+        //     $user->is_renter = 1; 
+        // }   
         
-        
+        $user->is_eo=0;
+        $user->is_renter=1;
         $user->name = $request['name'];
         $user->email = $request['email'];
         $user->no_telp = $request['no_telp'];

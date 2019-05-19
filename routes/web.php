@@ -6,7 +6,7 @@ Route::get('/', function () {
 Route::get('/edit_user', function () {
     return view('pages.user_editprofile');
 });
-Route::get('/my_request', function () {
+Route::get('/request', function () {
     return view('pages.user_transact');
 });
 Route::get('/ambil_paket', function () {
@@ -22,6 +22,12 @@ Route::get('/eo_profile', function () {
 
 Route::get('/store', function () {
     return view('pages.eo_profile');
+});
+
+Route::get('/dashboard', 'TemplateControl@index');
+
+Route::get('/form', function () {
+    return view('pages.form');
 });
 
 // LOGIN, REGISTER, LOGOUT
@@ -44,9 +50,3 @@ Route::resource('pakets', 'PaketController');
 
 //SEARCHING
 Route::post('/search', 'PaketController@search');
-
-Route::get('/dashboard', 'TemplateControl@index');
-
-Route::get('/form', function () {
-    return view('pages.form');
-});
