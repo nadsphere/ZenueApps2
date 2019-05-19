@@ -27,6 +27,8 @@ Route::get('/form', function () {
     return view('pages.form');
 });
 
+Route ::post('/registereo', 'UserController@store_eo');
+
 // LOGIN, REGISTER, LOGOUT
 Route::group(['middleware' => 'web'], function () {
     Route::post('/register', 'UserController@store');

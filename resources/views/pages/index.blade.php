@@ -79,6 +79,7 @@
           <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
               <ul>
               <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegistEO">Buka Event Organizer</a></li>
+              <li><a href="{{ url('/paket') }}">Paket</a></li>
                 <li><a href="#">Edit Profil</a></li>
                 <li><a href="#">My Order</a></li>
                 <li><a href="#">My Wishlist</a></li>
@@ -196,79 +197,41 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           </div>
           <div class="modal-body">
-            <form action=" " method="post">
+            <form action="{{'/registereo'}}" method="post">
                 {{ csrf_field() }}
-                <div class="form-group">
-                  @if ($errors->first('role'))
-                  <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('role') }}</strong>
-                @endif
-                </div>
-                <div class="form-group">
-                    <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-user fa_color" style="margin-top:10px"></i></span>
-                      <input type="text" class="form-control" name="name" placeholder="Masukkan Nama" required="required" value="{{ old('name') }}">
-                    </div>
-                @if ($errors->first('name'))
-                  <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('name') }}</strong>
-                @endif
-                </div>
-                <div class="form-group">
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-envelope fa_color" style="margin-top:10px"></i></span>
-                    <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required" value="{{ old('email') }}">
-                  </div>
-                  @if ($errors->first('email'))
-                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('email') }}</strong>
-                  @endif
-                </div>
-                <div class="form-group">
-                  <div class="input-group">
-                    <span class="input-group-addon"><i class="fa fa-lock fa_color" style="margin-top:10px"></i></span>
-                    <input type="password" class="form-control" name="password" placeholder="Masukkan Password" required="required" value="{{ old('password') }}">
-                  </div>
-                  @if ($errors->first('password'))
-                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('password') }}</strong>
-                  @endif
-                </div>
               <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-building fa_color" style="margin-top:10px"></i></span>
-                    <input type="text" class="form-control" name="name" placeholder="Nama EO" required>
+                    <input type="text" class="form-control" name="namaeo" placeholder="Nama EO" required>
                   </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-envelope fa_color" style="margin-top:10px"></i></span>
-                  <input type="email" class="form-control" name="email" placeholder="Email" required>
+                  <input type="email" class="form-control" name="emaileo" placeholder="Email" required>
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-map fa_color" style="margin-top:10px"></i></span>
-                  <input type="text" class="form-control" name="alamat" placeholder="Alamat" required>
+                  <input type="text" class="form-control" name="alamateo" placeholder="Alamat" required>
                 </div>
               </div>
               <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-phone fa_color" style="margin-top:10px"></i></span>
-                    <input type="text" class="form-control" name="kontak" placeholder="Kontak" required="required">
+                    <input type="text" class="form-control" name="kontakeo" placeholder="Kontak" required="required">
                   </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-globe fa_color" style="margin-top:10px"></i></span>
-                  <input type="text" class="form-control" name="link" placeholder="Link (opsional)">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock fa_color" style="margin-top:10px"></i></span>
-                  <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+                  <input type="text" class="form-control" name="linkeo" placeholder="Link (opsional)">
                 </div>
               </div>
               <div class="form-group">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" name="gambar_profil" accept="image/*" id="gambarprofil" required>
+                  <input type="file" class="custom-file-input" name="gambar_profil_eo" accept="image/*" id="gambarprofil" required>
                   <label class="custom-file-label" for="gambarprofil">Foto Profil</label>
                 </div>
               </div>            
