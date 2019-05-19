@@ -1,278 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/style2.css">
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Edit Profil Anda</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style2.css" rel="stylesheet">
+    <link href="css/ui.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/fix.css" rel="stylesheet" type="text/css"/>
-    <title>Document</title>
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <style>
-           
-        div.cover-photo {
-            background-size: cover;
-            height: 300px;
+        .img-circle{
+          width: 100px;
+          height: 100px;
         }
-        .profile-photo-warp {
-        position: inherit;
-        }
-            body{
-                margin-top:20px;
-                background:#eee;
-            }
-            
-            .card {
-                position: relative;
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-direction: column;
-                flex-direction: column;
-                min-width: 0;
-                word-wrap: break-word;
-                background-color: #fff;
-                background-clip: border-box;
-                border: 1px solid #e5e9f2;
-                border-radius: .2rem
-            }
-            
-            .card>hr {
-                margin-right: 0;
-                margin-left: 0
-            }
-            
-            .card>.list-group:first-child .list-group-item:first-child {
-                border-top-left-radius: .2rem;
-                border-top-right-radius: .2rem
-            }
-            
-            .card>.list-group:last-child .list-group-item:last-child {
-                border-bottom-right-radius: .2rem;
-                border-bottom-left-radius: .2rem
-            }
-            
-            .card-body {
-                -ms-flex: 1 1 auto;
-                flex: 1 1 auto;
-                padding: 1.25rem
-            }
-            
-            .card-title {
-                margin-bottom: .75rem
-            }
-            
-            .card-subtitle {
-                margin-top: -.375rem
-            }
-            
-            .card-subtitle,
-            .card-text:last-child {
-                margin-bottom: 0
-            }
-            
-            .card-link:hover {
-                text-decoration: none
-            }
-            
-            .card-link+.card-link {
-                margin-left: 1.25rem
-            }
-            
-            .card-header {
-                padding: .75rem 1.25rem;
-                margin-bottom: 0;
-                color: inherit;
-                background-color: #fff;
-                border-bottom: 1px solid #e5e9f2
-            }
-            
-            .card-header:first-child {
-                border-radius: calc(.2rem - 1px) calc(.2rem - 1px) 0 0
-            }
-            
-            .card-header+.list-group .list-group-item:first-child {
-                border-top: 0
-            }
-            
-            .card-footer {
-                padding: .75rem 1.25rem;
-                background-color: #fff;
-                border-top: 1px solid #e5e9f2
-            }
-            
-            .card-footer:last-child {
-                border-radius: 0 0 calc(.2rem - 1px) calc(.2rem - 1px)
-            }
-            
-            .card-header-tabs {
-                margin-bottom: -.75rem;
-                border-bottom: 0
-            }
-            
-            .card-header-pills,
-            .card-header-tabs {
-                margin-right: -.625rem;
-                margin-left: -.625rem
-            }
-            
-            .card-img-overlay {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                padding: 1.25rem
-            }
-            
-            .card-img {
-                width: 100%;
-                border-radius: calc(.2rem - 1px)
-            }
-            
-            .card-img-top {
-                width: 100%;
-                border-top-left-radius: calc(.2rem - 1px);
-                border-top-right-radius: calc(.2rem - 1px)
-            }
-            
-            .card-img-bottom {
-                width: 100%;
-                border-bottom-right-radius: calc(.2rem - 1px);
-                border-bottom-left-radius: calc(.2rem - 1px)
-            }
-            
-            .card-deck {
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-direction: column;
-                flex-direction: column
-            }
-            
-            .card-deck .card {
-                margin-bottom: .75rem
-            }
-            
-            @media (min-width:576px) {
-                .card-deck {
-                    -ms-flex-flow: row wrap;
-                    flex-flow: row wrap;
-                    margin-right: -.75rem;
-                    margin-left: -.75rem
-                }
-                .card-deck .card {
-                    display: -ms-flexbox;
-                    display: flex;
-                    -ms-flex: 1 0 0%;
-                    flex: 1 0 0%;
-                    -ms-flex-direction: column;
-                    flex-direction: column;
-                    margin-right: .75rem;
-                    margin-bottom: 0;
-                    margin-left: .75rem
-                }
-            }
-            
-            .card-group {
-                display: -ms-flexbox;
-                display: flex;
-                -ms-flex-direction: column;
-                flex-direction: column
-            }
-            
-            .card-group>.card {
-                margin-bottom: .75rem
-            }
-            
-            @media (min-width:576px) {
-                .card-group {
-                    -ms-flex-flow: row wrap;
-                    flex-flow: row wrap
-                }
-                .card-group>.card {
-                    -ms-flex: 1 0 0%;
-                    flex: 1 0 0%;
-                    margin-bottom: 0
-                }
-                .card-group>.card+.card {
-                    margin-left: 0;
-                    border-left: 0
-                }
-                .card-group>.card:first-child {
-                    border-top-right-radius: 0;
-                    border-bottom-right-radius: 0
-                }
-                .card-group>.card:first-child .card-header,
-                .card-group>.card:first-child .card-img-top {
-                    border-top-right-radius: 0
-                }
-                .card-group>.card:first-child .card-footer,
-                .card-group>.card:first-child .card-img-bottom {
-                    border-bottom-right-radius: 0
-                }
-                .card-group>.card:last-child {
-                    border-top-left-radius: 0;
-                    border-bottom-left-radius: 0
-                }
-                .card-group>.card:last-child .card-header,
-                .card-group>.card:last-child .card-img-top {
-                    border-top-left-radius: 0
-                }
-                .card-group>.card:last-child .card-footer,
-                .card-group>.card:last-child .card-img-bottom {
-                    border-bottom-left-radius: 0
-                }
-                .card-group>.card:only-child {
-                    border-radius: .2rem
-                }
-                .card-group>.card:only-child .card-header,
-                .card-group>.card:only-child .card-img-top {
-                    border-top-left-radius: .2rem;
-                    border-top-right-radius: .2rem
-                }
-                .card-group>.card:only-child .card-footer,
-                .card-group>.card:only-child .card-img-bottom {
-                    border-bottom-right-radius: .2rem;
-                    border-bottom-left-radius: .2rem
-                }
-                .card-group>.card:not(:first-child):not(:last-child):not(:only-child),
-                .card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-footer,
-                .card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-header,
-                .card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
-                .card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-img-top {
-                    border-radius: 0
-                }
-            }
-            
-            .card-columns .card {
-                margin-bottom: .75rem
-            }
-            
-            @media (min-width:576px) {
-                .card-columns {
-                    -webkit-column-count: 3;
-                    column-count: 3;
-                    -webkit-column-gap: 1.25rem;
-                    column-gap: 1.25rem;
-                    orphans: 1;
-                    widows: 1
-                }
-                .card-columns .card {
-                    display: inline-block;
-                    width: 100%
-                }
-            }
-            img.img-circle {
-                width: 150px;
-                height: 150px;
-                /* position: absolute; */
-                left: 60px;
-                z-index: 1;
-            }
-        </style>
+        .txt-small{
+          font-size: 15px;
+      }
+    </style>
 </head>
-
 <body>
     <button type="button" class="mobile-nav-toggle d-lg-none"><i class="fa fa-bars"></i></button>
     <header id="header" class="header-stack">
@@ -280,48 +32,96 @@
         <div class="logo float-left">
           <h1 class="text-light"><a href="promaag.html" class="scrollto"><span>ZEN</span></a></h1>
         </div>
-  
+    
         <nav class="main-nav float-right d-none d-lg-block">
           <ul>
             <li>
                 <a href="#" class="widget-header mr-3">
-                  <i style="font-size: 16pt" class="icon fa fa-shopping-bag"></i>
+                  <i style="font-size: 16pt" class="icon fa fa-shopping-basket"></i>
                 </a>
             </li>
-            <li>
-                <a href="#" class="widget-header mr-3">
-                  <i style="font-size: 16pt" class="icon fa fa-bell-o"></i>
-                </a>
+            <li class="dropdown notifications">
+                    <a href="#" class="widget-header mr-3" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                        <i style="font-size: 16pt" class="icon fa fa-bell" ></i>
+                        <span class="badge badge-pill badge-secondary">3+</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-small">
+                      <li>
+                          <a class="dropdown-item" href="#">
+                              <div class="notification__icon-wrapper">
+                                <div class="notification__icon">
+                                  <i class="fa fa-exclamation-triangle"></i>
+                                </div>
+                              </div>
+                              <div class="notification__content">
+                                <span class="notification__category">Payment</span>
+                                <p>Anda Membatalkan Pembayaran Customer...</p>
+                              </div>
+                            </a>
+                      </li>
+                      <hr>
+                      <li>
+                          <a class="dropdown-item" href="#">
+                              <div class="notification__icon-wrapper">
+                                <div class="notification__icon">
+                                  <i class="fa fa-info"></i>
+                                </div>
+                              </div>
+                              <div class="notification__content">
+                                <span class="notification__category">Order</span>
+                                <p>Customer #ID0012 mengonfirmasi pembayaran uang muka</p>
+                              </div>
+                            </a>
+                      </li>
+                      <hr>
+                      <li>
+                          <a class="dropdown-item" href="#">
+                              <div class="notification__icon-wrapper">
+                                <div class="notification__icon">
+                                  <i class="fa fa-check-circle"></i>
+                                </div>
+                              </div>
+                              <div class="notification__content">
+                                <span class="notification__category">Payment</span>
+                                <p>Anda menerima pesanan Customer ID #ID0001</p>
+                              </div>
+                            </a>
+                      </li>
+                      <hr>
+                      <li>
+                        <a href="" class="dropdown-item notification__all text-muted text-center">Lihat Semua</a>
+                          <!-- <a class="dropdown-item notification__all text-center" href="#"> Lihat Semua </a> -->
+                      </li>
+                    </ul>
+        
             </li>
             <li>
-              <div class="input-group">
-                  <div class="form-group has-search">
-                      <span class="fa fa-glip fa-search form-control-feedback"></span>
-                      <input type="text" class="form-controls form-control" placeholder="Cari...">
-                  </div>
-              </div>
-          </li>
-            <li><a href="#about">Paket</a></li>
-            <!-- <li><a href="after-login.html">Iklan</a></li> -->
-            <li class="drop-down"><a href="index.html"><span>Jono Organizer</span></a>
-              <ul>
-                <li><a href="#">Atur EO</a></li>
-                <li><a href="#">Pengriman</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="index.html">Sign Out</a></li>
-              </ul>
+                <div class="input-group">
+                    <div class="form-group has-search">
+                        <span class="fa fa-glip fa-search form-control-feedback"></span>
+                        <input type="text" class="form-controls form-control" placeholder="Cari...">
+                    </div>
+                </div>
+            </li>
+            <li class="drop-down"><a href="index.html"><span>JONO ORGANIZER</span></a>
+                <ul>
+                  <li><a href="#">Atur EO</a></li>
+                  <li><a href="#">Pengriman</a></li>
+                  <li><a href="#">Dashboard</a></li>
+                  <li><a href="index.html">Sign Out</a></li>
+                </ul>
             </li>
           </ul>
         </nav>
       </div>
     </header>
-    
-    <main id="main">
-            <section class="container">
+    <main id="main" class="section-bg">
+            <br />  <br /> <br />
+        <section class="container ">
                 <div class="row">
                    <div class="col-md-12">
                         <div class="cover-photo" style="background-image: url('img/bg-1.jpg') ;">
-                            <br /><br /><br /><br /><br /><br /><br /><br />
+                            <br /><br /><br /><br /><br /><br />
                             <div class="row">
                                     <div class="col-12 col-lg-4 col-xl-3 order-2 order-lg-1">
                                             <div class="card mb-4">
@@ -566,8 +366,9 @@
                         </div>
                    </div>
                 </div>
-            </section>
+        </section>
     </main>
+    
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br />
 <footer id="footer" class="section-bg">
@@ -633,5 +434,12 @@
       </div>
     </div>
 </footer>
+
+  <script src="../../dist/js/demo.js"></script>
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
