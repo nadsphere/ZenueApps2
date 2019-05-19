@@ -69,7 +69,7 @@
                 <header class="section-header">
                     <h3 class="title">Pesanan Anda</h3>
                 </header>
-                <br /><br /><br />
+                <br /><br />
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
