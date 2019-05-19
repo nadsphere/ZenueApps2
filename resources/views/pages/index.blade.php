@@ -203,46 +203,47 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           </div>
           <div class="modal-body">
-            <form action=" " method="post">
+            <form action="{{url('/registereo')}}" method="post">
+            {{ csrf_field() }}
               <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-building fa_color" style="margin-top:10px"></i></span>
-                    <input type="text" class="form-control" name="name" placeholder="Nama EO" required>
+                    <input type="text" class="form-control" name="namaeo" placeholder="Nama EO" required>
                   </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-envelope fa_color" style="margin-top:10px"></i></span>
-                  <input type="email" class="form-control" name="email" placeholder="Email" required>
+                  <input type="email" class="form-control" name="emaileo" placeholder="Email" required>
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-map fa_color" style="margin-top:10px"></i></span>
-                  <input type="text" class="form-control" name="alamat" placeholder="Alamat" required>
+                  <input type="text" class="form-control" name="alamateo" placeholder="Alamat" required>
                 </div>
               </div>
               <div class="form-group">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-phone fa_color" style="margin-top:10px"></i></span>
-                    <input type="text" class="form-control" name="kontak" placeholder="Kontak" required="required">
+                    <input type="text" class="form-control" name="kontakeo" placeholder="Kontak" required="required">
                   </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-globe fa_color" style="margin-top:10px"></i></span>
-                  <input type="text" class="form-control" name="link" placeholder="Link (opsional)">
+                  <input type="text" class="form-control" name="linkeo" placeholder="Link (opsional)">
                 </div>
               </div>
               <div class="form-group">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-lock fa_color" style="margin-top:10px"></i></span>
-                  <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
+                  <input type="text" class="form-control" name="passwordeo" placeholder="Masukkan Password" required="required">
                 </div>
               </div>
               <div class="form-group">
                 <div class="custom-file">
-                  <input type="file" class="custom-file-input" name="gambar_profil" accept="image/*" id="gambarprofil" required>
+                  <input type="file" class="custom-file-input" name="gambar_profil_eo" accept="image/*" id="gambarprofil">
                   <label class="custom-file-label" for="gambarprofil">Foto Profil</label>
                 </div>
               </div>            

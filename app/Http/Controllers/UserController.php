@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Input;
 
 use Auth;
 use App\User;
+use App\Eo;
 use Redirect;
+
 
 class UserController extends Controller
 {
@@ -67,6 +69,7 @@ class UserController extends Controller
         $user = Auth::guard('users')->user();        
         return view('pages.index', compact('user'));
     }
+
     public function login(Request $request)
     {
         $auth = Auth::guard('users')->attempt([
@@ -84,5 +87,46 @@ class UserController extends Controller
     public function logout(){
         Auth::guard('users')->logout();
         return redirect('/');
+    }
+
+    public function store_eo(Request $request){
+        //return 1;
+        $eo = new Eo();
+        $user = new User();
+        // $validate_eo = $request->validate([
+        //     'nama_eo' => 'required|min:6',
+        //     'email' => 'required|email|unique:users',
+        //     'alamat' => 'required|min:10',
+        //     'kontak' => 'required|min:11',
+        //     'link' => '',
+        //     'password' => 'required|min:8'
+        // ],
+        // [   
+        //     'nama_eo.required' => 'Name is required',
+        //     'nama_eo.min' => 'Name must be at least 6 characters.',
+        //     'email.required' => 'Email is required',
+        //     'email.unique' => 'This email has been registered',
+        //     'alamat.required' => 'Alamat must be at least 10 characters',
+        //     'kontak.required' => 'No Telp must be at least 11 characters.',
+        //     'password.min' => 'Password must be at least 8 characters.'
+        // ]);
+        
+        $eo->nama_eo = $request['namaeo'];
+        $eo->email = $request['emaileo'];
+        $eo->alamat = $request['alamateo'];
+        $eo->kontak = $request['kontakeo'];
+        $eo->link = $request['linkeo'];
+        $eo->gambar_profil = $request['gambar_profil_eo'];
+        $user->email = $request['emaileo'];
+        $user->password = bcrypt($request['passwordeo']);
+        
+        $eo->save();
+        $user->save();
+        
+        // if ($register){
+        //     return 1;
+        // }else{
+        //     return 0;
+        // }
     }
 }

@@ -18,6 +18,8 @@ Route::get('/store', function () {
     return view('pages.eo_profile');
 });
 
+Route::post('/registereo', 'UserController@store_eo');
+
 // LOGIN, REGISTER, LOGOUT
 Route::group(['middleware' => 'web'], function () {
     Route::post('/register', 'UserController@store');
@@ -44,3 +46,4 @@ Route::get('/dashboard', 'TemplateControl@index');
 Route::get('/form', function () {
     return view('pages.form');
 });
+
