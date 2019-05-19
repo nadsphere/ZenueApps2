@@ -1107,18 +1107,18 @@ input.form-controls::placeholder:hover{
 {
   margin: 0;
   line-height: 1.5;
-  font-size: .75rem;
+  font-size: 12px;
   color: #000;
 }
 
 .notifications .dropdown-menu .notification__category
 {
-  font-size: .5625rem;
+  font-size: 10px;
   color: #000000;
   letter-spacing: .0938rem;
   display: inline-block;
   text-transform: uppercase;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   font-weight: 500;
 }
 

@@ -9,6 +9,9 @@ Route::get('/edit_user', function () {
 Route::get('/request', function () {
     return view('pages.user_transact');
 });
+Route::get('/ambil_paket', function () {
+    return view('pages.form_ambilpaket');
+});
 Route::get('/edit_eo', function () {
     return view('pages.eo_editprofile');
 });
