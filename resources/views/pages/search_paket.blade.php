@@ -50,60 +50,10 @@
                   <i style="font-size: 16pt" class="icon fa fa-shopping-basket"></i>
                 </a>
             </li>
-            <li class="dropdown notifications">
-                <a href="#" class="widget-header mr-3" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                    <i style="font-size: 16pt" class="icon fa fa-bell" ></i>
-                    <span class="badge badge-pill badge-secondary">3+</span>
+            <li>
+                <a href="#" class="widget-header mr-3">
+                  <i style="font-size: 16pt" class="icon fa fa-bell-o"></i>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-small">
-                  <li>
-                      <a class="dropdown-item" href="#">
-                          <div class="notification__icon-wrapper">
-                            <div class="notification__icon">
-                              <i class="fa fa-exclamation-triangle"></i>
-                            </div>
-                          </div>
-                          <div class="notification__content">
-                            <span class="notification__category">Payment</span>
-                            <p>Segera lunasi pembayaran paket anda...</p>
-                          </div>
-                        </a>
-                  </li>
-                  <hr>
-                  <li>
-                      <a class="dropdown-item" href="#">
-                          <div class="notification__icon-wrapper">
-                            <div class="notification__icon">
-                              <i class="fa fa-check-circle"></i>
-                            </div>
-                          </div>
-                          <div class="notification__content">
-                            <span class="notification__category">Order</span>
-                            <p>Penawaran Paket Anda Diterima</p>
-                          </div>
-                        </a>
-                  </li>
-                  <hr>
-                  <li>
-                      <a class="dropdown-item" href="#">
-                          <div class="notification__icon-wrapper">
-                            <div class="notification__icon">
-                              <i class="fa fa-check-circle-o"></i>
-                            </div>
-                          </div>
-                          <div class="notification__content">
-                            <span class="notification__category">Payment</span>
-                            <p>Pembayaran Anda Telah diterima</p>
-                          </div>
-                        </a>
-                  </li>
-                  <hr>
-                  <li>
-                    <a href="" class="dropdown-item notification__all text-muted text-center">Lihat Semua</a>
-                      <!-- <a class="dropdown-item notification__all text-center" href="#"> Lihat Semua </a> -->
-                  </li>
-                </ul>
-    
             </li>
             <li>
                 <div class="input-group">
@@ -116,6 +66,7 @@
                     </div>
                 </div>
             </li>
+            <!-- <li><a href="after-login.html">Iklan</a></li> -->
             @if ($user == null)
           <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalLogin">LOGIN</a></li> 
           <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
@@ -162,42 +113,44 @@
                             <div class="filter-content collapse show" id="collapse22">
                                     <div class="card-body">
                                     <form>
+                                      <fieldset name="radio">
                                         <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
+                                            <input class="form-radio-input"  type="radio">
+                                            <span class="form-radio-label">
                                                 Wedding
                                             </span>
                                         </label> 
                                         <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
+                                            <input class="form-radio-input"  type="radio">
+                                            <span class="form-radio-label">
                                                 Catering
                                             </span>
                                         </label> 
                                         <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
+                                            <input class="form-radio-input"  type="radio">
+                                            <span class="form-radio-label">
                                                 Party
                                             </span>
                                         </label>
                                         <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
+                                            <input class="form-radio-input"  type="radio">
+                                            <span class="form-radio-label">
                                                 Concert
                                             </span>
                                         </label> 
                                         <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
+                                            <input class="form-radio-input"  type="radio">
+                                            <span class="form-radio-label">
                                                 Conference
                                             </span>
                                         </label>  <!-- form-check.// -->
                                         <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
+                                            <input class="form-radio-input"  type="radio">
+                                            <span class="form-radio-label">
                                                 Rental
                                             </span>
                                         </label>  <!-- form-check.// -->
+                                      </fieldset>
                                     </form>
                                     </div> <!-- card-body.// -->
                             </div>
@@ -281,7 +234,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <aside class="col-sm-3">
-                                    @php $images_paket = json_decode($value->gambar_paket)@endphp
+                                        @php $images_paket = json_decode($value->gambar_paket)@endphp
                                         <div class="img-wrap"><img class="img-wrap" alt="{{$value->gambar_paket}}" src="{{ asset('img/upload/'.$images_paket[0]) }}"></div>
                                     </aside> 
                                     <article class="col-sm-9">
@@ -295,7 +248,6 @@
                                                         <i class="fa fa-star"></i> 
                                                     </li>
                                                     <li>
-                                                        
                                                         <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
                                                         <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
                                                         <i class="fa fa-star"></i> 
@@ -304,7 +256,6 @@
                                                 <div class="label-rating"><b> (125)</b></div> 
                                                 <p class="title"> <b>{{$value->id_eo}}</b></p> 
                                         </div>
-                                        <p class="texts">{{$value->kategori}}</p>
                                         <p class="texts">{{$value->deskripsi}}</p>
                                         <p class="texts">Rp. {{ number_format($value->harga_paket)}} ,-</p>
                                         <a href="#" class="btn btn-outline-danger">Ambil Penawaran</a>
