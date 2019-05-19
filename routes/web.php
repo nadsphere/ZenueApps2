@@ -27,8 +27,6 @@ Route::get('/form', function () {
     return view('pages.form');
 });
 
-
-
 // LOGIN, REGISTER, LOGOUT
 Route::group(['middleware' => 'web'], function () {
     Route::post('/register', 'UserController@store');

@@ -162,42 +162,12 @@
                             <div class="filter-content collapse show" id="collapse22">
                                     <div class="card-body">
                                     <form>
-                                        <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
-                                                Wedding
-                                            </span>
-                                        </label> 
-                                        <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
-                                                Catering
-                                            </span>
-                                        </label> 
-                                        <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
-                                                Party
-                                            </span>
-                                        </label>
-                                        <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
-                                                Concert
-                                            </span>
-                                        </label> 
-                                        <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
-                                                Conference
-                                            </span>
-                                        </label>  <!-- form-check.// -->
-                                        <label class="form-check">
-                                            <input class="form-check-input" value="" type="checkbox">
-                                            <span class="form-check-label">
-                                                Rental
-                                            </span>
-                                        </label>  <!-- form-check.// -->
+                                    <input type="radio" name="kategori" value="wedding"> Wedding<br>
+                                    <input type="radio" name="kategori" value="catering"> Catering<br>
+                                    <input type="radio" name="kategori" value="party"> Party<br>
+                                    <input type="radio" name="kategori" value="concert"> Concert<br>
+                                    <input type="radio" name="kategori" value="conference"> Conference<br>
+                                    <input type="radio" name="kategori" value="rental"> Rental<br>
                                     </form>
                                     </div> <!-- card-body.// -->
                             </div>
@@ -212,25 +182,10 @@
                                 <div class="filter-content collapse show" id="collapse33">
                                         <div class="card-body">
                                         <form>
-                                            <label class="form-check">
-                                                <input class="form-check-input" value="" type="checkbox">
-                                                <span class="form-check-label">
-                                                    Bogor
-                                                </span>
-                                            </label> 
-                                            <label class="form-check">
-                                                <input class="form-check-input" value="" type="checkbox">
-                                                <span class="form-check-label">
-                                                    Jakarta
-                                                </span>
-                                            </label> 
-                                            <label class="form-check">
-                                                <input class="form-check-input" value="" type="checkbox">
-                                                <span class="form-check-label">
-                                                    Depok
-                                                </span>
-                                            </label>
-                                        </form>
+                                            <input type="radio" name="lokasi" value="bogor"> Bogor<br>
+                                            <input type="radio" name="lokasi" value="jakarta"> Jakarta<br>
+                                            <input type="radio" name="lokasi" value="depok"> Depok<br>
+                                          </form>
                                         </div> <!-- card-body.// -->
                                 </div>
                         </article>
