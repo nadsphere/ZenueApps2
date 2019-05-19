@@ -133,7 +133,7 @@
             <div class=" bg-white" style="margin-top:50px">
                     <br /><br />  
                     <header class="section-header">
-                        <h3 class="title">Pesanan Anda</h3>
+                        <h3 class="title">My Request</h3>
                     </header>
                     <br /><br />
                     <div class="row">
@@ -177,52 +177,12 @@
                         </div>
                         <div class="col-md-1"></div>
                     </div>
+                    <br />
                     
-                    <br /><br />
-                    <div class="row">
-                      <div class="col-md-1"></div>
-                      <div class="col-md-10">
-                          <form action="">
-                              <div class="form-group row">
-                                  <label for="inputEmail3" class="col-sm-2 col-form-label"><b> Nama Pembeli</b></label>
-                                  <div class="col-sm-10">
-                                      <input type="text" class="form-control-plaintext" id="exInputNama1" value="Joko Mulyadi" readonly>
-                                  </div>
-                              </div>
-                              <div class="form-group row">
-                                  <label for="email" class="col-sm-2 col-form-label"><b> Email</b></label>
-                                  <div class="col-sm-10">
-                                      <input type="email" class="form-control" id="email" placeholder="" name="email" value="jokomul13@gmail.com">
-                                  </div>
-                              </div>
-                              <div class="form-group row">
-                                  <label for="telpon" class="col-sm-2 col-form-label"><b> Nomor Telepon</b></label>
-                                  <div class="col-sm-10">
-                                    <input type="number" class="form-control" name="no_telpon" id="telpon" placeholder="0813xxxx" value="081356224577">
-                                  </div>
-                              </div>
-                              <div class="form-group row">
-                                  <label for="bayar" class="col-sm-2 col-form-label"><b>Metode Pembayaran</b></label>
-                                  <div class="col-sm-10">
-                                      <select class="form-control" disabled>
-                                          <option>Transfer</option>
-                                      </select>
-                                  </div>
-                              </div>
-                              <br />
-                              <div class="text-center">
-                                  <button class="btn btn-danger" type="submit">Lanjutkan</button>
-                                  <button class="btn btn-outline-danger" type="reset">Batal</button>
-                              </div>
-                              <br /><br />
-                          </form>
-                      </div>
-                      <div class="col-md-1"></div>
-                    </div>
-                    
+
                 </div>
         </section>
-        
+        <br /><br /><br /><br /><br />
     </main>
       <footer id="footer" class="section-bg">
         <div class="footer-top">
