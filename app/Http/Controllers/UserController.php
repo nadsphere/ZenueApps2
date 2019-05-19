@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\URL;
 
 use Auth;
 use App\User;
@@ -76,9 +77,12 @@ class UserController extends Controller
         ], true);
         
         if ($auth){
-            return redirect('/', compact('user'));
+            return redirect('/');
         }else{
-           return 0;
+            $url = URL::to('/');
+
+            return Redirect::to($url)
+            ->with('error','Username or Password is incorrect');
         }
     }
 

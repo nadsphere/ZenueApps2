@@ -97,6 +97,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               </div>
               <div class="modal-body">
+                @php $error = Session::get('error'); @endphp
                 <form action="{{ url('/login') }}" method="post">
                 {{ csrf_field() }}
                   <div class="form-group">
@@ -111,6 +112,11 @@
                       <input type="text" class="form-control" name="password" placeholder="Masukkan Password" required="required">
                     </div>
                   </div>
+                  @if (!empty($error))
+                  <div class="form-group">
+                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $error }}</strong>
+                  </div>
+                  @endif
                   <div class="form-group">
                     <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
                   </div>
@@ -1096,9 +1102,18 @@
   interval: 2000
   })
   </script>
-  @if( $errors->any())
+
+  @if ( $errors->any() )
+  <script>
+      $('#modalRegist').modal('show');
+  </script>
+  @endif
+
+@if(!empty($error) )
 <script>
-    $('#modalRegist').modal('show');
+$(function() {
+    $('#modalLogin').modal('show');
+});
 </script>
 @endif
 
