@@ -102,7 +102,7 @@
                   <div class="form-group">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-user" style="margin-top:10px"></i></span>
-                      <input type="text" class="form-control" name="no_telp" placeholder="Masukkan Email" required="required">
+                      <input type="text" class="form-control" name="email" placeholder="Masukkan Email" required="required">
                     </div>
                   </div>
                   <div class="form-group">
@@ -196,7 +196,7 @@
         </div>
     </div>
     <div id="eoModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-login">
+      <div class="modal-dialog modal-login  modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">				
             <h4 class="modal-title">Register EO</h4>
@@ -204,19 +204,47 @@
           </div>
           <div class="modal-body">
             <form action=" " method="post">
+                {{ csrf_field() }}
+                <div class="form-group">
+                  <div class="input-group">
+                      <label for="role_as" class="opsi_name">Mendaftar Sebagai </label>
+                      <br />
+                      <div style="margin-left:20px">
+                        <select class="form-control" id="role_as" name="role" disabled>
+                          <option value="eo"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
+                          <option value="renter"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#sub-model" data-dismiss="modal">Pelanggan</button></option>
+                      </select>
+                      </div>
+                  </div>
+                  @if ($errors->first('role'))
+                  <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('role') }}</strong>
+                @endif
+                </div>
                 <div class="form-group">
                     <div class="input-group">
-                        <label for="role_as" class="opsi_name">Mendaftar Sebagai </label>
-                        <br />
-                        <div style="margin-left:20px">
-                          <select class="form-control" id="role_as">
-                            <option value="users"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#sub-model" data-dismiss="modal">Pelanggan</button></option>
-                            <option value="eos"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#eoModal" data-dismiss="modal">Pemilik Acara (EO)</button></option>
-                        </select>
-                        </div>
+                      <span class="input-group-addon"><i class="fa fa-user fa_color" style="margin-top:10px"></i></span>
+                      <input type="text" class="form-control" name="name" placeholder="Masukkan Nama" required="required" value="{{ old('name') }}">
                     </div>
-                    @if ($errors->first('role'))
-                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('role') }}</strong>
+                @if ($errors->first('name'))
+                  <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('name') }}</strong>
+                @endif
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope fa_color" style="margin-top:10px"></i></span>
+                    <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="required" value="{{ old('email') }}">
+                  </div>
+                  @if ($errors->first('email'))
+                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('email') }}</strong>
+                  @endif
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa_color" style="margin-top:10px"></i></span>
+                    <input type="password" class="form-control" name="password" placeholder="Masukkan Password" required="required" value="{{ old('password') }}">
+                  </div>
+                  @if ($errors->first('password'))
+                    <strong id="error" style="margin-left:10px;color:gray;font-size:10px;">{{ $errors->first('password') }}</strong>
                   @endif
                 </div>
               <div class="form-group">
@@ -1088,18 +1116,7 @@ if (e.keyCode == 13)
     var title = $(this).val();
       $('#eoModal').modal('show');
       $('#modalRegist').modal('hide');
-<<<<<<< HEAD
-    //   $('#eoModal').modal({
-    //   closeExisting:true
-    // });
-    // if($(this).val() === 'eos'){
-    //   $('#eoModal').modal('show');
-    //   $('#modalRegist').modal('hide');
-    //     } else if($(this).val() === 'users') {
-    //       $('#modalRegist').modal('show');
-    // } 
-=======
->>>>>>> e2bd13c3102d8cfe5e76d3c9ade2206aa6651b1c
+
   });
 </script>
 
