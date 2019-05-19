@@ -32,11 +32,60 @@
     
           <nav class="main-nav float-right d-none d-lg-block">
             <ul>
-                <li>
-                    <a href="#" class="widget-header mr-3">
-                        <i style="font-size: 16pt" class="icon fa fa-bell-o"></i>
-                    </a>
-                </li>
+                    <li class="dropdown notifications">
+                            <a href="#" class="widget-header mr-3" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                                <i style="font-size: 16pt" class="icon fa fa-bell" ></i>
+                                <span class="badge badge-pill badge-secondary">3+</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-small">
+                              <li>
+                                  <a class="dropdown-item" href="#">
+                                      <div class="notification__icon-wrapper">
+                                        <div class="notification__icon">
+                                          <i class="fa fa-exclamation-triangle"></i>
+                                        </div>
+                                      </div>
+                                      <div class="notification__content">
+                                        <span class="notification__category">Payment</span>
+                                        <p>Anda Menerima Pembayaran dari Customer..</p>
+                                      </div>
+                                    </a>
+                              </li>
+                              <hr>
+                              <li>
+                                  <a class="dropdown-item" href="#">
+                                      <div class="notification__icon-wrapper">
+                                        <div class="notification__icon">
+                                          <i class="fa fa-info"></i>
+                                        </div>
+                                      </div>
+                                      <div class="notification__content">
+                                        <span class="notification__category">Order</span>
+                                        <p>Dapatkan Penawaran Menarik..</p>
+                                      </div>
+                                    </a>
+                              </li>
+                              <hr>
+                              <li>
+                                  <a class="dropdown-item" href="#">
+                                      <div class="notification__icon-wrapper">
+                                        <div class="notification__icon">
+                                          <i class="fa fa-info"></i>
+                                        </div>
+                                      </div>
+                                      <div class="notification__content">
+                                        <span class="notification__category">Order</span>
+                                        <p>Customer #ID0012 mengonfirmasi pembayaran uang muka</p>
+                                      </div>
+                                    </a>
+                              </li>
+                              <hr>
+                              <li>
+                                <a href="" class="dropdown-item notification__all text-muted text-center">Lihat Semua</a>
+                              </li>
+                            </ul>
+                
+                        </li>
                 <li>
                     <div class="input-group">
                         <div class="form-group has-search">
@@ -46,7 +95,6 @@
                     </div>
                 </li>
               <li><a href="#about">Paket</a></li>
-              <!-- <li><a href="after-login.html">Iklan</a></li> -->
               <li class="drop-down"><a href="index.html"><span>Jono Organizer</span></a>
                 <ul>
                   <li><a href="#">Atur EO</a></li>

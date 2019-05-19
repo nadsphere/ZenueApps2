@@ -8,12 +8,14 @@
     <meta name="keywords" content="" />
 	<title>Edit Profil User</title>
     <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.min.css">
-    <link rel="stylesheet" href="css/jangandiubah.css">
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/color.css"> -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style2.css" rel="stylesheet">
+    <link href="css/ui.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/fix.css" rel="stylesheet" type="text/css"/>
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <style>
       .img-circle{
@@ -38,10 +40,58 @@
               <i style="font-size: 16pt" class="icon fa fa-shopping-basket"></i>
             </a>
         </li>
-        <li>
-            <a href="#" class="widget-header mr-3">
-              <i style="font-size: 16pt" class="icon fa fa-bell-o"></i>
+        <li class="dropdown notifications">
+            <a href="#" class="widget-header mr-3" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                <i style="font-size: 16pt" class="icon fa fa-bell" ></i>
+                <span class="badge badge-pill badge-secondary">3+</span>
             </a>
+            <ul class="dropdown-menu dropdown-menu-small">
+              <li>
+                  <a class="dropdown-item" href="#">
+                      <div class="notification__icon-wrapper">
+                        <div class="notification__icon">
+                          <i class="fa fa-exclamation-triangle"></i>
+                        </div>
+                      </div>
+                      <div class="notification__content">
+                        <span class="notification__category">Payment</span>
+                        <p>Segera lunasi pembayaran paket anda...</p>
+                      </div>
+                    </a>
+              </li>
+              <hr>
+              <li>
+                  <a class="dropdown-item" href="#">
+                      <div class="notification__icon-wrapper">
+                        <div class="notification__icon">
+                          <i class="fa fa-check-circle"></i>
+                        </div>
+                      </div>
+                      <div class="notification__content">
+                        <span class="notification__category">Order</span>
+                        <p>Penawaran Paket Anda Diterima</p>
+                      </div>
+                    </a>
+              </li>
+              <hr>
+              <li>
+                  <a class="dropdown-item" href="#">
+                      <div class="notification__icon-wrapper">
+                        <div class="notification__icon">
+                          <i class="fa fa-check-circle-o"></i>
+                        </div>
+                      </div>
+                      <div class="notification__content">
+                        <span class="notification__category">Payment</span>
+                        <p>Pembayaran Anda Telah diterima</p>
+                      </div>
+                    </a>
+              </li>
+              <hr>
+              <li>
+                <a href="" class="dropdown-item notification__all text-muted text-center">Lihat Semua</a>
+              </li>
+            </ul>
         </li>
         <li>
             <div class="input-group">
