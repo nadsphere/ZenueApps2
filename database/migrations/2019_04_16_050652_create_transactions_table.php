@@ -15,7 +15,12 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            
+            $table->bigInteger('id_paket');
+            $table->string('kode_booking')->nullable();
+            $table->string('email');
+            $table->string('no_telp');
+            $table->date('tanggal_acara');
+            $table->integer('status_pembayaran')->default(0);
             $table->timestamps();
         });
     }

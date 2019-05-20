@@ -9,9 +9,7 @@ Route::get('/edit_user', function () {
 Route::get('/request', function () {
     return view('pages.user_transact');
 });
-Route::get('/ambil_paket', function () {
-    return view('pages.form_ambilpaket');
-});
+
 Route::get('/edit_eo', function () {
     return view('pages.eo_editprofile');
 });
@@ -31,6 +29,10 @@ Route::get('/dashboard', 'TemplateControl@index');
 Route::get('/form', function () {
     return view('pages.form');
 });
+
+Route::post('/registereo', 'UserController@store_eo');
+Route::post('/form_paket', 'TransactionController@store_transactions');
+Route::get('/ambil_paket/{idpaket}', 'TransactionController@index_paket');
 
 // LOGIN, REGISTER, LOGOUT
 Route::group(['middleware' => 'web'], function () {

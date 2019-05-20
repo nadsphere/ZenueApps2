@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\URL;
 use Auth;
 use App\User;
 use Redirect;
+use App\Eo;
 
 class UserController extends Controller
 {
@@ -88,5 +89,36 @@ class UserController extends Controller
     public function logout(){
         Auth::guard('users')->logout();
         return redirect('/');
+    }
+
+    public function store_eo(Request $request){
+        $usereo = new Eo();
+
+        // $validator = $request->validate([
+        //     'name'=>'required|min:4',
+        //     'email'=>'required|email|unique:users',
+        //     'no_telp' => 'required|min:11',
+        //     'password' => 'required|min:8',
+        // ],
+        // [
+        //     'name.required' => 'Name is required',
+        //     'name.min' => 'Name must be at least 4 characters.',
+        //     'email.required' => 'Email is required',
+        //     'email.unique' => 'This email has been registered',
+        //     'no_telp' => 'No Telp must be at least 11 characters.',
+        //     'password.min' => 'Password must be at least 8 characters.',
+        // ]);
+        $user_id = Auth::guard('users')->user()->id;
+
+        $usereo->user_id = $user_id;
+        $usereo->nama_eo = $request['namaeo'];
+        $usereo->email = $request['emaileo'];
+        $usereo->alamat = $request['alamateo'];
+        $usereo->kontak = $request['kontakeo'];
+        $usereo->link = $request['linkeo'];
+        $usereo->gambar_profil = $request['gambar_profil_eo'];
+
+        $usereo->save();
+        return redirect ('/');
     }
 }

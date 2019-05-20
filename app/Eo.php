@@ -6,8 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Eo extends Model
 {
-    // public function nama_eo(){
-    //     return $this->belongsTo(Paket::class);
-    // }
+    protected $table = 'eos';
 
+    protected $fillable = [
+        'id',
+        'user_id',
+        'nama_eo',
+        'email',
+        'alamat',
+        'kontak',
+        'link',
+        'gambar_profil'
+    ];
+
+    protected $primaryKey = 'id';
 }
