@@ -23,7 +23,9 @@ Route::get('/eo_profile', function () {
 Route::get('/store', function () {
     return view('pages.eo_profile');
 });
-
+Route::get('/dashpage', function () {
+    return view('pages.dashpage');
+});
 Route::get('/dashboard', 'TemplateControl@index');
 
 Route::get('/form', function () {
