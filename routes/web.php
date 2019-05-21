@@ -1,4 +1,31 @@
 <?php
+// halaman dashboard
+Route::get('/dashpage', function () {
+    return view('pages.dashpage');
+});
+Route::get('/chrt', function () {
+    return view('pages.hula');
+});
+// Route::get('/dash_users', function () {
+//     return view('pages.dashpage_user');
+// });
+// Route::get('/dash_eos', function () {
+//     return view('pages.dashpage_eo');
+// });
+// Route::get('/dash_pakets', function () {
+//     return view('pages.dashpage_paket');
+// });
+// Route::get('/dash_bookings', function () {
+//     return view('pages.dashpage_booking');
+// });
+// Route::get('/dash_transacts', function () {
+//     return view('pages.dashpage_transact');
+// });
+// Route::get('/dash_charts', function () {
+//     return view('pages.dashpage_charts');
+// });
+Route::get('/dashboard', 'TemplateControl@index');
+//end dashboard section
 
 Route::get('/', function () {
     return view('pages.index');
@@ -21,10 +48,6 @@ Route::get('/eo_profile', function () {
 Route::get('/store', function () {
     return view('pages.eo_profile');
 });
-Route::get('/dashpage', function () {
-    return view('pages.dashpage');
-});
-Route::get('/dashboard', 'TemplateControl@index');
 
 Route::get('/form', function () {
     return view('pages.form');
