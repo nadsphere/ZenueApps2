@@ -1,8 +1,8 @@
-
 body {
   background: #fff;
   color: #444;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans",'Montserrat', sans-serif;
+  height: auto;
 }
 aside { 
   display: block;
@@ -1404,3 +1404,5 @@ position: inherit;
       left: 60px;
       z-index: 1;
   }
+
+  

@@ -27,6 +27,18 @@ Route::get('/chrt', function () {
 Route::get('/dashboard', 'TemplateControl@index');
 //end dashboard section
 
+//login/egister non modals
+Route::get('/login', function () {
+    return view('pages.login_page');
+});
+Route::get('/register', function () {
+    return view('pages.register_page');
+});
+Route::get('/regist_eo', function () {
+    return view('pages.register_eo');
+});
+//end section
+
 Route::get('/', function () {
     return view('pages.index');
 });
