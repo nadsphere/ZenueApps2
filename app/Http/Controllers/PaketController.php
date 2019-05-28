@@ -182,7 +182,7 @@ class PaketController extends Controller
 
     public function index_detail($id){
         $user = Auth::guard('users')->user();
-        $paket = DB::table('pakets')->where('id',$id)->get();
+        $paket = Paket::where('id',$id)->get();
         $eo_id = $paket[0]->id_eo;
         $nama_eo = User::where('id', $eo_id)->get();
 

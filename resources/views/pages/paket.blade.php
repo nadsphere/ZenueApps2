@@ -116,7 +116,6 @@
               </div>
             </div>
           </li>
-            <!-- <li><a href="after-login.html">Iklan</a></li> -->
             @if ($user == null)
             <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalLogin">LOGIN</a></li> 
             <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>

@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\URL;
 
 use Auth;
-use App\User;
 use Redirect;
+use App\User;
 use App\Eo;
+use App\Paket;
 
 class UserController extends Controller
 {
@@ -32,22 +33,9 @@ class UserController extends Controller
             'no_telp' => 'No Telp must be at least 11 characters.',
             'password.min' => 'Password must be at least 8 characters.',
         ]);
-
-        
-        // if($request->role == 'eo'){
-            
-        //     $user->is_eo = 1;  
-        //     $user->is_renter = 0;  
-            
-        // } 
-        // elseif ($request->role == 'renter')   {
-            
-        //     $user->is_eo = 0;  
-        //     $user->is_renter = 1; 
-        // }   
         
         $user->is_eo=0;
-        $user->is_renter=1;
+        $user->is_renter=0;
         $user->name = $request['name'];
         $user->email = $request['email'];
         $user->no_telp = $request['no_telp'];
@@ -66,7 +54,8 @@ class UserController extends Controller
     public function index()
     {
         $user = Auth::guard('users')->user();        
-        return view('pages.index', compact('user'));
+        $rekomendasi_paket = Paket::inRandomOrder()->take(4)->get();
+        return view('pages.index', compact('user', 'rekomendasi_paket'));
     }
 
     public function login(Request $request)

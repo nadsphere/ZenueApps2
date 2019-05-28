@@ -68,18 +68,16 @@
             <li><a href="{{ url('/paket') }}">Paket</a></li>
             <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
                 <ul>
-                  <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegistEO">Buka Event Organizer</a></li>
                   <li><a href="{{ url('/paket') }}">Paket</a></li>
                   <li><a href="#">Pengriman</a></li>
                   <li><a href="#">Dashboard</a></li>
                   <li><a href="{{ url('/logout') }}">Sign Out</a></li>
                 </ul>
             </li>
-          @elseif ($user->is_renter == 1 )
+          @else
           <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
               <ul>
               <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegistEO">Buka Event Organizer</a></li>
-              <li><a href="{{ url('/paket') }}">Paket</a></li>
                 <li><a href="#">Edit Profil</a></li>
                 <li><a href="#">My Order</a></li>
                 <li><a href="#">My Wishlist</a></li>
@@ -660,186 +658,24 @@
             </header>
             <br>
             <div class="row-sm">
+            @foreach ($rekomendasi_paket as $rekomendasi)
                 <div class="col-md-3 col-sm-6">
-                  <a href="start.html">
+                  <a href="{{ url('/detail_paket/'.$rekomendasi->id) }}">
                     <figure class="card card-product">
-                        <div class="img-wrap"> <img class="" src="img/items/wedding-package.jpeg"></div>
+                        @php $images_paket = json_decode($rekomendasi->gambar_paket) @endphp
+                        <div class="img-wrap"> <img class="" src="{{ asset('img/upload/'.$images_paket[0]) }}"></div>
                         <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Nikah (Tipe: Anggrek)</b></a>
+                            <a href="#" class="title"><b>{{$rekomendasi->nama_paket}}</b></a>
                             <div class="action-wrap">
                               <div class="price-wrap">
-                                <span class="price-new">Rp 36.000.000</span>
+                                <span class="price-new">Rp. {{ number_format($rekomendasi->harga_paket) }}</span>
                               </div> 
                             </div>
                         </figcaption>
                     </figure>
                   </a>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/cat-2.png"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>A la Western Catering Package</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 12.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-3.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Sultan Class Wedding Package (Custom Nego)</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 60.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img src="img/items/cont.png"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Konser Tipe Ekonomis</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 25.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure> <!-- card // -->
-                </div>
-            </div>
-            <br>
-            <div class="row-sm">
-                <div class="col-md-3 col-sm-6">
-                  <a href="start.html">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img class="" src="img/items/wedding-package.jpeg"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Nikah (Tipe: Anggrek)</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 36.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure>
-                  </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-2.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Paket Nikah Silver Class</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 22.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-3.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Sultan Class Wedding Package (Custom Nego)</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 60.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img src="img/items/cont.png"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Konser Tipe Ekonomis</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 25.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure> <!-- card // -->
-                </div>
-            </div>
-            <div class="row-sm">
-                <div class="col-md-3 col-sm-6">
-                  <a href="start.html">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img class="" src="img/items/wedding-package.jpeg"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Nikah (Tipe: Anggrek)</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 36.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure>
-                  </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-2.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Paket Nikah Silver Class</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 22.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-3.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Sultan Class Wedding Package (Custom Nego)</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 60.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img src="img/items/cont.png"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Konser Tipe Ekonomis</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 25.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure> <!-- card // -->
-                </div>
-            </div>
+              @endforeach
             <br /> <br>
         </div>                    		                            
     </section> 
