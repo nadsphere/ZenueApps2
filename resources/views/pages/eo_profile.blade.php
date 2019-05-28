@@ -40,61 +40,8 @@
                   <i style="font-size: 16pt" class="icon fa fa-shopping-basket"></i>
                 </a>
             </li>
-            <li class="dropdown notifications">
-                    <a href="#" class="widget-header mr-3" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                        <i style="font-size: 16pt" class="icon fa fa-bell" ></i>
-                        <span class="badge badge-pill badge-secondary">3+</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-small">
-                      <li>
-                          <a class="dropdown-item" href="#">
-                              <div class="notification__icon-wrapper">
-                                <div class="notification__icon">
-                                  <i class="fa fa-exclamation-triangle"></i>
-                                </div>
-                              </div>
-                              <div class="notification__content">
-                                <span class="notification__category">Payment</span>
-                                <p>Anda Membatalkan Pembayaran Customer...</p>
-                              </div>
-                            </a>
-                      </li>
-                      <hr>
-                      <li>
-                          <a class="dropdown-item" href="#">
-                              <div class="notification__icon-wrapper">
-                                <div class="notification__icon">
-                                  <i class="fa fa-info"></i>
-                                </div>
-                              </div>
-                              <div class="notification__content">
-                                <span class="notification__category">Order</span>
-                                <p>Customer #ID0012 mengonfirmasi pembayaran uang muka</p>
-                              </div>
-                            </a>
-                      </li>
-                      <hr>
-                      <li>
-                          <a class="dropdown-item" href="#">
-                              <div class="notification__icon-wrapper">
-                                <div class="notification__icon">
-                                  <i class="fa fa-check-circle"></i>
-                                </div>
-                              </div>
-                              <div class="notification__content">
-                                <span class="notification__category">Payment</span>
-                                <p>Anda menerima pesanan Customer ID #ID0001</p>
-                              </div>
-                            </a>
-                      </li>
-                      <hr>
-                      <li>
-                        <a href="" class="dropdown-item notification__all text-muted text-center">Lihat Semua</a>
-                          <!-- <a class="dropdown-item notification__all text-center" href="#"> Lihat Semua </a> -->
-                      </li>
-                    </ul>
-        
-            </li>
+            
+            
             <li>
                 <div class="input-group">
                     <div class="form-group has-search">
@@ -106,7 +53,7 @@
             <li class="drop-down"><a href="index.html"><span>JONO ORGANIZER</span></a>
                 <ul>
                   <li><a href="#">Atur EO</a></li>
-                  <li><a href="#">Pengriman</a></li>
+                  <li><a href="#">Pengiriman</a></li>
                   <li><a href="#">Dashboard</a></li>
                   <li><a href="index.html">Sign Out</a></li>
                 </ul>

@@ -128,5 +128,18 @@
     }
   });
 
+  $("role_as").on('change', 
+  function selectRedirect() {
+    switch (document.getElementById('role_as').value) {
+      case "users":
+          window.location = "";
+          break;
+      case "eos":
+          window.location = "regist_eo";
+          break;  
+      default:
+          break;
+  }
+  });
 })(jQuery);
 
