@@ -1405,4 +1405,21 @@ position: inherit;
       z-index: 1;
   }
 
+  .highlight{
+    display: inline-block;
+    padding:2px 6px;
+    font-weight:550;
+    color:#fff;
+    font-size:14px;
+  text-align:center; }
+  .high-approve{
+    background-color:#28a745;
+  }
+  .high-pending{
+    background: #ffc107;
+  }
+  .high-cancel{
+    background: #dc3545;
+  }
+
   

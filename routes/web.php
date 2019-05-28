@@ -1,4 +1,9 @@
 <?php
+//approval (EO)
+Route::get('/transacts', function () {
+    return view('pages.approval');
+});
+
 // halaman dashboard
 Route::get('/dashpage', function () {
     return view('pages.dashpage');
@@ -38,6 +43,16 @@ Route::get('/regist_eo', function () {
     return view('pages.register_eo');
 });
 //end section
+
+//NOTIF USER dan EO
+Route::get('/eo_notif', function () {
+    return view('pages.eo_notification');
+});
+Route::get('/user_notif', function () {
+    return view('pages.user_notification');
+});
+//END
+
 
 Route::get('/', function () {
     return view('pages.index');

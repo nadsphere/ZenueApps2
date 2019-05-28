@@ -2106,6 +2106,20 @@ ul.row, ul.row-sm {
   .card-group-item:last-child {
     border-bottom: 0; }
 
+/* =====card notif panels===== */
+.card-notif-itm {
+  border-bottom: 1px solid #dee2e6; }
+  .card-notif-itm .notif-head {
+    border-bottom: 0;
+    background-color: #fcf7f7; }
+  .card-notif-itm:last-child {
+    border-bottom: 0; }
+    .notif-head .title {
+      margin-bottom: 0;
+      line-height: 1.5; }
+.bdges{
+  margin: 3px 0;
+}
 /* ====================== shopping-cart ==================== */
 .shopping-cart-wrap img {
   max-width: 100px; }
