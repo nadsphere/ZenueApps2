@@ -743,21 +743,6 @@
               <form action="/examples/actions/confirmation.php" method="post">
                 <div class="form-group">
                   <div class="input-group">
-                      <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
-                      <br />
-                      <div style="margin-left:20px">
-                          <div class="form-check-inline rad_check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optradio">Pemilik Acara (EO)
-                              </label>
-                          </div>
-                          <div class="form-check-inline rad_check">
-                            <label class="form-check-label">
-                              <input type="radio" class="form-check-input" name="optradio">Pelanggan
-                            </label>
-                          </div>
-                      </div>
-                        
                   </div>
                 </div>
                 <div class="form-group">
