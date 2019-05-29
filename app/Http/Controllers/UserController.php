@@ -108,6 +108,13 @@ class UserController extends Controller
         $usereo->gambar_profil = $request['gambar_profil_eo'];
 
         $usereo->save();
-        return redirect ('/');
+
+        $update_eo = $this->update_eo($user_id);
+        $rekomendasi_paket = Paket::inRandomOrder()->take(4)->get();
+        return redirect ('/', compact('user', 'rekomendasi_paket'));
+    }
+
+    public function update_eo($id){
+        $update_status = User::where('id', $id)->update(['is_eo' => 1]);
     }
 }
