@@ -16,7 +16,7 @@ class TransactionController extends Controller
             $paket = Paket::find($idpaket);
             return view('pages.form_ambilpaket', compact('user','user_nama','paket'));
         }else{
-            return "kamu belum login";
+            return view('pages.login_page');
         }
     }
     public function store_transactions(Request $request){
