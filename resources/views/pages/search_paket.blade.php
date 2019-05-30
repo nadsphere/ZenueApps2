@@ -6,6 +6,64 @@
       }
 </style>
 <body>
+    <button type="button" class="mobile-nav-toggle d-lg-none"><i class="fa fa-bars"></i></button>
+    <header id="header" class="header-stack">
+      <div class="container">
+        <div class="logo float-left">
+          <h1 class="text-light"><a href="{{url('/')}}" class="scrollto"><span>ZEN</span></a></h1>
+        </div>
+  
+        <nav class="main-nav float-right d-none d-lg-block">
+          <ul>
+            <li>
+                <a href="#" class="widget-header mr-3">
+                  <i style="font-size: 16pt" class="icon fa fa-shopping-basket"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="widget-header mr-3">
+                  <i style="font-size: 16pt" class="icon fa fa-bell-o"></i>
+                </a>
+            </li>
+            <li>
+                <div class="input-group">
+                    <div class="form-group has-search">
+                      <form action="{{url('/search')}}" method="post" id="searchPaket">
+                      {{ csrf_field() }}
+                          <span class="fa fa-glip fa-search form-control-feedback"></span>
+                          <input type="text" class="form-controls form-control" name="paket" placeholder="Cari...">
+                      </form>
+                    </div>
+                </div>
+            </li>
+            <!-- <li><a href="after-login.html">Iklan</a></li> -->
+            @if ($user == null)
+          <li><a href="" class="trigger-btn" data-toggle="modal" data-target=".modalLogin">LOGIN</a></li> 
+          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
+            @elseif ($user->is_eo == 1 )
+          <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
+              <ul>
+                <li><a href="{{url('/paket')}}">Paket</a></li>
+                <li><a href="#">Pengriman</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="{{ url('/logout') }}">Sign Out</a></li>
+              </ul>
+          </li>
+          @elseif ($user->is_renter == 1 )
+          <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
+              <ul>
+                <li><a href="#">Edit Profil</a></li>
+                <li><a href="#">My Order</a></li>
+                <li><a href="#">My Wishlist</a></li>
+                <li><a href="{{ url('/logout') }}">Sign Out</a></li>
+              </ul>
+          </li>
+          @endif
+          </ul>
+        </nav>
+      </div>
+    </header>
+>>>>>>> 07a1d7b1cd1dd49ca0b30926b2537a2c1e12795d
   <main id="main">
       <br /><br />
     <section class="bg-white padding-y">
@@ -100,7 +158,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <aside class="col-sm-3">
-                                    @php $images_paket = json_decode($value->gambar_paket)@endphp
+                                        @php $images_paket = json_decode($value->gambar_paket)@endphp
                                         <div class="img-wrap"><img class="img-wrap" alt="{{$value->gambar_paket}}" src="{{ asset('img/upload/'.$images_paket[0]) }}"></div>
                                     </aside> 
                                     <article class="col-sm-9">
@@ -114,7 +172,6 @@
                                                         <i class="fa fa-star"></i> 
                                                     </li>
                                                     <li>
-                                                        
                                                         <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
                                                         <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
                                                         <i class="fa fa-star"></i> 
@@ -123,7 +180,6 @@
                                                 <div class="label-rating"><b> (125)</b></div> 
                                                 <p class="title"> <b>{{$value->id_eo}}</b></p> 
                                         </div>
-                                        <p class="texts">{{$value->kategori}}</p>
                                         <p class="texts">{{$value->deskripsi}}</p>
                                         <p class="texts">Rp. {{ number_format($value->harga_paket)}} ,-</p>
                                         <a href="#" class="btn btn-outline-danger">Ambil Penawaran</a>
