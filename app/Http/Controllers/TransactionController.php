@@ -10,11 +10,14 @@ use App\Transaction;
 class TransactionController extends Controller
 {
     public function index_paket($idpaket){
-        
-        $user = Auth::guard('users')->user();
-        $user_nama = $user->name;
-        $paket = Paket::find($idpaket);
-        return view('pages.form_ambilpaket', compact('user','user_nama','paket'));
+        if (Auth::guard('users')->check()) {
+            $user = Auth::guard('users')->user();
+            $user_nama = $user->name;
+            $paket = Paket::find($idpaket);
+            return view('pages.form_ambilpaket', compact('user','user_nama','paket'));
+        }else{
+            return view('pages.login_page');
+        }
     }
     public function store_transactions(Request $request){
         $transaction = new Transaction();

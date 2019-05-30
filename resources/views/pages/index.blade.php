@@ -1,97 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Zeninth EO - Your Event Solution</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
-  <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/fix.css') }}" rel="stylesheet" type="text/css"/>
-  <link href="{{asset('css/measure.css')}}" rel="stylesheet" type="text/css"/>
-
-  <!-- Libraries CSS Files -->
-  <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-  <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
-  <link href="{{asset('lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-  <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="{{asset('css/style.css')}}" rel="stylesheet">
-  <link href="{{asset('css/style2.css')}}" rel="stylesheet">
-</head>
-<body>
-  <header id="header">
-    <div class="container">
-      <div class="logo float-left">
-        <h1 class="text-light"><a href="#intro" class="scrollto"><span>ZEN</span></a></h1>
-        <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
-      </div>
-
-      <nav class="main-nav float-right d-none d-lg-block">
-        <ul>
-          <li><a href="#about">Tentang</a></li>
-          <li><a href="#about">Mitra EO</a></li>
-          <li>
-              <a href="#" class="widget-header mr-3">
-                <i style="font-size: 16pt" class="icon fa fa-shopping-basket"></i>
-              </a>
-          </li>
-          <li>
-              <a href="#" class="widget-header mr-3">
-                <i style="font-size: 16pt" class="icon fa fa-bell-o"></i>
-              </a>
-          </li>
-           <li>
-                <div class="input-group">
-                    <div class="form-group has-search">
-                    <form action="{{url('/search')}}" method="post" id="searchPaket">
-                    {{ csrf_field() }}
-                        <span class="fa fa-glip fa-search form-control-feedback"></span>
-                        <input type="text" class="form-controls form-control" name="paket" placeholder="Cari...">
-                    </form>
-                    </div>
-                </div>
-            </li>
-            @if ($user == null)
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalLogin">LOGIN</a></li> 
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
-            @elseif ($user->is_eo == 1 )
-            <li><a href="{{ url('/paket') }}">Paket</a></li>
-            <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
-                <ul>
-                  <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegistEO">Buka Event Organizer</a></li>
-                  <li><a href="{{ url('/paket') }}">Paket</a></li>
-                  <li><a href="#">Pengriman</a></li>
-                  <li><a href="#">Dashboard</a></li>
-                  <li><a href="{{ url('/logout') }}">Sign Out</a></li>
-                </ul>
-            </li>
-          @elseif ($user->is_renter == 1 )
-          <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
-              <ul>
-              <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegistEO">Buka Event Organizer</a></li>
-              <li><a href="{{ url('/paket') }}">Paket</a></li>
-                <li><a href="#">Edit Profil</a></li>
-                <li><a href="#">My Order</a></li>
-                <li><a href="#">My Wishlist</a></li>
-                <li><a href="{{ url('/logout') }}">Sign Out</a></li>
-              </ul>
-          </li>
-          @endif
-        </ul>
-      </nav>
-    </div>
-  </header>
-
+@extends('layout.app')
+@section('content')
     <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-login">
             <div class="modal-content">
@@ -660,186 +568,24 @@
             </header>
             <br>
             <div class="row-sm">
+            @foreach ($rekomendasi_paket as $rekomendasi)
                 <div class="col-md-3 col-sm-6">
-                  <a href="start.html">
+                  <a href="{{ url('/detail_paket/'.$rekomendasi->id) }}">
                     <figure class="card card-product">
-                        <div class="img-wrap"> <img class="" src="img/items/wedding-package.jpeg"></div>
+                        @php $images_paket = json_decode($rekomendasi->gambar_paket) @endphp
+                        <div class="img-wrap"> <img class="" src="{{ asset('img/upload/'.$images_paket[0]) }}"></div>
                         <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Nikah (Tipe: Anggrek)</b></a>
+                            <a href="#" class="title"><b>{{$rekomendasi->nama_paket}}</b></a>
                             <div class="action-wrap">
                               <div class="price-wrap">
-                                <span class="price-new">Rp 36.000.000</span>
+                                <span class="price-new">Rp. {{ number_format($rekomendasi->harga_paket) }}</span>
                               </div> 
                             </div>
                         </figcaption>
                     </figure>
                   </a>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/cat-2.png"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>A la Western Catering Package</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 12.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-3.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Sultan Class Wedding Package (Custom Nego)</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 60.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img src="img/items/cont.png"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Konser Tipe Ekonomis</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 25.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure> <!-- card // -->
-                </div>
-            </div>
-            <br>
-            <div class="row-sm">
-                <div class="col-md-3 col-sm-6">
-                  <a href="start.html">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img class="" src="img/items/wedding-package.jpeg"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Nikah (Tipe: Anggrek)</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 36.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure>
-                  </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-2.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Paket Nikah Silver Class</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 22.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-3.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Sultan Class Wedding Package (Custom Nego)</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 60.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img src="img/items/cont.png"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Konser Tipe Ekonomis</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 25.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure> <!-- card // -->
-                </div>
-            </div>
-            <div class="row-sm">
-                <div class="col-md-3 col-sm-6">
-                  <a href="start.html">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img class="" src="img/items/wedding-package.jpeg"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Nikah (Tipe: Anggrek)</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 36.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure>
-                  </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-2.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Paket Nikah Silver Class</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 22.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="start.html">
-                      <figure class="card card-product">
-                          <div class="img-wrap"> <img class="" src="img/items/wed-3.jpg"></div>
-                          <figcaption class="info-wrap">
-                              <a href="#" class="title"><b>Sultan Class Wedding Package (Custom Nego)</b></a>
-                              <div class="action-wrap">
-                                <div class="price-wrap">
-                                  <span class="price-new">Rp 60.000.000</span>
-                                </div> 
-                              </div>
-                          </figcaption>
-                      </figure>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <figure class="card card-product">
-                        <div class="img-wrap"> <img src="img/items/cont.png"></div>
-                        <figcaption class="info-wrap">
-                            <a href="#" class="title"><b> Paket Konser Tipe Ekonomis</b></a>
-                            <div class="action-wrap">
-                              <div class="price-wrap">
-                                <span class="price-new">Rp 25.000.000</span>
-                              </div> 
-                            </div>
-                        </figcaption>
-                    </figure> <!-- card // -->
-                </div>
-            </div>
+              @endforeach
             <br /> <br>
         </div>                    		                            
     </section> 
@@ -907,21 +653,6 @@
               <form action="/examples/actions/confirmation.php" method="post">
                 <div class="form-group">
                   <div class="input-group">
-                      <label for="daftaran" class="opsi_name">Mendaftar Sebagai </label>
-                      <br />
-                      <div style="margin-left:20px">
-                          <div class="form-check-inline rad_check">
-                              <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optradio">Pemilik Acara (EO)
-                              </label>
-                          </div>
-                          <div class="form-check-inline rad_check">
-                            <label class="form-check-label">
-                              <input type="radio" class="form-check-input" name="optradio">Pelanggan
-                            </label>
-                          </div>
-                      </div>
-                        
                   </div>
                 </div>
                 <div class="form-group">
@@ -959,70 +690,6 @@
           </div>
       </div>
   </div>
-
-  <footer id="footer" class="section-bg">
-    <div class="footer-top">
-      <div class="container">
-          <div class="row">
-              <div class="col-sm-3">
-                  <div class="footer-links">
-                      <h4>Mitra EO Zen</h4>
-                        <ul>
-                          <li><a href="#">Cara Jual</a></li>
-                          <li><a href="#">Daftar Mitra</a></li>
-                          <li><a href="#">Ketentuan Dana</a></li>
-                          <li><a href="#">Periklanan</a></li>
-                        </ul>
-                    </div>
-              </div>  
-              <div class="col-sm-3">
-                  <div class="footer-links">
-                      <h4>Lebih Tahu Zenith</h4>
-                        <ul>
-                          <li><a href="#">Tentang Kami</a></li>
-                          <li><a href="#">Layanan</a></li>
-                          <li><a href="#">Syarat dan Ketentuan</a></li>
-                          <li><a href="#">Kebijakan Privasi</a></li>
-                        </ul>
-                    </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="footer-links">
-                  <h4>Layanan Pelanggan</h4>
-                    <ul>
-                      <li><a href="#">Pembayaran</a></li>
-                      <li><a href="#">Pengembalian Dana dan Uang</a></li>
-                      <li><a href="#">Komplain</a></li>
-                      <li><a href="#">Garansi</a></li>
-                      <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-              </div>
-              <div class="col-sm-3">
-                <div class="footer-links">
-                  <h4>Contact Us</h4>
-                  <p>
-                    Jl. Kemanggisan VII Kav. 31 <br>
-                    Jakarta Selatan<br>
-                    <strong>Phone:</strong> +62 (21)123456<br>
-                    <strong>Email:</strong> info@example.com<br>
-                  </p>
-                </div>
-              </div>
-          </div>
-          <div class="copyright">
-              <div class="social-links">
-                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-              </div>
-              <br />
-              <p class="text-center">&copy; 2019 Copyright <strong>Zenith </strong>| Hak Cipta Dilindungi</p>
-          </div> 
-      </div>
-    </div>
-  </footer>
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <!-- JavaScript Libraries -->
   <script src="lib/jquery/jquery.min.js"></script>
@@ -1076,3 +743,4 @@ if (e.keyCode == 13)
 
 </body>
 </html>
+@endsection

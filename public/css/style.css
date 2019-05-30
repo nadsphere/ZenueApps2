@@ -147,11 +147,11 @@ h6 {
 --------------------------------------------------------------*/
 
 #header {
-  height: 110px;
+  
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  padding: 20px 0;
+  padding: 10px 0;
   position: fixed;
   left: 0;
   top: 0;
@@ -1422,4 +1422,17 @@ position: inherit;
     background: #dc3545;
   }
 
-  
+  .card-product-result{
+      text-decoration: none;
+      color: #000;
+  }
+
+  .card-product-result:hover{
+    text-decoration: none;
+    color : #000;
+  }
+
+  .search-icon-wishlist{
+    color:#000;
+    float: right;
+  }

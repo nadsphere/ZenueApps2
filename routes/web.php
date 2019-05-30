@@ -9,9 +9,7 @@ Route::get('/transact_detail', function () {
 
 
 // halaman dashboard
-Route::get('/dashpage', function () {
-    return view('pages.dashpage');
-});
+Route::get('/dashboard', 'DashboardController@index');
 Route::get('/chrt', function () {
     return view('pages.hula');
 });
@@ -33,7 +31,6 @@ Route::get('/chrt', function () {
 // Route::get('/dash_charts', function () {
 //     return view('pages.dashpage_charts');
 // });
-Route::get('/dashboard', 'TemplateControl@index');
 //end dashboard section
 
 //login/egister non modals
@@ -106,8 +103,11 @@ Route::get('/paket_edit/{id}','PaketController@edit');
 Route::post('/update/{id}','PaketController@update');
 Route::get('/hapus_paket/{id}','PaketController@destroy');
 Route::get('/detail_paket/{id}','PaketController@index_detail');
-
 Route::resource('pakets', 'PaketController');
 
 //SEARCHING
 Route::post('/search', 'PaketController@search');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
