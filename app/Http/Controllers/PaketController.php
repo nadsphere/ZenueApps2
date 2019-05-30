@@ -49,44 +49,50 @@ class PaketController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = $this->validate($request, [
-            'gambar_paket' => 'required',
-            'gambar_paket.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'nama_paket' => 'required|min:5',
-            'kategori' => 'required',
-            'available'=> 'required'
-        ]);
+        if (Auth::guard('users')->check()) {
+            # code...
+            $validator = $this->validate($request, [
+                'gambar_paket' => 'required',
+                'gambar_paket.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'nama_paket' => 'required|min:5',
+                'kategori' => 'required',
+                'available'=> 'required'
+            ]);
+            
+    
+            if($request->hasfile('gambar_paket')){
+                foreach($request->file('gambar_paket') as $gambar){
+                    $file = $gambar->getClientOriginalName();
+                    $gambar->move(public_path().'/img/upload/', $file);  
+                    $data[] = $file;
+                }
+                $user = Auth::guard('users')->user();
+                $id_eo = Eo::where('user_id',$user->id);
+    
+                $data_paket = [ 
+                'id_eo' => $id_eo,
+                'gambar_paket'=> implode("|",$data),
+                'nama_paket'=> $request->nama_paket,
+                'kategori'=> $request->kategori,
+                'available'=> $request->available,
+                'deskripsi'=> $request->deskripsi,
+                'harga_paket'=> $request->harga_paket
+                ];
+    
+                $paket = new Paket($data_paket);
+                $paket->gambar_paket=json_encode($data);
+                $paket->save();
+
+                if (!$validator){
+                    return Redirect::back()->withErrors($validator)->withInput($request->all());
+                }else{
+                    return redirect('/paket');
+                }
+            }
+        } else {
+            return "kamu belum login";
+        }
         
-
-        if($request->hasfile('gambar_paket')){
-            foreach($request->file('gambar_paket') as $gambar){
-                $file = $gambar->getClientOriginalName();
-                $gambar->move(public_path().'/img/upload/', $file);  
-                $data[] = $file;
-            }
-
-            $id_eo = Auth::guard('users')->user()->id;
-
-            $data_paket = [ 
-            'id_eo' => $id_eo,
-            'gambar_paket'=> implode("|",$data),
-            'nama_paket'=> $request->nama_paket,
-            'kategori'=> $request->kategori,
-            'available'=> $request->available,
-            'deskripsi'=> $request->deskripsi,
-            'harga_paket'=> $request->harga_paket
-        ];
-
-            $paket = new Paket($data_paket);
-            $paket->gambar_paket=json_encode($data);
-            $paket->save();
-
-            if (!$validator){
-                return Redirect::back()->withErrors($validator)->withInput($request->all());
-            }else{
-                return redirect('/paket');
-            }
-        };
     }
         
 
@@ -174,11 +180,10 @@ class PaketController extends Controller
     }
 
     public function search(Request $request){
-        $user = Auth::guard('users')->user();
         $search = $request['paket'];
         $search_paket = Paket::where('nama_paket', 'like', '%'.$search.'%')->get();
         $count_search_paket = $search_paket->count();
-        return view('pages.search_paket', compact('search', 'search_paket', 'count_search_paket', 'user'));
+        return view('pages.search_paket', compact('search', 'search_paket', 'count_search_paket'));
     }
 
     public function search_filter(Request $request){
