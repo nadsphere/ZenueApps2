@@ -157,7 +157,7 @@
 													<img src="{{ asset('img/EO/eo-2.jpg') }}" width="65" height="65" class="rounded-circle mr-5" alt="Marie Salter">
 											</a>
 											<div class="media-body">
-													<h4>{{ $nama_eo[0]->name }}</h4>
+													<h4>{{ $eo[0]->nama_eo }}</h4>
 													<a href="#" class="btn btn-danger"><i class="	far fa-comment"></i> Kontak</a>
 											</div>
 									</div>

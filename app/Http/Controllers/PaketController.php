@@ -186,17 +186,10 @@ class PaketController extends Controller
     }
 
     public function index_detail($id){
-        $user = Auth::guard('users')->user();
-        $paket = Paket::where('id',$id)->get();
-        $eo_id = $paket[0]->id_eo;
-        $nama_eo = User::where('id', $eo_id)->get();
-
-        if ($user == null) {
-            return view('pages.paket_details', compact('user', 'paket', 'nama_eo'));
-        }else{
-            $id_eo = Auth::guard('users')->user()->id;
-            return view('pages.paket_details', compact('user', 'id_eo', 'paket', 'nama_eo'));
-        }
+            # code...
+            $paket = Paket::where('id',$id)->get();
+            $eo = Eo::where('id', $paket[0]->id_eo)->get();
+            return view('pages.paket_details', compact( 'paket', 'eo'));
     }
 
 
