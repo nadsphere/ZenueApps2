@@ -49,6 +49,7 @@
                 <i style="font-size: 16pt" class="icon fa fa-shopping-basket"></i>
               </a>
           </li>
+          @if(Auth::guard('user')->check() == )
           <li>
               <a href="#" class="widget-header mr-3">
                 <i style="font-size: 16pt" class="icon fa fa-bell"></i>
