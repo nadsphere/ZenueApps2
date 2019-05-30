@@ -27,7 +27,7 @@ class PaketController extends Controller
             return view('pages.paket', compact('paket', 'i', 'id_eo', 'user'));
         }
         else{
-            return view('pages.index');
+            return view('pages.login_page');
         }
     }
 
