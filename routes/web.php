@@ -96,7 +96,6 @@ Route::get('/paket_edit/{id}','PaketController@edit');
 Route::post('/update/{id}','PaketController@update');
 Route::get('/hapus_paket/{id}','PaketController@destroy');
 Route::get('/detail_paket/{id}','PaketController@index_detail');
-
 Route::resource('pakets', 'PaketController');
 
 //SEARCHING
