@@ -130,19 +130,6 @@
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
-                        {{-- <table class="table">
-                            <tr>
-                                <th> Nama Paket</th>
-                                <td>Paket Nikah (Kelas Ekonomi)</td>
-                                <tr></tr>            
-                                <th>Fasilitas</th>
-                                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td> 
-                                <tr></tr>
-                                <th>Harga</th>
-                                <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td>
-                                <tr></tr>
-                            </tr>
-                        </table> --}}
                         <form>
                             <hr>
                             <div class="form-group row">

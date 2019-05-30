@@ -75,15 +75,15 @@
                       </li>
                       <hr>
                       <li>
-                          <a class="dropdown-item" href="#">
+                          <a class="dropdown-item" href="eo_notif">
                               <div class="notification__icon-wrapper">
                                 <div class="notification__icon">
                                   <i class="fa fa-check-circle"></i>
                                 </div>
                               </div>
                               <div class="notification__content">
-                                <span class="notification__category">Payment</span>
-                                <p>Anda menerima pesanan Customer ID #ID0001</p>
+                                <span class="notification__category">Penerimaan Pesanan</span>
+                                <p>Anda menerima pesanan dari Pelanggan Jono Triyono..</p>
                               </div>
                             </a>
                       </li>

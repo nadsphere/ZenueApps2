@@ -46,59 +46,59 @@
                 </a>
             </li>
             <li class="dropdown notifications">
-                    <a href="#" class="widget-header mr-3" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                        <i style="font-size: 16pt" class="icon fa fa-bell" ></i>
-                        <span class="badge badge-pill badge-secondary">3+</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-small">
-                      <li>
-                          <a class="dropdown-item" href="#">
-                              <div class="notification__icon-wrapper">
-                                <div class="notification__icon">
-                                  <i class="fa fa-exclamation-triangle"></i>
-                                </div>
-                              </div>
-                              <div class="notification__content">
-                                <span class="notification__category">Payment</span>
-                                <p>Anda Membatalkan Pembayaran Customer...</p>
-                              </div>
-                            </a>
-                      </li>
-                      <hr>
-                      <li>
-                          <a class="dropdown-item" href="#">
-                              <div class="notification__icon-wrapper">
-                                <div class="notification__icon">
-                                  <i class="fa fa-info"></i>
-                                </div>
-                              </div>
-                              <div class="notification__content">
-                                <span class="notification__category">Order</span>
-                                <p>Customer #ID0012 mengonfirmasi pembayaran uang muka</p>
-                              </div>
-                            </a>
-                      </li>
-                      <hr>
-                      <li>
-                          <a class="dropdown-item" href="#">
-                              <div class="notification__icon-wrapper">
-                                <div class="notification__icon">
-                                  <i class="fa fa-check-circle"></i>
-                                </div>
-                              </div>
-                              <div class="notification__content">
-                                <span class="notification__category">Payment</span>
-                                <p>Anda menerima pesanan Customer ID #ID0001</p>
-                              </div>
-                            </a>
-                      </li>
-                      <hr>
-                      <li>
-                        <a href="" class="dropdown-item notification__all text-muted text-center">Lihat Semua</a>
-                          <!-- <a class="dropdown-item notification__all text-center" href="#"> Lihat Semua </a> -->
-                      </li>
-                    </ul>
-        
+              <a href="#" class="widget-header mr-3" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                  <i style="font-size: 16pt" class="icon fa fa-bell" ></i>
+                  <span class="badge badge-pill badge-secondary">3+</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-small">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="notification__icon-wrapper">
+                          <div class="notification__icon">
+                            <i class="fa fa-exclamation-triangle"></i>
+                          </div>
+                        </div>
+                        <div class="notification__content">
+                          <span class="notification__category">Payment</span>
+                          <p>Anda Membatalkan Pembayaran Customer...</p>
+                        </div>
+                      </a>
+                </li>
+                <hr>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        <div class="notification__icon-wrapper">
+                          <div class="notification__icon">
+                            <i class="fa fa-info"></i>
+                          </div>
+                        </div>
+                        <div class="notification__content">
+                          <span class="notification__category">Order</span>
+                          <p>Customer #ID0012 mengonfirmasi pembayaran uang muka</p>
+                        </div>
+                      </a>
+                </li>
+                <hr>
+                <li>
+                    <a class="dropdown-item" href="eo_notif">
+                        <div class="notification__icon-wrapper">
+                          <div class="notification__icon">
+                            <i class="fa fa-check-circle"></i>
+                          </div>
+                        </div>
+                        <div class="notification__content">
+                          <span class="notification__category">Penerimaan Pesanan</span>
+                          <p>Anda menerima pesanan dari Pelanggan Jono Triyono..</p>
+                        </div>
+                      </a>
+                </li>
+                <hr>
+                <li>
+                  <a href="" class="dropdown-item notification__all text-muted text-center">Lihat Semua</a>
+                    <!-- <a class="dropdown-item notification__all text-center" href="#"> Lihat Semua </a> -->
+                </li>
+              </ul>
+  
             </li>
             <li>
                 <div class="input-group">
@@ -172,7 +172,7 @@
                           <td class="prd-sta">25000000</td>
                           <td class="prd-opt">
                             <form action="">
-                              <select class="form-control" id="kategori">
+                              <select class="form-control-plaintext" id="kategori" disabled>
                                 <option>Uang Penuh</option>
                                 <option>Uang Muka</option>
                               </select>
@@ -181,7 +181,7 @@
                           <td class="prd-prc">2019-05-22</td>
                           <td class="prd-pr"><span class="highlight high-approve">Accept</span></td>
                           <td class="prd-name">
-                            <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-eye"></i> View</a>
+                            <a href="transact_detail" class="btn btn-sm btn-danger"><i class="fa fa-eye"></i> View</a>
                           </td>
                     </tr>
                     <tr>

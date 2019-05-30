@@ -3,6 +3,10 @@
 Route::get('/transacts', function () {
     return view('pages.approval');
 });
+Route::get('/transact_detail', function () {
+    return view('pages.approve_detail');
+});
+
 
 // halaman dashboard
 Route::get('/dashpage', function () {
@@ -50,6 +54,9 @@ Route::get('/eo_notif', function () {
 });
 Route::get('/user_notif', function () {
     return view('pages.user_notification');
+});
+Route::get('/eonotif', function () {
+    return view('pages.notif_detail');
 });
 //END
 

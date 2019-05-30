@@ -161,18 +161,20 @@
                                           <div class="media-body">
                                               <div class="row">
                                                       <main class="col-sm-12">
+                                                        <a href="eonotif">
                                                           <article class="">
                                                               <div class="row">
-                                                                      <aside class="col-sm-3">
-                                                                          <div class="ava-prof"><img class="img-fluid home-pho" alt="gambar nikana" src="{{ asset('img/paket/weds.jpg') }}"></div>
-                                                                      </aside> 
-                                                                      <article class="col-sm-9">
-                                                                          <h5 class="title"> Konfimasi Penerimaan Pesanan</h5>
-                                                                          <p class="texts">Pesanan BK005 telah diterima.. </p>
-                                                                      </article>
-                                                              </div> 
-                                                              <hr>
+                                                                  <aside class="col-sm-2">
+                                                                      <div class="ava-prof"><img class="img-fluid home-pho" alt="gambar nikana" src="{{ asset('img/paket/weds.jpg') }}"></div>
+                                                                  </aside> 
+                                                                  <article class="col-sm-9">
+                                                                      <h5 class="title">Penerimaan Pesanan</h5>
+                                                                      <p style="color:#000" >Pesanan BK001 dari Jono Triyono telah diterima.. </p> 
+                                                                  </article>
+                                                              </div>
+                                                              <hr> 
                                                           </article>
+                                                        </a>
                                                           <a href="">
                                                           <article class="">
                                                                   <div class="row">
@@ -187,19 +189,19 @@
                                                                   <hr>
                                                           </article>
                                                           </a>
-                                                              <a href="link">
-                                                                  <article class="">
-                                                                          <div class="row">
-                                                                                  <aside class="col-sm-3">
-                                                                                      <div class="ava-prof"><img class="img-fluid home-pho" alt="gambar nikana" src="{{ asset('img/paket/weds.jpg') }}"></div>
-                                                                                  </aside> 
-                                                                                  <article class="col-sm-9">
-                                                                                      <h5 class="title"> Konfimasi Penerimaan Pesanan</h5>
-                                                                                      <p style="color:#000" >Pesanan BK005 telah diterima.. </p>
-                                                                                  </article>
-                                                                          </div> 
+                                                        <a href="eonotif">
+                                                          <article class="">
+                                                              <div class="row">
+                                                                  <aside class="col-sm-3">
+                                                                      <div class="ava-prof"><img class="img-fluid home-pho" alt="gambar nikana" src="{{ asset('img/paket/weds.jpg') }}"></div>
+                                                                  </aside> 
+                                                                  <article class="col-sm-9">
+                                                                      <h5 class="title"> Konfimasi Penerimaan Pesanan</h5>
+                                                                      <p style="color:#000" >Pesanan BK005 telah diterima.. </p>
                                                                   </article>
-                                                              </a>
+                                                              </div> 
+                                                          </article>
+                                                        </a>
                                                       </main> 
                                                   </div>
                                                   <br />
