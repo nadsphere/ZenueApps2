@@ -22,8 +22,9 @@ class PaketController extends Controller
         {
             $i = 0;
             $user = Auth::guard('users')->user();
-            $id_eo = Auth::guard('users')->user()->id;
-            $paket = Paket::where('id_eo', '=', $id_eo)->get();   
+            $eo = Eo::where('user_id', $user->id)->first();
+            $id_eo = $eo->id;
+            $paket = Paket::where('id_eo', $id_eo)->get();   
             return view('pages.paket', compact('paket', 'i', 'id_eo', 'user'));
         }
         else{
