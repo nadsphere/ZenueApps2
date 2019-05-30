@@ -100,3 +100,7 @@ Route::resource('pakets', 'PaketController');
 
 //SEARCHING
 Route::post('/search', 'PaketController@search');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

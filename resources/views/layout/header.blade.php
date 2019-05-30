@@ -65,12 +65,12 @@
                     </div>
                 </div>
             </li>
-            @if ($user == null)
+            @if (!Auth::guard('users')->check())
           <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalLogin">LOGIN</a></li> 
           <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
-            @elseif ($user->is_eo == 1 )
+            @elseif (Auth::guard('users')->check() && Auth::guard('users')->user()->is_eo == 1)
             <li><a href="{{ url('/paket') }}">Paket</a></li>
-            <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
+            <li class="drop-down"><a href="#"><span>{{Auth::guard('users')->user()->name}}</span></a>
                 <ul>
                   <li><a href="{{ url('/paket') }}">Paket</a></li>
                   <li><a href="#">Pengriman</a></li>
@@ -78,7 +78,7 @@
                   <li><a href="{{ url('/logout') }}">Sign Out</a></li>
                 </ul>
             </li>
-          @else
+          @elseif (Auth::guard('users')->check() && Auth::guard('users')->user()->is_eo == 0)
           <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
               <ul>
               <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegistEO">Buka Event Organizer</a></li>
