@@ -46,17 +46,23 @@ Route::get('/regist_eo', function () {
 //end section
 
 //NOTIF USER dan EO
-Route::get('/eo_notif', function () {
+Route::get('/eo/notif', function () {
     return view('pages.eo_notification');
 });
-Route::get('/user_notif', function () {
+Route::get('/eo/notif/more', function () {
+    return view('pages.eo_notif_detail');
+});
+Route::get('/user/notif', function () {
     return view('pages.user_notification');
 });
-Route::get('/eonotif', function () {
-    return view('pages.notif_detail');
+Route::get('/user/notif/more', function () {
+    return view('pages.user_notif_detail');
 });
-//END
 
+//MTD PAYMENT USER
+Route::get('/user/payments', function () {
+    return view('pages.user_notif_detail');
+});
 
 Route::get('/', function () {
     return view('pages.index');

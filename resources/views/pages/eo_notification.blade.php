@@ -14,21 +14,6 @@
     <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/fix.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{asset('lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-    <style>
-        .ava-prof{
-            width: 50%;
-            height: 50%;
-            position: relative;
-            overflow: hidden;
-        }
-        .home-pho img{
-            position: absolute;
-            top: 0;
-            left: 0;
-            vertical-align: middle;
-            border-radius: 50%;
-        }
-    </style>
 </head>
 <body>
     <button type="button" class="mobile-nav-toggle d-lg-none"><i class="fa fa-bars"></i></button>
@@ -121,158 +106,73 @@
       </div>
     </header>
     <main id="main" class="section-bg2">
-        <section class="section-content bg padding-y">
-                <br /><br /><br /><br />
-            <div class="container">
-              <div class="row float-right">
-                <a href="" class="btn"><i class="fa fa-filter"></i> Urutkan </a>
-                <a href="" class="btn"><i class="fa fa-cog"></i> </a>
-              </div>
-              <br /><br />
-              <div class="row">
-                  <aside class="col-sm-3">
-                      <div class="card card-filter">
-                          <article class="card-notif-itm">
-                              <header class="card-header notif-head">
-                                  <a href="#">
-                                      <h6 class="title">Notifikasi<span class="float-right badge badge-info round bdges">125</span></h6>
-                                  </a>       
-                              </header>
-                              <div style="" class="filter-content collapse show">
-                                  <div class="card-body">
-                                      <ul class="list-unstyled list-lg">
-                                          <a href="#"><li>Pesanan</li></a>
-                                          <hr>
-                                          <a href="#"><li>Penilaian</li></a>
-                                          <hr>
-                                          <a href="#"><li>Promo Penjual</li> </a><hr>
-                                          <a href="#"><li>Aktivitas</li></a> <hr>
-                                          <a href="#"><li>Iklan</li></a>
-                                      </ul>  
-                                  </div> <!-- card-body.// -->
-                              </div> <!-- collapse .// -->
-                          </article> <!-- card-group-item.// -->
+      <section class="section-content bg padding-y">
+              <br />
+          <div class="container">          
+            <div class="row mt-4">
+              <main class="mt-4 col-lg-3 col-xl-3 col-md-5">
+                  <div class="card card-filter">
+                      <article class="card-notif-itm">
+                          <header class="card-header notif-head">
+                              <a href="#">
+                                  <h6 class="title">Notifikasi<span class="float-right badge badge-info round bdges">125</span></h6>
+                              </a>       
+                          </header>
+                          <div class="filter-content collapse show">
+                              <div class="card-body">
+                                  <ul class="list-unstyled list-lg">
+                                      <a href="#"><li>Pesanan</li></a>
+                                      <hr>
+                                      <a href="#"><li>Aktivitas</li></a>
+                                  </ul>  
+                              </div> 
+                              
+                          </div> 
+                      </article>
+                  </div> 
+              </main>
+                <main class="mt-4 col-lg-9 col-xl-9 col-md-7">
+                    <div class="card">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col-lg-12">
+                                  <div class="profiletimeline"> 
+                                      <a href="notif/more" class="hover">
+                                          <div class="sl-item mt-0" >
+                                              <aside class="sl-left">
+                                                  <img class="img-rounded" alt="avaeo_notif" src="{{asset('img/items/stores.png')}}">
+                                              </aside> 
+                                              <article class="sl-right">
+                                                  <h5 class="sl-title">Penerimaan Pesanan <span class="sl-date">5 Menit</span></h5>
+                                                  <p class="sl-txt">Pesanan BK001 dari Jono Triyono telah diterima.. </p> 
+                                              </article>  
+                                          </div>                                        
+                                      </a>
+                                      <a href="notif_detail.html">
+                                          <article class="sl-item mt-0 mb-0">
+                                              <div class="ml-0">
+                                                  <aside class="sl-left">
+                                                      <img class="img-rounded" alt="avaeo_notif" src="{{asset('img/items/stores.png')}}">
+                                                  </aside> 
+                                                  <article class="sl-right">
+                                                      <h5 class="sl-title">Penerimaan Pesanan <span class="sl-date">5 Menit</span></h5>
+                                                      <p class="sl-txt">Pesanan BK001 dari Jono Triyono telah diterima.. </p> 
+                                                  </article> 
+                                              </div>  
+                                          </article> 
+                                      </a>
+                                    </div>
+                              </div>
+                          </div>
+                                    
                       </div>
-                  </aside>
-                  <main class="col-sm-9">
-                          <div class="card">
-                                  <div class="card-body h-100">
-                                      <div class="media">
-                                          <div class="media-body">
-                                              <div class="row">
-                                                      <main class="col-sm-12">
-                                                        <a href="eonotif">
-                                                          <article class="">
-                                                              <div class="row">
-                                                                  <aside class="col-sm-2">
-                                                                      <div class="ava-prof"><img class="img-fluid home-pho" alt="gambar nikana" src="{{ asset('img/paket/weds.jpg') }}"></div>
-                                                                  </aside> 
-                                                                  <article class="col-sm-9">
-                                                                      <h5 class="title">Penerimaan Pesanan</h5>
-                                                                      <p style="color:#000" >Pesanan BK001 dari Jono Triyono telah diterima.. </p> 
-                                                                  </article>
-                                                              </div>
-                                                              <hr> 
-                                                          </article>
-                                                        </a>
-                                                          <a href="">
-                                                          <article class="">
-                                                                  <div class="row">
-                                                                          <aside class="col-sm-3">
-                                                                              <div class="ava-prof"><img class="img-fluid home-pho" alt="gambar nikana" src="{{ asset('img/paket/weds.jpg') }}"></div>
-                                                                          </aside> 
-                                                                          <article class="col-sm-9">
-                                                                              <h5 class="title"> Konfimasi Penerimaan Pesanan</h5>
-                                                                              <p class="texts">Pesanan BK005 telah diterima.. </p>
-                                                                          </article>
-                                                                  </div> 
-                                                                  <hr>
-                                                          </article>
-                                                          </a>
-                                                        <a href="eonotif">
-                                                          <article class="">
-                                                              <div class="row">
-                                                                  <aside class="col-sm-3">
-                                                                      <div class="ava-prof"><img class="img-fluid home-pho" alt="gambar nikana" src="{{ asset('img/paket/weds.jpg') }}"></div>
-                                                                  </aside> 
-                                                                  <article class="col-sm-9">
-                                                                      <h5 class="title"> Konfimasi Penerimaan Pesanan</h5>
-                                                                      <p style="color:#000" >Pesanan BK005 telah diterima.. </p>
-                                                                  </article>
-                                                              </div> 
-                                                          </article>
-                                                        </a>
-                                                      </main> 
-                                                  </div>
-                                                  <br />
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                      {{-- <article class="card card-product">
-                              <div class="card-body">
-                                  <div class="row">
-                                      <aside class="col-sm-3">
-                                          <div class="img-wrap"><img height="65%" width="20%" src="{{asset('/img/paket/weds.jpg')}}"></div>
-                                      </aside> 
-                                      <article class="col-sm-8">
-                                              <h4 class="title"> Paket Nikah Kelas EKonomi</h4>
-                                              <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam </p>
-                                      </article>
-                                  </div> 
-                              </div>
-                      </article>
-                      <article class="card card-product">
-                              <div class="card-body">
-                                  <div class="row">
-                                      <aside class="col-sm-3">
-                                          <div class="img-wrap"><img height="65%" width="20%" src="{{asset('/img/paket/weds.jpg')}}"></div>
-                                      </aside> 
-                                      <article class="col-sm-8">
-                                              <h4 class="title"> Paket Nikah Kelas EKonomi</h4>
-                                              <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam </p>
-                                      </article>
-                                  </div> 
-                              </div>
-                      </article>
-                      <article class="card card-product">
-                              <div class="card-body">
-                                  <div class="row">
-                                      <aside class="col-sm-3">
-                                          <div class="img-wrap"><img height="65%" width="20%" src="{{asset('/img/paket/weds.jpg')}}"></div>
-                                      </aside> 
-                                      <article class="col-sm-8">
-                                              <h4 class="title"> Paket Nikah Kelas EKonomi</h4>
-                                              <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Ut wisi enim ad minim veniam </p>
-                                      </article>
-                                  </div> 
-                              </div>
-                      </article> --}}
-                  </main> 
-              </div>
-            </div> <!-- container .//  -->
-            <br />
-            <div class="row d-flex justify-content-center">
-                    <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                    </div>
+                </main>
             </div>
-            </section>
-            
+          </div> <!-- container .//  -->
+          <br />
+      </section>
+          
     </main>
       <footer id="footer" class="section-bg">
         <div class="footer-top">
