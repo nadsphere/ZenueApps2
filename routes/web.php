@@ -1,10 +1,17 @@
 <?php
 //approval (EO)
-Route::get('/transacts', function () {
-    return view('pages.approval');
+Route::get('/eo/approve_book', function () {
+    return view('pages.eo_approv_book');
 });
-Route::get('/transact_detail', function () {
-    return view('pages.approve_detail');
+Route::get('/eo/approve_book/details', function () {
+    return view('pages.eo_approv_bookdet');
+});
+//*User
+Route::get('/user/approve_book', function () {
+    return view('pages.user_approv_book');
+});
+Route::get('/user/approve_book/details', function () {
+    return view('pages.user_approv_bookdet');
 });
 
 
@@ -61,7 +68,7 @@ Route::get('/user/notif/more', function () {
 
 //MTD PAYMENT USER
 Route::get('/user/payments', function () {
-    return view('pages.user_notif_detail');
+    return view('pages.user_mtd_payment');
 });
 
 Route::get('/', function () {

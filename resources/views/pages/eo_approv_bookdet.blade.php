@@ -189,8 +189,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="col text-center mb-1">
-                                                    <button class="btn btn-success" style="white-space: nowrap" type="submit" onclick="location.href='approval.html';">Terima</button>
-                                                    <input class="btn btn-danger" type="button" onclick="location.href='approval.html';" value="Tolak" />
+                                                    <button class="btn btn-success" style="white-space: nowrap" type="submit" onclick="location.href='/eo/approve_book';">Terima</button>
+                                                    <input class="btn btn-danger" type="button" onclick="location.href='/eo/approve_book';" value="Tolak" />
                                                 </div>
                                                 <br />
                                             </form>
