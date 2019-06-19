@@ -66,8 +66,8 @@
                 </div>
             </li>
             @if (!Auth::guard('users')->check())
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalLogin">LOGIN</a></li> 
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">REGISTER</a></li>
+          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalLogin">Login</a></li> 
+          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">Register</a></li>
             @elseif (Auth::guard('users')->check() && Auth::guard('users')->user()->is_eo == 1)
             <li><a href="{{ url('/paket') }}">Paket</a></li>
             <li class="drop-down"><a href="#"><span>{{Auth::guard('users')->user()->name}}</span></a>

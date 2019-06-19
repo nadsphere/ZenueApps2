@@ -155,47 +155,24 @@
         </div>
       </div>
     </div> 
-  <section>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="first-slide img-box" style="background: rgb(193, 23, 23, .5); height: 50%;" src="img/bg-1.jpg" alt="First slide">
-              <div class="carousel-caption text-left d-none d-md-block ">
-                <h3 class="display-4" style="color:white;">Get 30% Off</h3>
-                <p class="lead" style="color:white;">Untuk setiap pemesanan pertama</p>
-                <a class="btn btn-lg btn-outline-light" href="#" role="button">Pesan Sekarang</a>
+    <section id="intro" class="clearfix">
+        <div class="container d-flex h-100">
+          <div class="row justify-content-center align-self-center">
+            <div class="col-md-6 intro-info order-md-first order-first mb-5">
+              <h2>Make your Event Awesome!</h2>
+              <p>Temukan layanan organizer untuk berbagai acara di lokasi terdekat Anda dan dapatkan rekomendasi menarik lainnya</p>
+              <div>
+                <a href="#about" class="btn-get-started scrollto">Daftar Sekarang</a>
               </div>
             </div>
-            <div class="carousel-item">
-                <img class="second-slide img-fluid" src="img/bg-2.jpg" alt="Second slide">
-              <div class="carousel-caption text-left d-none d-md-block">
-                <h3 class="display-4">Best Day Offer</h3>
-                <p class="lead">Diskon besar-besaran untuk event terbaikmu</p>
-              </div>
-            </div>
-            <div class="carousel-item">
-                <img class="third-slide img-fluid overlay" src="img/bg-3.jpg" alt="Third slide">
-              <div class="carousel-caption text-left d-none d-md-block">
-                <h3 class="display-4">Pasang Iklanmu di sini!</h3>
-                <p class="lead">Nikmati keuntungan lebih dengan mempromosikan mitra Anda</p>
-              </div>
+      <br>
+            <div class="col-md-6 intro-img order-md-last order-last pt-1">
+              <img src="{{asset('img/bn-img.png')}}" alt="" class="img-fluid clo-img">
             </div>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-             </a>
-      </div>
-  </section>
+    
+        </div>
+      </section>
   <main id="main">
 		<section id="services" class="section-bg">
 		    <div class="container">

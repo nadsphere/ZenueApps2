@@ -70,6 +70,9 @@ Route::get('/user/notif/more', function () {
 Route::get('/user/payments', function () {
     return view('pages.user_mtd_payment');
 });
+Route::get('/kokom', function () {
+    return view('pages.komplete');
+});
 
 Route::get('/', function () {
     return view('pages.index');
