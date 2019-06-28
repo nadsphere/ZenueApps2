@@ -11,6 +11,7 @@ aside {
 
 a {
   color: #000;
+
   transition: 0.5s;
 }
 
@@ -235,7 +236,7 @@ h6 {
 #intro .intro-info p {
   color: #fff;
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 350;
 }
 
 #intro .intro-info .btn-get-started,
@@ -653,11 +654,17 @@ h6 {
   letter-spacing: 1px;
   display: inline-block;
   padding: 8px 26px;
-  border-radius: 3px;
+  border-radius: 50px;
   transition: 0.5s;
   margin: 10px;
   border: 3px solid #fff;
   color: #fff;
+}
+.cta-btn:hover{
+  text-decoration: none;
+  outline: none;
+  background: #fff;
+  color: #000000;
 }
 
 /* FOOTER */
