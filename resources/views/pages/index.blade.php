@@ -159,8 +159,8 @@
         <div class="container d-flex h-100">
           <div class="row justify-content-center align-self-center">
             <div class="col-md-6 intro-info order-md-first order-first mb-5">
-              <h2>Make your Event Awesome!</h2>
-              <p>Temukan layanan organizer untuk berbagai acara di lokasi terdekat Anda dan dapatkan rekomendasi menarik lainnya</p>
+              <h2>Buat Acaramu Mudah & Keren!</h2>
+              <p>Temukan layanan organizer untuk berbagai acara di lokasi terdekat Anda dan dapatkan rekomendasi menarik lainnya.</p>
               <div>
                 <a href="#about" class="btn-get-started scrollto">Daftar Sekarang</a>
               </div>
