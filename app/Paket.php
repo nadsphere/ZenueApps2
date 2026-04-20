@@ -31,13 +31,19 @@ class Paket extends Model
         return $this->hasMany(Transaction::class, 'id_paket');
     }
 
-    public function getImagesAttribute()
+    public function ratings()
     {
-        return json_decode($this->gambar_paket, true) ?? [];
+        return $this->hasMany(Rating::class, 'paket_id');
     }
 
-    public function getFormattedPriceAttribute()
+    public function getAverageRatingAttribute()
     {
-        return 'Rp ' . number_format($this->harga_paket, 0, ',', '.');
+        return $this->ratings()->avg('rating') ?? 0;
     }
+
+    public function getRatingCountAttribute()
+    {
+        return $this->ratings()->count();
+    }
+
 }

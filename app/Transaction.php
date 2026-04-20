@@ -12,6 +12,7 @@ class Transaction extends Model
     protected $table = 'transactions';
 
     protected $fillable = [
+        'user_id',
         'id_paket',
         'kode_booking',
         'email',
@@ -28,6 +29,11 @@ class Transaction extends Model
     public function paket()
     {
         return $this->belongsTo(Paket::class, 'id_paket');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function getStatusLabelAttribute()

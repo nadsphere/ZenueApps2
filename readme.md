@@ -1,8 +1,6 @@
-# ZenueApps2 - Event Organizer Platform
+# Zenith Apps - Event Organizer Platform
 
-Event organizer marketplace platform for managing event packages, bookings, and transactions.
-
-Built with **Laravel 11**.
+Event organizer marketplace platform for managing event packages, bookings, and transactions. Built with **Laravel 11**.
 
 ## Requirements
 
@@ -75,14 +73,11 @@ Visit: `http://localhost:8000`
 ```
 app/
 ├── Http/
-│   ├── Controllers/
-│   │   ├── Controller.php
-│   │   ├── DashboardController.php
-│   │   ├── PaketController.php
-│   │   ├── TransactionController.php
-│   │   └── UserController.php
-│   └── Middleware/
-│       └── AuthUser.php
+│   └── Controllers/
+│       ├── Controller.php
+│       ├── PaketController.php
+│       ├── TransactionController.php
+│       └── UserController.php
 ├── Models/
 │   ├── Booking.php
 │   ├── Eo.php
@@ -96,31 +91,50 @@ bootstrap/
 └── providers.php
 database/
 ├── migrations/
-│   ├── 2019_04_16_042110_create_eos_table.php
-│   ├── 2019_04_16_050652_create_transactions_table.php
-│   ├── 2019_04_16_052840_create_bookings_table.php
-│   ├── 2019_04_27_052755_create_pakets_table.php
-│   └── 2019_05_14_075521_create_users_table.php
+├── factories/
+└── seeders/
+public/
+├── css/          # Main stylesheets
+│   ├── modern.css
+│   ├── header-inline.css
+│   ├── auth-inline.css
+│   ├── paket-details-inline.css
+│   └── ...
+└── js/           # Main scripts
+    ├── main.js
+    ├── header-inline.js
+    ├── login-inline.js
+    ├── register-inline.js
+    └── ...
+resources/
+└── views/
+    ├── layout/
+    │   ├── app.blade.php     # Main layout (header + footer)
+    │   ├── auth.blade.php    # Auth layout (login/register)
+    │   ├── header.blade.php  # Navigation header
+    │   └── footer.blade.php  # Site footer
+    └── pages/
+        ├── index.blade.php           # Homepage
+        ├── login_page.blade.php      # User login
+        ├── register_page.blade.php   # User registration
+        ├── register_eo.blade.php     # EO registration
+        ├── browse_paket.blade.php    # Browse packages
+        ├── paket_details.blade.php   # Package detail
+        ├── dashboard.blade.php       # Dashboard
+        ├── manage_paket.blade.php    # EO: manage packages
+        ├── user_transact.blade.php   # User: bookings
+        ├── transact_detail.blade.php  # Transaction detail
+        ├── wishlist.blade.php        # Wishlist
+        ├── user_profile.blade.php    # User profile
+        ├── eo_profile.blade.php      # EO profile
+        ├── form_ambilpaket.blade.php  # Booking form
+        ├── search_paket.blade.php    # Search results
+        ├── paket.blade.php           # EO: orders view
+        └── ... (notification, approval, payment pages)
 routes/
 ├── web.php
 ├── api.php
 └── console.php
-resources/
-└── views/
-    ├── layout/
-    │   ├── app.blade.php
-    │   └── footer.blade.php
-    └── pages/
-        ├── index.blade.php
-        ├── login_page.blade.php
-        ├── register_page.blade.php
-        ├── register_eo.blade.php
-        ├── paket.blade.php
-        ├── paket_details.blade.php
-        ├── form_ambilpaket.blade.php
-        ├── search_paket.blade.php
-        ├── dashpage.blade.php
-        └── ... (other pages)
 tests/
 ├── Unit/
 │   ├── UserModelTest.php
@@ -142,25 +156,30 @@ tests/
 
 | Role | Description |
 |------|-------------|
-| **Regular User** | Browse packages, make bookings |
-| **Event Organizer (EO)** | Create and manage event packages |
+| **Regular User** | Browse packages, make bookings, manage wishlist |
+| **Event Organizer (EO)** | Create and manage event packages, handle orders |
 
 ### Core Functionality
 
 | Feature | Description |
 |---------|-------------|
 | User Registration | Register as regular user or EO |
-| User Login | Authenticate with phone number and password |
+| User Login | Authenticate with email and password |
+| Package Browsing | Browse packages by category with search & sort |
 | Package Management | EO can create, edit, delete packages |
-| Package Search | Search packages by name |
 | Booking System | Users can book event packages |
 | Transaction Tracking | Track booking status and payments |
+| Wishlist | Save favorite packages for later |
+| Notifications | Real-time notifications for users and EOs |
+| User Profile | Edit profile and password |
+| EO Profile | Manage EO business profile |
 
 ---
 
 ## Database Schema
 
 ### Users Table
+
 | Column | Type | Description |
 |--------|------|-------------|
 | id | bigint | Primary key |
@@ -169,9 +188,9 @@ tests/
 | no_telp | string | Phone number |
 | password | string | Hashed password |
 | is_eo | boolean | Is Event Organizer flag |
-| is_renter | boolean | Is Renter flag |
 
 ### Eos Table (Event Organizers)
+
 | Column | Type | Description |
 |--------|------|-------------|
 | id | bigint | Primary key |
@@ -184,89 +203,77 @@ tests/
 | gambar_profil | string | Profile image (nullable) |
 
 ### Pakets Table (Packages)
+
 | Column | Type | Description |
 |--------|------|-------------|
 | id | bigint | Primary key |
 | id_eo | bigint | Foreign key to eos |
 | gambar_paket | string | JSON array of images |
 | nama_paket | string | Package name |
-| kategori | string | Category (Wedding, Catering, etc.) |
+| kategori | string | Category (Wedding, Concert, Party, etc.) |
 | available | string | Availability status |
 | deskripsi | text | Package description |
 | harga_paket | decimal | Price |
 
 ### Transactions Table
+
 | Column | Type | Description |
 |--------|------|-------------|
 | id | bigint | Primary key |
 | id_paket | bigint | Foreign key to pakets |
-| kode_booking | string | Booking code (nullable) |
+| id_user | bigint | Foreign key to users |
+| kode_booking | string | Booking code |
 | email | string | Customer email |
 | no_telp | string | Customer phone |
 | tanggal_acara | date | Event date |
 | status_pembayaran | int | Payment status (0=Pending, 1=Paid) |
-
-### Bookings Table
-| Column | Type | Description |
-|--------|------|-------------|
-| id | bigint | Primary key |
-| pemesan_id | bigint | Customer user ID |
-| renter_id | bigint | Renter user ID |
-| jenis_layanan | string | Service type |
-| lokasi | text | Event location |
-| konsep_acara | text | Event concept |
-| deskripsi_acara | text | Event description |
-| jumlah_tamu | bigint | Number of guests |
-| tanggal_acara | datetime | Event date/time |
-| informasi | text | Additional info (nullable) |
-| is_accepted | boolean | Acceptance status |
+| status_approval | int | Approval status (0=Pending, 1=Approved, 2=Rejected) |
 
 ---
 
 ## Routes
 
 ### Public Routes
+
 | Method | URI | Description |
 |--------|-----|-------------|
 | GET | `/` | Home page |
 | GET | `/login` | Login page |
 | GET | `/register` | Registration page |
 | GET | `/regist_eo` | EO registration page |
+| GET | `/paket` | Browse all packages |
+| GET | `/detail_paket/{id}` | Package detail page |
 
-### Authenticated Routes (Users)
+### Authenticated Routes (Users & EO)
+
 | Method | URI | Description |
 |--------|-----|-------------|
 | POST | `/register` | Register new user |
 | POST | `/login` | User login |
 | GET | `/logout` | User logout |
 | POST | `/registereo` | Register as EO |
-| GET | `/dashboard` | Dashboard |
-| GET | `/paket` | Manage packages (EO) |
-| POST | `/insert` | Create package |
-| POST | `/update/{id}` | Update package |
-| GET | `/paket_edit/{id}` | Edit package |
-| GET | `/hapus_paket/{id}` | Delete package |
-| GET | `/detail_paket/{id}` | Package details |
-| POST | `/search` | Search packages |
-| GET | `/ambil_paket/{idpaket}` | Book package |
-| POST | `/form_paket` | Submit booking |
-
-### EO Routes
-| Method | URI | Description |
-|--------|-----|-------------|
-| GET | `/eo/approve_book` | Approve bookings |
-| GET | `/eo/notif` | EO notifications |
-| GET | `/eo_profile` | EO profile page |
-| GET | `/edit_eo` | Edit EO profile |
-
-### User Routes
-| Method | URI | Description |
-|--------|-----|-------------|
-| GET | `/user/approve_book` | User bookings |
+| GET | `/dashboard` | User dashboard |
+| GET | `/edit_user` | Edit user profile |
+| GET | `/user_profile` | View user profile |
+| GET | `/booking` | User bookings / transactions |
+| GET | `/wishlist` | Saved packages |
 | GET | `/user/notif` | User notifications |
 | GET | `/user/payments` | Payment methods |
-| GET | `/edit_user` | Edit user profile |
-| GET | `/request` | Transaction history |
+
+### EO-Specific Routes
+
+| Method | URI | Description |
+|--------|-----|-------------|
+| GET | `/manage_paket` | Manage EO packages |
+| POST | `/insert` | Create package |
+| GET | `/paket_edit/{id}` | Edit package |
+| POST | `/update/{id}` | Update package |
+| GET | `/hapus_paket/{id}` | Delete package |
+| GET | `/orders` | View orders |
+| GET | `/eo/approve_book` | Approve bookings |
+| GET | `/eo/notif` | EO notifications |
+| GET | `/eo_profile` | View EO profile |
+| GET | `/eo_profile/edit` | Edit EO profile |
 
 ---
 
@@ -274,15 +281,64 @@ tests/
 
 The application uses a custom `users` guard for authentication:
 
-- **Login**: Phone number (`no_telp`) + Password
+- **Login**: Email + Password
 - **Auth Guard**: `Auth::guard('users')`
 - **Session-based**: Uses Laravel's default session driver
 
-### Middleware
+---
 
-| Middleware | Description |
-|------------|-------------|
-| `auth.users` | Protects authenticated routes |
+## CSS & JS Architecture
+
+Styles and scripts use an **inline externalization pattern**: inline `<style>` and `<script>` blocks in blade templates are extracted into external files in `public/css/` and `public/js/`, then loaded via Laravel's `@push/@stack` mechanism.
+
+### CSS Files
+
+| File | Description |
+|------|-------------|
+| `modern.css` | Base theme styles |
+| `header-inline.css` | Navigation header styles |
+| `auth-inline.css` | Login/register page styles |
+| `paket-details-inline.css` | Package detail page styles |
+| `transact-detail-inline.css` | Transaction detail styles |
+| `user-editprofile-inline.css` | Edit profile styles |
+| `user-transact-inline.css` | User transactions/booking styles |
+| `wishlist-inline.css` | Wishlist page styles |
+| `index.css` | Homepage styles |
+
+### JS Files
+
+| File | Description |
+|------|-------------|
+| `header-inline.js` | Navigation, scroll behavior, notifications |
+| `index-slider-inline.js` | Homepage EO carousel slider |
+| `browse-paket-inline.js` | Package browsing, filtering, wishlist toggle |
+| `login-inline.js` | Login form validation |
+| `register-inline.js` | User registration validation |
+| `register-eo-inline.js` | EO registration validation |
+| `manage-paket-inline.js` | Package management modals |
+| `paket-details-inline.js` | Package detail page JS |
+| `user-transact-inline.js` | Booking cancel modal |
+| `transact-detail-inline.js` | Transaction detail JS |
+| `wishlist-inline.js` | Wishlist remove modal |
+| `dashboard-inline.js` | Dashboard pagination |
+
+### Page Body Classes
+
+Each page sets a unique body class for page-specific CSS targeting:
+
+| Page | Body Class |
+|------|-----------|
+| Homepage | `is-home` |
+| Login/Register | `body-auth` |
+| Browse Packages | `is-package` |
+| Package Detail | `is-paket-detail` |
+| Dashboard | `is-dashboard` |
+| Manage Packages | `is-manage` |
+| User Bookings | `is-booking` |
+| Transaction Detail | `is-transact` |
+| Wishlist | `is-wishlist` |
+| User Profile | `is-profile` |
+| EO Profile | `is-eo-profile` |
 
 ---
 
@@ -299,19 +355,6 @@ php artisan test --coverage
 php artisan test --testsuite=Unit
 php artisan test --testsuite=Feature
 ```
-
-### Test Files
-
-| Test File | Tests |
-|-----------|-------|
-| `UserModelTest` | User creation, password hidden, relationships |
-| `EoModelTest` | EO creation, user/pakets relationships |
-| `PaketModelTest` | Package creation, images, formatted price |
-| `TransactionModelTest` | Transaction creation, status labels |
-| `BookingModelTest` | Booking creation, pemesan/renter relationships |
-| `UserControllerTest` | Register, login, logout, EO registration |
-| `PaketControllerTest` | CRUD operations, authentication |
-| `TransactionControllerTest` | Booking flow, validation |
 
 ---
 
@@ -358,6 +401,26 @@ php artisan route:list
 
 ## Recent Changes
 
+### Inline Code Externalization
+- Extracted all inline `<style>` blocks from blade templates into external CSS files in `public/css/`
+- Extracted all inline `<script>` blocks from blade templates into external JS files in `public/js/`
+- Migrated to Laravel's `@push/@stack` mechanism for styles and scripts
+- Created 15 external CSS files and 12 external JS files
+- Added body classes to all 26 blade templates for page-specific CSS targeting
+
+### Homepage Improvements
+- Fixed navbar text visibility (dark header with white text)
+- Added border and rounded container to EO slider section
+- Removed gap between CTA section and footer
+- Fixed hero section padding for proper nav-to-content spacing
+
+### Code Cleanup
+- Fixed missing `@section('body_class')` directives across all pages
+- Removed duplicate CSS rules in header-inline.css
+- Fixed missing user-transact-inline.js file
+- Cleaned up orphaned inline code left behind by partial replacements
+- Removed unused bower_components directory (Flot, Ionicons, etc.)
+
 ### Laravel 11 Upgrade
 - Upgraded from Laravel 5.8 to Laravel 11
 - Updated `composer.json` with Laravel 11 packages
@@ -365,20 +428,9 @@ php artisan route:list
 - Added `bootstrap/providers.php`
 - Simplified `config/app.php`
 - Added `HasFactory` trait to all models
-- Added relationships to models (User, Eo, Paket, Transaction, Booking)
+- Added relationships to models (User, Eo, Paket, Transaction)
 - Updated exception handler
 - Updated phpunit.xml for Laravel 11
-
-### Code Cleanup
-- Fixed duplicate routes in `api.php`
-- Removed unused controllers and files
-- Fixed PaketController bugs (`$id_eo`, typo)
-- Added missing Eo import
-- Fixed UserController undefined `$user` variable
-- Added password hiding to User model
-- Fixed Booking and Transaction models
-- Cleaned up routes
-- Removed empty stubs and dead code
 
 ---
 

@@ -98,35 +98,85 @@
     time: 1000
   });
 
-  // Porfolio isotope and filter
-  $(window).on('load', function () {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item'
+})(jQuery);
+
+// Enhanced Zenith Styling
+(function($) {
+  "use strict";
+
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const animateOnScroll = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-visible');
+        animateOnScroll.unobserve(entry.target);
+      }
     });
-    $('#portfolio-flters li').on( 'click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
-  
-      portfolioIsotope.isotope({ filter: $(this).data('filter') });
-    });
+  }, observerOptions);
+
+  // Observe elements for scroll animation
+  document.querySelectorAll('.box, .features, .thumb-wrappers, .card-product').forEach((el, index) => {
+    el.style.animationDelay = `${index * 0.1}s`;
+    animateOnScroll.observe(el);
   });
 
-  // Testimonials carousel (uses the Owl Carousel library)
-  $(".testimonials-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    items: 1
-  });
-
-  // Clients carousel (uses the Owl Carousel library)
-  $(".clients-carousel").owlCarousel({
-    autoplay: true,
-    dots: true,
-    loop: true,
-    responsive: { 0: { items: 2 }, 768: { items: 4 }, 900: { items: 6 }
+  // Add scroll animation CSS - visible by default, enhanced on scroll
+  const style = document.createElement('style');
+  style.textContent = `
+    .animate-on-scroll {
+      transition: box-shadow 0.4s ease, transform 0.4s ease;
     }
+    .animate-on-scroll.visible {
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Scroll animation with IntersectionObserver
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        scrollObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05 });
+
+  document.querySelectorAll('.box, .features, .thumb-wrappers, .card-product').forEach((el) => {
+    el.classList.add('animate-on-scroll');
+    scrollObserver.observe(el);
   });
+
+  // Image lazy loading enhancement
+  $('img').on('error', function() {
+    $(this).attr('src', 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgZmlsbD0iI2Y4ZjlmZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNTc1NzU3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCI+VElEWCBJTEVBUjwvdGV4dD48L3N2Zz4=');
+  });
+
+  // Enhanced dropdown hover effect
+  $('.main-nav .drop-down').hover(
+    function() {
+      $(this).find('> ul').stop(true, true).fadeIn(200);
+    },
+    function() {
+      $(this).find('> ul').stop(true, true).fadeOut(200);
+    }
+  );
+
+  // Card image zoom effect
+  $('.card-product').hover(
+    function() {
+      $(this).find('.img-wrap img').addClass('zoom');
+    },
+    function() {
+      $(this).find('.img-wrap img').removeClass('zoom');
+    }
+  );
 
 })(jQuery);
+
 

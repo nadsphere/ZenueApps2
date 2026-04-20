@@ -1,0 +1,117 @@
+/* Card Styling */
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(44,62,80,0.08);
+    overflow: hidden;
+}
+.card-header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    font-weight: 600;
+    border-bottom: 1px solid #1a252f;
+    padding: 12px 20px;
+}
+.card .card-body {
+    color: #2c3e50;
+}
+/* Table Styling */
+.table th, .table td {
+    color: #2c3e50;
+    border: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+.table thead th {
+    background-color: #2c3e50;
+    color: #ffffff;
+    font-weight: 600;
+    border: 1px solid #1a252f;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+.table tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+.table tbody tr:nth-of-type(even) {
+    background-color: #ffffff;
+}
+.table tbody tr:hover {
+    background-color: #e8f4f8;
+}
+/* Form label */
+.form-group label {
+    color: #2c3e50;
+    font-weight: 600;
+}
+.form-control {
+    color: #2c3e50;
+    border: 1px solid #ced4da;
+}
+.form-control:focus {
+    border-color: #c0392b;
+    box-shadow: 0 0 0 0.2rem rgba(192,57,43,.15);
+}
+/* Custom Radio */
+.custom-control-label {
+    color: #2c3e50;
+}
+/* Section header */
+.section-header .title {
+    color: #2c3e50;
+    font-weight: 700;
+}
+/* Title & text */
+.title { color: #2c3e50; }
+.text-dark { color: #2c3e50; }
+/* Accordion Collapsible Card */
+.card-header[aria-expanded="true"] {
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+.card-header[aria-expanded="false"] {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    border-bottom: 1px solid #dee2e6;
+}
+/* List styling */
+.ol-list {
+    padding-inline-start: 0;
+    color: #2c3e50;
+}
+.ol-list li {
+    text-align: justify;
+    color: #2c3e50;
+}
+.li-list {
+    color: #2c3e50;
+}
+/* Notification sidebar */
+.notif-head {
+    background-color: #2c3e50;
+    color: #ffffff;
+}
+.notif-head .title {
+    color: #ffffff;
+}
+
+/* Alert Styles */
+.alert-success-modern {
+    background: linear-gradient(135deg, rgba(39, 174, 96, 0.1) 0%, rgba(39, 174, 96, 0.05) 100%);
+    border: 1px solid rgba(39, 174, 96, 0.3);
+    border-left: 4px solid #27ae60;
+    border-radius: 8px;
+    color: #1e8449;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+}
+
+.alert-danger-modern {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(231, 76, 60, 0.05) 100%);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    border-left: 4px solid #e74c3c;
+    border-radius: 8px;
+    color: #c0392b;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+}

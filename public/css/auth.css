@@ -1,0 +1,43 @@
+/* Auth Page Enhanced Styling */
+.body-auth {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 30%, #34495e 70%, #2c3e50 100%) !important;
+    font-family: 'Open Sans', sans-serif !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.body-auth::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(192, 57, 43, 0.1) 0%, transparent 50%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+.body-auth::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(52, 73, 94, 0.2) 0%, transparent 50%);
+    animation: pulse 10s ease-in-out infinite reverse;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.body-auth > * {
+    position: relative;
+    z-index: 1;
+}

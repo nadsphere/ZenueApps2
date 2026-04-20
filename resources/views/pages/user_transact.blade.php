@@ -1,238 +1,183 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My Request</title>
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style2.css" rel="stylesheet">
-    <link href="css/ui.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/fix.css" rel="stylesheet" type="text/css"/>
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <style>
-        .img-circle{
-          width: 100px;
-          height: 100px;
-        }
-        .txt-small{
-          font-size: 15px;
-      }
-    </style>
-</head>
-<body>
-    <button type="button" class="mobile-nav-toggle d-lg-none"><i class="fa fa-bars"></i></button>
-    <header id="header" class="header-stack">
-      <div class="container">
-        <div class="logo float-left">
-          <h1 class="text-light"><a href="promaag.html" class="scrollto"><span>ZEN</span></a></h1>
+@extends('layout.app')
+@section('body_class', 'is-booking')
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/user_transact.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user-transact-inline.css') }}">
+@endpush
+@section('content')
+<main id="main">
+<section class="booking-page">
+<div class="container">
+
+    <!-- Page Title - Matching Informasi Akun card-header style -->
+    <div class="page-header-banner">
+        <div class="card-icon">
+            <i class="fa fa-shopping-bag"></i>
         </div>
-    
-        <nav class="main-nav float-right d-none d-lg-block">
-          <ul>
-            <li>
-                <a href="#" class="widget-header mr-3">
-                  <i style="font-size: 16pt" class="icon fa fa-shopping-basket"></i>
-                </a>
-            </li>
-            <li class="dropdown notifications">
-                <a href="#" class="widget-header mr-3" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                    <i style="font-size: 16pt" class="icon fa fa-bell" ></i>
-                    <span class="badge badge-pill badge-secondary">3+</span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-small">
-                  <li>
-                      <a class="dropdown-item" href="#">
-                          <div class="notification__icon-wrapper">
-                            <div class="notification__icon">
-                              <i class="fa fa-times-circle"></i>
-                            </div>
-                          </div>
-                          <div class="notification__content">
-                            <span class="notification__category">Order</span>
-                            <p>Pesanan Anda Dibatalkan..</p>
-                          </div>
-                        </a>
-                  </li>
-                  <hr>
-                  <li>
-                      <a class="dropdown-item" href="#">
-                          <div class="notification__icon-wrapper">
-                            <div class="notification__icon">
-                              <i class="fa fa-exclamation-triangle"></i>
-                            </div>
-                          </div>
-                          <div class="notification__content">
-                            <span class="notification__category">Payment</span>
-                            <p>Segera lunasi pembayaran paket anda...</p>
-                          </div>
-                        </a>
-                  </li>
-                  <hr>
-                  <li>
-                      <a class="dropdown-item" href="#">
-                          <div class="notification__icon-wrapper">
-                            <div class="notification__icon">
-                              <i class="fa fa-info"></i>
-                            </div>
-                          </div>
-                          <div class="notification__content">
-                            <span class="notification__category">Order</span>
-                            <p>Penawaran Paket Anda Diterima</p>
-                          </div>
-                        </a>
-                  </li>
-                  <hr>
-                  <li>
-                      <a class="dropdown-item" href="#">
-                          <div class="notification__icon-wrapper">
-                            <div class="notification__icon">
-                              <i class="fa fa-check-circle"></i>
-                            </div>
-                          </div>
-                          <div class="notification__content">
-                            <span class="notification__category">Payment</span>
-                            <p>Pembayaran Anda Telah diterima</p>
-                          </div>
-                        </a>
-                  </li>
-                  <hr>
-                  <li>
-                    <a href="" class="dropdown-item notification__all text-muted text-center">Lihat Semua</a>
-                  </li>
-                </ul>
-    
-            </li>
-            <li>
-                <div class="input-group">
-                    <div class="form-group has-search">
-                        <span class="fa fa-glip fa-search form-control-feedback"></span>
-                        <input type="text" class="form-controls form-control" placeholder="Cari...">
-                    </div>
-                </div>
-            </li>
-            <li class="drop-down"><a href="index.html"><span>JOKO MULYADI</span></a>
-              <ul>
-                <li><a href="#">Edit Profil</a></li>
-                <li><a href="#">My Order</a></li>
-                <li><a href="#">My Wishlist</a></li>
-                <li><a href="index.html">Sign Out</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main id="main" class="section-bg2">
-        <section class="container">
-            <br />  <br />  <br /> <br />
-            <div class=" bg-white" style="margin-top:50px">
+        <h2>Pesanan Saya</h2>
+    </div>
 
-                    <br /><br />
-                    <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-10">
-                            <table class="table">
-                                <tr>
-                                    <th> Nama Paket</th>
-                                    <td>Paket Nikah (Kelas Ekonomi)</td>
-                                    <tr></tr>            
-                                    <th>Fasilitas</th>
-                                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td> 
-                                    <tr></tr>
-                                    <th>Harga</th>
-                                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit doloribus sequi nihil fugiat laudantium ipsam, ducimus pariatur reiciendis officiis et nostrum blanditiis dolorum dolorem odio soluta quae optio veniam? Veritatis?</td>
-                                    <tr></tr>
-                                </tr>
-                            </table>
+    <!-- Alert Messages -->
+    @if(session('success'))
+        <div class="alert-success-modern">{{ session('success') }}</div>
+    @endif
+    @if(session('error'))
+        <div class="alert-danger-modern">{{ session('error') }}</div>
+    @endif
 
-                        </div>
-                        <div class="col-md-1"></div>
-                    </div>
-                    <br />
-                    
-
-                </div>
-        </section>
-        <br /><br /><br /><br /><br />
-    </main>
-      <footer id="footer" class="section-bg">
-        <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-sm-3">
-                      <div class="footer-links">
-                          <h4>Mitra EO Zen</h4>
-                            <ul>
-                              <li><a href="#">Cara Jual</a></li>
-                              <li><a href="#">Daftar Mitra</a></li>
-                              <li><a href="#">Ketentuan Dana</a></li>
-                              <li><a href="#">Periklanan</a></li>
-                            </ul>
-                        </div>
-                  </div>  
-                  <div class="col-sm-3">
-                      <div class="footer-links">
-                          <h4>Lebih Tahu Zenith</h4>
-                            <ul>
-                              <li><a href="#">Tentang Kami</a></li>
-                              <li><a href="#">Layanan</a></li>
-                              <li><a href="#">Syarat dan Ketentuan</a></li>
-                              <li><a href="#">Kebijakan Privasi</a></li>
-                            </ul>
-                        </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="footer-links">
-                      <h4>Layanan Pelanggan</h4>
-                        <ul>
-                          <li><a href="#">Pembayaran</a></li>
-                          <li><a href="#">Pengembalian Dana dan Uang</a></li>
-                          <li><a href="#">Komplain</a></li>
-                          <li><a href="#">Garansi</a></li>
-                          <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="footer-links">
-                      <h4>Contact Us</h4>
-                      <p>
-                        Jl. Kemanggisan VII Kav. 31 <br>
-                        Jakarta Selatan<br>
-                        <strong>Phone:</strong> +62 (21)123456<br>
-                        <strong>Email:</strong> info@example.com<br>
-                      </p>
-                    </div>
-                  </div>
-              </div>
-              <div class="copyright">
-                  <div class="social-links">
-                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                  </div>
-                  <br />
-                  <p class="text-center">&copy; 2019 Copyright <strong>Zenith </strong>| Hak Cipta Dilindungi</p>
-              </div> 
-          </div>
+    <!-- Stats Row -->
+    <div class="booking-stats-row">
+        <div class="booking-stat-card">
+            <div class="stat-icon total">
+                <i class="fa fa-shopping-bag"></i>
+            </div>
+            <div class="stat-info">
+                <h3>{{ $transactions->count() }}</h3>
+                <p>Total Pesanan</p>
+            </div>
         </div>
-      </footer>
+        <div class="booking-stat-card">
+            <div class="stat-icon menunggu">
+                <i class="fa fa-clock-o"></i>
+            </div>
+            <div class="stat-info">
+                <h3>{{ $transactions->where('status_pembayaran', 0)->count() }}</h3>
+                <p>Menunggu</p>
+            </div>
+        </div>
+        <div class="booking-stat-card">
+            <div class="stat-icon dibayar">
+                <i class="fa fa-check-circle-o"></i>
+            </div>
+            <div class="stat-info">
+                <h3>{{ $transactions->where('status_pembayaran', 1)->count() }}</h3>
+                <p>Dibayar</p>
+            </div>
+        </div>
+        <div class="booking-stat-card">
+            <div class="stat-icon dikonfirmasi">
+                <i class="fa fa-thumbs-up"></i>
+            </div>
+            <div class="stat-info">
+                <h3>{{ $transactions->where('status_pembayaran', 2)->count() }}</h3>
+                <p>Dikonfirmasi</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- Table Card -->
+    <div class="table-card">
+        <div class="table-card-header">
+            <div class="card-icon">
+                <i class="fa fa-list"></i>
+            </div>
+            <h3>Daftar Pesanan</h3>
+        </div>
+        <div class="table-card-body">
+            @if($transactions->count() > 0)
+                <table class="booking-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Tanggal</th>
+                            <th>Kode Booking</th>
+                            <th>Nama Pelanggan</th>
+                            <th>Paket</th>
+                            <th>Tanggal Acara</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($transactions as $index => $transaction)
+                            @php
+                                $statusClass = match($transaction->status_pembayaran) {
+                                    0 => 'menunggu',
+                                    1 => 'dibayar',
+                                    2 => 'dikonfirmasi',
+                                    3 => 'dibatalkan',
+                                    default => 'menunggu'
+                                };
+                                $statusLabel = match($transaction->status_pembayaran) {
+                                    0 => 'Menunggu',
+                                    1 => 'Dibayar',
+                                    2 => 'Dikonfirmasi',
+                                    3 => 'Dibatalkan',
+                                    default => 'Unknown'
+                                };
+                            @endphp
+                            <tr>
+                                <td class="td-no">{{ $index + 1 }}</td>
+                                <td class="td-date">
+                                    {{ $transaction->created_at->format('d M Y') }}
+                                </td>
+                                <td class="td-kode">{{ $transaction->kode_booking }}</td>
+                                <td class="td-pelanggan">{{ $transaction->user->name ?? 'N/A' }}</td>
+                                <td class="td-paket">
+                                    {{ $transaction->paket->nama_paket ?? 'N/A' }}
+                                    <br><small>{{ $transaction->paket->kategori ?? '' }}</small>
+                                </td>
+                                <td class="td-date">
+                                    {{ $transaction->tanggal_acara ? \Carbon\Carbon::parse($transaction->tanggal_acara)->format('d M Y') : 'N/A' }}
+                                </td>
+                                <td>
+                                    <span class="table-status-badge {{ $statusClass }}">{{ $statusLabel }}</span>
+                                </td>
+                                <td class="td-actions">
+                                    <a href="{{ url('/transact_detail/'.$transaction->id) }}" class="table-action-btn detail">
+                                        <i class="fa fa-eye"></i> Detail
+                                    </a>
+                                    @if($transaction->status_pembayaran == 0)
+                                        <a href="javascript:void(0)"
+                                           class="table-action-btn cancel"
+                                           onclick="openCancelModal('{{ url('/booking/delete/'.$transaction->id) }}', '{{ $transaction->paket->nama_paket ?? 'pesanan ini' }}')">
+                                            <i class="fa fa-times"></i> Batal
+                                        </a>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            @else
+                <div class="table-empty">
+                    <i class="fa fa-shopping-bag"></i>
+                    <h5>Belum Ada Pesanan</h5>
+                    <p>Anda belum memiliki pesanan.</p>
+                    <a href="{{ url('/paket') }}" class="btn-browse-dashboard">
+                        <i class="fa fa-compass"></i> Jelajahi Paket
+                    </a>
+                </div>
+            @endif
+        </div>
+    </div>
 
-      
-  <!-- ./wrapper -->
+</div>
 
-  <script src="../../dist/js/demo.js"></script>
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+<!-- Cancel Confirmation Modal -->
+<div class="modal-backdrop-custom" id="cancelModal">
+    <div class="modal-custom" role="dialog" aria-modal="true">
+        <div class="modal-custom-header">
+            <h5><i class="fa fa-exclamation-triangle"></i> Konfirmasi Batalkan</h5>
+        </div>
+        <div class="modal-custom-body">
+            <div class="modal-custom-icon">
+                <i class="fa fa-times-circle"></i>
+            </div>
+            <p>Apakah Anda yakin ingin membatalkan</p>
+            <p class="paket-name" id="cancelModalName"></p>
+            <small>dari daftar pesanan Anda?</small>
+        </div>
+        <div class="modal-custom-footer">
+            <a href="javascript:void(0)" class="modal-btn-cancel" onclick="closeCancelModal()">Batal</a>
+            <a href="#" id="cancelConfirmBtn" class="modal-btn-confirm">
+                <i class="fa fa-times"></i> Batalkan
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="{{ asset('js/user-transact-inline.js') }}"></script>
+</section>
+</main>
+@endsection

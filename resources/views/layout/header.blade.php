@@ -1,202 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Zeninth EO - Your Event Solution</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zenith EO - Platform terpercaya untuk menemukan Event Organizer profesional">
+    <title>Zenith EO - Your Event Solution</title>
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="{{ asset('img/favicon.png') }}" rel="icon">
+    <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
-  {{-- <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"> --}}
-  <link href="{{ asset('css/fix.css') }}" rel="stylesheet" type="text/css"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700|Montserrat:400,500,600,700,800" rel="stylesheet">
 
-  <!-- Libraries CSS Files -->
-  <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-  <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
-  <link href="{{asset('lib/ionicons/css/ionicons.min.css')}}" rel="stylesheet">
-  <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-  <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
-  {{-- <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'> --}}
+    <!-- Libraries CSS Files -->
+    <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
-  <!-- Main Stylesheet File -->
-  <link href="{{asset('css/style.css')}}" rel="stylesheet">
-  <link href="{{asset('css/carousel.css')}}" rel="stylesheet">
-  @if (Request::path() !== '/')
-    <link href="{{asset('css/measure.css')}}" rel="stylesheet">
-  @endif
-  <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css"/>
+    <!-- Main Stylesheet File -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="{{ asset('css/modern.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/header-inline.css') }}" rel="stylesheet">
+    @yield('head')
+    @stack('styles')
 </head>
-<body>
-<button type="button" class="mobile-nav-toggle d-lg-none"><i class="fa fa-bars"></i></button>
-  <header id="header">
-    <div class="container">
-      <div class="logo float-left">
-        <h1 class="text-light"><a href="{{ url('/') }}" class="scrollto"><span>ZEN</span></a></h1>
-      </div>
+<body class="@yield('body_class')">
+<!-- Navigation -->
+<header id="header" @yield('header_attrs')>
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo">
+            <h1 class="mb-0"><a href="{{ url('/') }}"><span>ZEN</span></a></h1>
+        </div>
 
-      <nav class="main-nav float-right d-none d-lg-block">
-        <ul>
-          <li><a href="#about">Tentang</a></li>
-          <li><a href="#about">Mitra EO</a></li>
-          <li>
-              <a href="#" class="widget-header mr-3">
-                <i style="font-size: 16pt" class="icon fa fa-shopping-basket"></i>
-              </a>
-          </li>
-           <li class="dropdown notifications">
-              <a href="#" class="widget-header mr-3" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                  <i style="font-size: 16pt" class="icon fa fa-bell" ></i>
-                  <span class="badge badge-pill badge-secondary">3+</span>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-small">
-                <li>
-                    <a class="dropdown-item" href="#">
-                        <div class="notification__icon-wrapper">
-                          <div class="notification__icon">
-                            <i class="fa fa-times-circle"></i>
-                          </div>
+        <nav class="main-nav d-none d-lg-flex align-items-center">
+            <ul class="nav main-nav-ul d-flex align-items-center mb-0 list-unstyled">
+                @if(!Auth::guard('users')->check())
+                    <li class="ml-3"><a href="{{ url('/paket') }}" class="px-3 py-2 nav-link-dark">Jelajahi Paket</a></li>
+                    <li class="ml-3"><a href="{{ url('/login') }}" class="btn btn-outline-dark btn-sm px-3">Masuk</a></li>
+                    <li class="ml-2"><a href="{{ url('/register') }}" class="btn btn-primary btn-sm px-3 text-white">Daftar</a></li>
+                @elseif(Auth::guard('users')->user()->is_eo == 1)
+                    <li class="ml-3"><a href="{{ url('/dashboard') }}" class="px-3 py-2 nav-link-dark">Dashboard</a></li>
+                    <li class="ml-3"><a href="{{ url('/paket') }}" class="px-3 py-2 nav-link-dark">Jelajahi Paket</a></li>
+                    <li class="ml-3"><a href="{{ url('/manage_paket') }}" class="px-3 py-2 nav-link-dark">Kelola Paket</a></li>
+                    <li class="ml-3"><a href="{{ url('/orders') }}" class="px-3 py-2 nav-link-dark">Kelola Pesanan</a></li>
+                    <li class="ml-3">
+                        <a href="{{ url('/eo/notif') }}" class="px-3 py-2 nav-link-dark position-relative" title="Notifikasi">
+                            <i class="fa fa-bell"></i>
+                            <span id="notif-badge-eo" class="position-absolute badge-count" style="display:none">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown ml-2">
+                        <a class="dropdown-toggle nav-link-dark px-3 py-2" href="#" role="button" data-toggle="dropdown">
+                            <i class="fa fa-user-circle mr-1"></i>{{ Auth::guard('users')->user()->name }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="{{ url('/user_profile') }}"><i class="fa fa-user mr-2"></i>Profil Saya</a>
+                            <a class="dropdown-item" href="{{ url('/eo_profile/edit') }}"><i class="fa fa-building mr-2"></i>Profil EO</a>
+                            <a class="dropdown-item" href="{{ url('/wishlist') }}"><i class="fa fa-heart mr-2"></i>Wishlist Saya</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ url('/logout') }}"><i class="fa fa-sign-out mr-2"></i>Sign Out</a>
                         </div>
-                        <div class="notification__content">
-                          <span class="notification__category">Order</span>
-                          <p>Pesanan Anda Dibatalkan..</p>
+                    </li>
+                @else
+                    <li class="ml-3"><a href="{{ url('/paket') }}" class="px-3 py-2 nav-link-dark">Jelajahi Paket</a></li>
+                    <li class="ml-2"><a href="{{ url('/regist_eo') }}" class="px-3 py-2 nav-link-dark">Buka EO</a></li>
+                    <li class="ml-3">
+                        <a href="{{ url('/user/notif') }}" class="px-3 py-2 nav-link-dark position-relative" title="Notifikasi">
+                            <i class="fa fa-bell"></i>
+                            <span id="notif-badge-user" class="position-absolute badge-count" style="display:none">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown ml-2">
+                        <a class="dropdown-toggle nav-link-dark px-3 py-2" href="#" role="button" data-toggle="dropdown">
+                            <i class="fa fa-user-circle mr-1"></i>{{ Auth::guard('users')->user()->name }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="{{ url('/edit_user') }}"><i class="fa fa-user mr-2"></i>Edit Profil</a>
+                            <a class="dropdown-item" href="{{ url('/booking') }}"><i class="fa fa-shopping-bag mr-2"></i>Pesanan Saya</a>
+                            <a class="dropdown-item" href="{{ url('/wishlist') }}"><i class="fa fa-heart mr-2"></i>Wishlist Saya</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ url('/logout') }}"><i class="fa fa-sign-out mr-2"></i>Sign Out</a>
                         </div>
-                      </a>
-                </li>
-                <hr>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        <div class="notification__icon-wrapper">
-                          <div class="notification__icon">
-                            <i class="fa fa-exclamation-triangle"></i>
-                          </div>
-                        </div>
-                        <div class="notification__content">
-                          <span class="notification__category">Payment</span>
-                          <p>Segera lunasi pembayaran paket anda...</p>
-                        </div>
-                      </a>
-                </li>
-                <hr>
-                <li>
-                    <a class="dropdown-item" href="/user/notif">
-                        <div class="notification__icon-wrapper">
-                          <div class="notification__icon">
-                            <i class="fa fa-info"></i>
-                          </div>
-                        </div>
-                        <div class="notification__content">
-                          <span class="notification__category">SEKARANG BANGET: BUY 1 GET 1!</span>
-                          <p>Serbu promonya dan koleksi pilihan paket termurah..</p>
-                        </div>
-                      </a>
-                </li>
-                <hr>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        <div class="notification__icon-wrapper">
-                          <div class="notification__icon">
-                            <i class="fa fa-check-circle"></i>
-                          </div>
-                        </div>
-                        <div class="notification__content">
-                          <span class="notification__category">Booking Confirment</span>
-                          <p>Pembayaran Anda Telah diterima</p>
-                        </div>
-                      </a>
-                </li>
-                <hr>
-                <li>
-                  <a href="" class="dropdown-item notification__all text-muted text-center">Lihat Semua</a>
-                </li>
-              </ul>
-  
-          </li>
-          <li>
-                <div class="input-group">
-                    <div class="form-group has-search">
-                    <form action="{{url('/search')}}" method="post" id="searchPaket">
-                    {{ csrf_field() }}
-                        <span class="fa fa-glip fa-search form-control-feedback"></span>
-                        <input type="text" class="form-controls form-control" name="paket" placeholder="Cari...">
-                    </form>
-                    </div>
-                </div>
-          </li>
-            @if (!Auth::guard('users')->check())
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalLogin">Login</a></li> 
-          <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegist">Register</a></li>
-            @elseif (Auth::guard('users')->check() && Auth::guard('users')->user()->is_eo == 1)
-            <li><a href="{{ url('/paket') }}">Paket</a></li>
-            <li class="drop-down"><a href="#"><span>{{Auth::guard('users')->user()->name}}</span></a>
-                <ul>
-                  <li><a href="{{ url('/paket') }}">Paket</a></li>
-                  <li><a href="#">Pengriman</a></li>
-                  <li><a href="#">Dashboard</a></li>
-                  <li><a href="{{ url('/logout') }}">Sign Out</a></li>
-                </ul>
-            </li>
-          @elseif (Auth::guard('users')->check() && Auth::guard('users')->user()->is_eo == 0)
-          <li class="drop-down"><a href="#"><span>{{$user->name}}</span></a>
-              <ul>
-              <li><a href="" class="trigger-btn" data-toggle="modal" data-target="#modalRegistEO">Buka Event Organizer</a></li>
-                <li><a href="#">Edit Profil</a></li>
-                <li><a href="#">My Order</a></li>
-                <li><a href="#">My Wishlist</a></li>
-                <li><a href="{{ url('/logout') }}">Sign Out</a></li>
-              </ul>
-          </li>
-          @endif
-        </ul>
-      </nav>
+                    </li>
+                @endif
+            </ul>
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <button type="button" class="mobile-nav-toggle d-lg-none">
+            <i class="fa fa-bars"></i>
+        </button>
     </div>
-  </header>
+</header>
 
-  <script src="{{ asset('lib/jquery/jquery.min.js') }}"></script>
-  <script src="{{ asset('lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
-  <script src="{{ asset('lib/mobile-nav/mobile-nav.js') }}"></script>
-  <script src="{{ asset('lib/wow/wow.min.js') }}"></script>
-  <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
-  <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
-  <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
-  <script src="{{ asset('lib/isotope/isotope.pkgd.min.js')}}"></script>
-  <!-- Template Main Javascript File -->
-  <script src="{{ asset('js/main.js') }}"></script>
+<!-- Mobile Navigation -->
+<div class="mobile-nav">
+    <div class="mobile-nav-header p-3">
+        <h4 class="mb-0"><span class="text-white">ZEN</span></h4>
+        <button type="button" class="mobile-nav-close text-white">&times;</button>
+    </div>
+    <ul class="mobile-nav-list p-3">
+        @if(!Auth::guard('users')->check())
+            <li><a href="{{ url('/paket') }}" class="mobile-nav-link"><i class="fa fa-compass mr-2"></i>Jelajahi Paket</a></li>
+            <li><a href="{{ url('/login') }}" class="mobile-nav-link">Login</a></li>
+            <li><a href="{{ url('/register') }}" class="mobile-nav-link mobile-nav-btn">Daftar</a></li>
+        @elseif(Auth::guard('users')->user()->is_eo == 1)
+            <li><a href="{{ url('/paket') }}" class="mobile-nav-link"><i class="fa fa-compass mr-2"></i>Jelajahi Paket</a></li>
+            <li><a href="{{ url('/dashboard') }}" class="mobile-nav-link"><i class="fa fa-home mr-2"></i>Dashboard</a></li>
+            <li><a href="{{ url('/orders') }}" class="mobile-nav-link"><i class="fa fa-shopping-bag mr-2"></i>Kelola Pesanan</a></li>
+            <li><a href="{{ url('/eo/notif') }}" class="mobile-nav-link"><i class="fa fa-bell mr-2"></i>Notifikasi <span id="notif-badge-eo-mobile" class="badge badge-danger ml-1" style="display:none;font-size:11px;">0</span></a></li>
+            <li><a href="{{ url('/user_profile') }}" class="mobile-nav-link"><i class="fa fa-user mr-2"></i>Profil Saya</a></li>
+            <li><a href="{{ url('/eo_profile/edit') }}" class="mobile-nav-link"><i class="fa fa-building mr-2"></i>Profil EO</a></li>
+            <li><a href="{{ url('/logout') }}" class="mobile-nav-link">Sign Out</a></li>
+        @else
+            <li><a href="{{ url('/paket') }}" class="mobile-nav-link"><i class="fa fa-compass mr-2"></i>Jelajahi Paket</a></li>
+            <li><a href="{{ url('/regist_eo') }}" class="mobile-nav-link">{{ Auth::guard('users')->user()->name }}</a></li>
+            <li><a href="{{ url('/edit_user') }}" class="mobile-nav-link"><i class="fa fa-user mr-2"></i>Edit Profil</a></li>
+            <li><a href="{{ url('/booking') }}" class="mobile-nav-link"><i class="fa fa-shopping-bag mr-2"></i>Pesanan Saya</a></li>
+            <li><a href="{{ url('/user/notif') }}" class="mobile-nav-link"><i class="fa fa-bell mr-2"></i>Notifikasi <span id="notif-badge-user-mobile" class="badge badge-danger ml-1" style="display:none;font-size:11px;">0</span></a></li>
+            <li><a href="{{ url('/logout') }}" class="mobile-nav-link">Sign Out</a></li>
+        @endif
+    </ul>
+</div>
+<div class="mobile-nav-overlay"></div>
 
-@if ($errors->any())
-  <script>
-      $('#modalRegist').modal('show');
-  </script>
-@endif
+<!-- JavaScript Libraries -->
+<script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('lib/easing/easing.min.js') }}"></script>
+<script src="{{ asset('lib/wow/wow.min.js') }}"></script>
+<script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 
-@if(!empty($error_login))
-<script>
-$(function() {
-    $('#modalLogin').modal('show');
-});
-</script>
-@endif
+<!-- Template Main JavaScript File -->
+<script src="{{ asset('js/main.js') }}"></script>
 
-<script>
-$('body').keypress(function(e){
-if (e.keyCode == 13)
-{
-    $('#searchPaket').submit();
-}
-});
-</script>
+<!-- Notification JS -->
+<script src="{{ asset('js/notification.js') }}"></script>
 
-<script>
-  $('#role_as').change(function(){
-    var title = $(this).val();
-      $('#eoModal').modal('show');
-      $('#modalRegist').modal('hide');
-
-  });
-</script>
+<script src="{{ asset('js/header-inline.js') }}"></script>

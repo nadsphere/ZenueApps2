@@ -1,309 +1,128 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Edit Profil Anda</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style2.css" rel="stylesheet">
-    <link href="css/ui.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/fix.css" rel="stylesheet" type="text/css"/>
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <style>
-        .img-circle{
-          width: 100px;
-          height: 100px;
-        }
-        .txt-small{
-          font-size: 15px;
-      }
-    </style>
-</head>
-<body>
-    <button type="button" class="mobile-nav-toggle d-lg-none"><i class="fa fa-bars"></i></button>
-    <header id="header" class="header-stack">
-      <div class="container">
-        <div class="logo float-left">
-          <h1 class="text-light"><a href="promaag.html" class="scrollto"><span>ZEN</span></a></h1>
-        </div>
-    
-        <nav class="main-nav float-right d-none d-lg-block">
-          <ul>
-            <li>
-                <a href="#" class="widget-header mr-3">
-                  <i style="font-size: 16pt" class="icon fa fa-shopping-basket"></i>
-                </a>
-            </li>
-            <li class="dropdown notifications">
-                <a href="#" class="widget-header mr-3" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                    <i style="font-size: 16pt" class="icon fa fa-bell" ></i>
-                    <span class="badge badge-pill badge-secondary">3+</span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-small">
-                  <li>
-                      <a class="dropdown-item" href="#">
-                          <div class="notification__icon-wrapper">
-                            <div class="notification__icon">
-                              <i class="fa fa-times-circle"></i>
-                            </div>
-                          </div>
-                          <div class="notification__content">
-                            <span class="notification__category">Order</span>
-                            <p>Pesanan Anda Dibatalkan..</p>
-                          </div>
-                        </a>
-                  </li>
-                  <hr>
-                  <li>
-                      <a class="dropdown-item" href="#">
-                          <div class="notification__icon-wrapper">
-                            <div class="notification__icon">
-                              <i class="fa fa-exclamation-triangle"></i>
-                            </div>
-                          </div>
-                          <div class="notification__content">
-                            <span class="notification__category">Payment</span>
-                            <p>Segera lunasi pembayaran paket anda...</p>
-                          </div>
-                        </a>
-                  </li>
-                  <hr>
-                  <li>
-                      <a class="dropdown-item" href="#">
-                          <div class="notification__icon-wrapper">
-                            <div class="notification__icon">
-                              <i class="fa fa-info"></i>
-                            </div>
-                          </div>
-                          <div class="notification__content">
-                            <span class="notification__category">Order</span>
-                            <p>Penawaran Paket Anda Diterima</p>
-                          </div>
-                        </a>
-                  </li>
-                  <hr>
-                  <li>
-                      <a class="dropdown-item" href="#">
-                          <div class="notification__icon-wrapper">
-                            <div class="notification__icon">
-                              <i class="fa fa-check-circle"></i>
-                            </div>
-                          </div>
-                          <div class="notification__content">
-                            <span class="notification__category">Payment</span>
-                            <p>Pembayaran Anda Telah diterima</p>
-                          </div>
-                        </a>
-                  </li>
-                  <hr>
-                  <li>
-                    <a href="" class="dropdown-item notification__all text-muted text-center">Lihat Semua</a>
-                  </li>
-                </ul>
-    
-            </li>
-            <li>
-                <div class="input-group">
-                    <div class="form-group has-search">
-                        <span class="fa fa-glip fa-search form-control-feedback"></span>
-                        <input type="text" class="form-controls form-control" placeholder="Cari...">
+@extends('layout.app')
+@section('body_class', 'is-profile')
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/eo_profile.css') }}">
+<link rel="stylesheet" href="{{ asset('css/user-editprofile-inline.css') }}">
+@endpush
+@section('content')
+<main id="main">
+    <section class="py-5">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1 class="page-title">Edit Profil</h1>
+                <p class="page-subtitle">Perbarui informasi akun Anda</p>
+            </div>
+
+            <!-- Alert Messages -->
+            @if(session('success'))
+                <div class="alert alert-success-modern">{{ session('success') }}</div>
+            @endif
+            @if(session('error'))
+                <div class="alert alert-danger-modern">{{ session('error') }}</div>
+            @endif
+
+            <!-- Profile Info Card -->
+            <div class="card">
+                <div class="card-header-custom">
+                    <div class="card-icon">
+                        <i class="fa fa-user"></i>
                     </div>
+                    <h3>Informasi Akun</h3>
                 </div>
-            </li>
-            <li class="drop-down"><a href="index.html"><span>JOKO MULYADI</span></a>
-              <ul>
-                <li><a href="#">Edit Profil</a></li>
-                <li><a href="#">My Order</a></li>
-                <li><a href="#">My Wishlist</a></li>
-                <li><a href="index.html">Sign Out</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main id="main" class="section-bg2">
-        <section class="container-fluid ">
-            <br />  <br />  <br /> <br />
-                  <div class="row merged">
-                      <div class="col-lg-1"></div>
-                      <div class="col-lg-3 col-sm-4">
-                              <div class="col-md-12">
-                                  <div class="col-sm-12">
-                                          <div class="row">
-                                          <div class="card mb-4">
-                                                  <div class="card-body">
-                                                          <div class="card-body text-center">
-                                                                  <img src="{{ asset('img/EO/eo-2.jpg') }}" alt="Kathy Davis" class="img-fluid rounded-circle mb-2 img-circle">
-                                                                  <br />
-                                                                  <h4 class="title"></h4>
-                                                                  <p class="txt-small text-muted text-center">Ukuran gambar: maks. 1 MB <br /> Format gambar: .JPEG, .PNG</p>
-                                                                  <br />
-                                                                  <form>
-                                                                      <div class="form-group row">
-                                                                          <input type="file" class="btn-ouline-info form-control-file" id="gambar_profil">
-                                                                      </div>
-                                                                  </form>
-                                                          </div>
-                                                  </div>
-                                              </div>
-                                          <div class="card mb-4 col-sm-12">
-                                                  <div class="card-body">
-                                                      <ul class="list-unstyled mb-0">
-                                                          <li class="mb-1">
-                                                          <i class="fa fa-heart-o"></i> My Wishlist
-                                                          </li><br />
-                                                          <li class="mb-1">
-                                                            <i class="fa fa-file-o"></i> Pesanan Saya
-                                                          </li><br />
-                                                          <li class="mb-1">
-                                                            <i class="fa fa-credit-card"></i> Metode Pembayaran
-                                                          </li>
-                                                      </ul>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                  </div>
-                              </div>
-                      </div>
-                      <div class="col-lg-7 col-sm-6">
-                        <div class="card mb-4">
-                            <div class="card-body ">  
-                            <div class="col-md-12 order-md-1">
-                                  <h4 class="mb-3 text-center"><b> Ubah Profil </b></h4> <br />
-                                  <form>
-                                      <div class="form-group row">
-                                        <label for="name" class="col-sm-3 col-form-label"><b>Nama</b></label>
-                                        <div class="col-sm-9">
-                                          <input type="text" id="name" name="name" readonly class="form-control-plaintext" id="name" value="Joko Mulyadi">
-                                        </div>
-                                      </div>
-                                      <div class="form-group row">
-                                          <label for="birthday" class="col-sm-3 col-form-label"><b>Tanggal Lahir</b></label>
-                                          <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="birthday" id="birthday" placeholder="">
-                                          </div>
-                                      </div>
-                                      <div class="form-group row">
-                                        <label for="email" class="col-sm-3 col-form-label"><b> Email</b></label>
-                                        <div class="col-sm-9">
-                                          <input type="email" class="form-control" id="email" name="email" placeholder="">
-                                        </div>
-                                      </div>
-                                      <div class="form-group row">
-                                          <label for="no_phone" class="col-sm-3 col-form-label"><b>No Telp</b></label>
-                                          <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="no_phone" id="no_phone" placeholder="">
-                                          </div>
-                                      </div>
-                                      <div class="form-group row">
-                                          <label for="alamats" class="col-sm-3 col-form-label"><b>Alamat</b></label>
-                                          <div class="col-sm-9">
-                                            <textarea class="form-control" name="alamats" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                          </div>
-                                      </div>
-                                      <div class="form-group row">
-                                          <label for="password" class="col-sm-3 col-form-label"><b> Password</b></label>
-                                          <div class="col-sm-9">
-                                            <input type="password" name="password" class="form-control" id="password" placeholder="">
-                                          </div>
-                                      </div>
-                                      <br />
-                                      <div class="form-group row justify-content-center">
-                                        <div class="col-sm-10">
-                                          <button class="btn btn-outline-danger btn-md btn-block" type="submit">Simpan</button>
-                                        </div>
-                                      </div>
-                                  </form>
-                                  
-                                </div>
-                            </div>
+                <div class="card-body-custom">
+                    <form action="{{ url('/edit_user') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap <span class="text-muted">*</span></label>
+                            <input type="text"
+                                   class="form-control @error('name') is-invalid @enderror"
+                                   id="name"
+                                   name="name"
+                                   value="{{ old('name', $user->name ?? '') }}"
+                                   required
+                                   minlength="4">
+                            @error('name')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
-                      </div>
-                      <div class="col-lg-1"></div>
-                  </div>
-        </section>
-        
-    </main>
-      <footer id="footer" class="section-bg">
-        <div class="footer-top">
-          <div class="container">
-              <div class="row">
-                  <div class="col-sm-3">
-                      <div class="footer-links">
-                          <h4>Mitra EO Zen</h4>
-                            <ul>
-                              <li><a href="#">Cara Jual</a></li>
-                              <li><a href="#">Daftar Mitra</a></li>
-                              <li><a href="#">Ketentuan Dana</a></li>
-                              <li><a href="#">Periklanan</a></li>
-                            </ul>
+                        <div class="form-group">
+                            <label for="email">Email <span class="text-muted">*</span></label>
+                            <input type="email"
+                                   class="form-control @error('email') is-invalid @enderror"
+                                   id="email"
+                                   name="email"
+                                   value="{{ old('email', $user->email ?? '') }}"
+                                   required>
+                            @error('email')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
-                  </div>  
-                  <div class="col-sm-3">
-                      <div class="footer-links">
-                          <h4>Lebih Tahu Zenith</h4>
-                            <ul>
-                              <li><a href="#">Tentang Kami</a></li>
-                              <li><a href="#">Layanan</a></li>
-                              <li><a href="#">Syarat dan Ketentuan</a></li>
-                              <li><a href="#">Kebijakan Privasi</a></li>
-                            </ul>
+                        <div class="form-group">
+                            <label for="no_telp">No. Telepon</label>
+                            <input type="text"
+                                   class="form-control @error('no_telp') is-invalid @enderror"
+                                   id="no_telp"
+                                   name="no_telp"
+                                   value="{{ old('no_telp', $user->no_telp ?? '') }}"
+                                   placeholder="Contoh: 081234567890"
+                                   minlength="10"
+                                   maxlength="15">
+                            @error('no_telp')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="footer-links">
-                      <h4>Layanan Pelanggan</h4>
-                        <ul>
-                          <li><a href="#">Pembayaran</a></li>
-                          <li><a href="#">Pengembalian Dana dan Uang</a></li>
-                          <li><a href="#">Komplain</a></li>
-                          <li><a href="#">Garansi</a></li>
-                          <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                  </div>
-                  <div class="col-sm-3">
-                    <div class="footer-links">
-                      <h4>Contact Us</h4>
-                      <p>
-                        Jl. Kemanggisan VII Kav. 31 <br>
-                        Jakarta Selatan<br>
-                        <strong>Phone:</strong> +62 (21)123456<br>
-                        <strong>Email:</strong> info@example.com<br>
-                      </p>
-                    </div>
-                  </div>
-              </div>
-              <div class="copyright">
-                  <div class="social-links">
-                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-                  </div>
-                  <br />
-                  <p class="text-center">&copy; 2019 Copyright <strong>Zenith </strong>| Hak Cipta Dilindungi</p>
-              </div> 
-          </div>
+
+                        <hr style="margin: 30px 0;">
+
+                        <h5 style="color: #2c3e50; margin-bottom: 20px;">
+                            <i class="fa fa-lock mr-2"></i>Ubah Password
+                        </h5>
+
+                        <div class="form-group">
+                            <label for="current_password">Password Lama</label>
+                            <input type="password"
+                                   class="form-control @error('current_password') is-invalid @enderror"
+                                   id="current_password"
+                                   name="current_password"
+                                   placeholder="Masukkan password lama"
+                                   minlength="8">
+                            @error('current_password')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="new_password">Password Baru</label>
+                            <input type="password"
+                                   class="form-control @error('new_password') is-invalid @enderror"
+                                   id="new_password"
+                                   name="new_password"
+                                   placeholder="Minimal 8 karakter"
+                                   minlength="8">
+                            @error('new_password')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="new_password_confirmation">Konfirmasi Password Baru</label>
+                            <input type="password"
+                                   class="form-control @error('new_password_confirmation') is-invalid @enderror"
+                                   id="new_password_confirmation"
+                                   name="new_password_confirmation"
+                                   placeholder="Ulangi password baru"
+                                   minlength="8">
+                            @error('new_password_confirmation')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fa fa-save"></i> Simpan Perubahan
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
-      </footer>
-
-
-      
-  <!-- ./wrapper -->
-
-  <script src="../../dist/js/demo.js"></script>
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
+    </section>
+</main>
+@endsection

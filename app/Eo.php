@@ -16,8 +16,11 @@ class Eo extends Model
         'nama_eo',
         'email',
         'alamat',
+        'no_telp',
         'kontak',
         'link',
+        'link_website',
+        'deskripsi',
         'gambar_profil',
     ];
 
@@ -29,5 +32,15 @@ class Eo extends Model
     public function pakets()
     {
         return $this->hasMany(Paket::class, 'id_eo');
+    }
+
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class, 'eo_id');
+    }
+
+    public function getAverageRatingAttribute()
+    {
+        return $this->ratings()->avg('rating') ?? 0;
     }
 }
